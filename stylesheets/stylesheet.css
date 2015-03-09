@@ -444,6 +444,9 @@ p {
   color:#9ddcff;
 }
 
+#mSitelink:hover {
+  color:#2268b2;
+}
 a {
   color: #2879d0;
 }
