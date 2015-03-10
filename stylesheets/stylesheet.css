@@ -895,7 +895,14 @@ footer a:hover {
 }
 
 .nCell {
-  color: #818181; 
+  color: #a1a1a1; 
+  font-family: 'Segoe UI'; 
+  font-size: 20px; 
+  text-align: center;
+} 
+
+.nCell2 {
+  color: #19A; 
   font-family: 'Segoe UI'; 
   font-size: 20px; 
   text-align: center;
