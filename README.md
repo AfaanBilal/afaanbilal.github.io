@@ -1,4 +1,4 @@
-Source of [afaan.ml](https://afaan.ml)
+Source of [afaanbilal.github.io](https://afaanbilal.github.io)
 ==============
 
 Author: **Afaan Bilal ([@AfaanBilal](https://github.com/AfaanBilal))**   
