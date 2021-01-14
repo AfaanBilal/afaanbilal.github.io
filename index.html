@@ -98,12 +98,11 @@
 
 <!-- Skills -->
 <section class="container mx-auto px-6 p-5">
-    <div v-for="(t, i) in skillTypes" :key="t" class="my-10 py-10 md:mx-36" :class="{'border-t': i}">
+    <div v-for="(t, i) in skillTypes" :key="t" class="mb-10 pt-10 md:mx-36" :class="{'border-t': i}">
         <h3 class="text-2xl font-bold text-center text-gray-800 mb-5">{{ getPlural(t) }}</h3>
         <div class="md:mx-20 flex flex-wrap justify-center">
             <a :href="s.link" target="_blank" rel="noopener" v-for="s in skills.filter(s => s.type == t)" :key="s.name">
-                <span :style="'background: ' + getBackground(s.type)" class="text-white px-2 py-1 rounded m-2 inline-block shadow hover:shadow-lg" v-text="s.name">
-                </span>
+                <span :style="'background: ' + getBackground(s.type)" class="text-white px-2 py-1 rounded m-2 inline-block shadow hover:shadow-lg" v-text="s.name"></span>
             </a>
         </div>
     </div>
