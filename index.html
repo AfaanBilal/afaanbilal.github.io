@@ -50,6 +50,83 @@
 </div>
 <!-- / Hero -->
 
+
+<!-- Research Projects -->
+<section class="container mx-auto px-6 p-5">
+    <h2 class="text-4xl font-bold text-center text-gray-800 my-10">Research Projects</h2>
+
+    <div class="flex flex-wrap my-10 border-b py-10">
+        <div class="w-full md:w-1/2 flex flex-wrap justify-center py-3">
+            <div class="px-1 w-full md:w-1/2 flex justify-center">
+                <img src="research/atvacs/A2-Detection-Recognition.png" class="rounded w-80 h-48 my-2 md:m-0" />
+            </div>
+            <div class="px-1 w-full md:w-1/2 flex justify-center">
+                <img src="research/atvacs/A2-Classification-Counting.png" class="rounded w-80 h-48 my-2 md:m-0" />
+            </div>
+            <div class="px-1 w-full md:w-1/2 flex justify-center">
+                <img src="research/atvacs/FGM-RTL.png" class="rounded w-80 h-48 my-2 md:m-0" />
+            </div>
+            <div class="px-1 w-full md:w-1/2 flex justify-center">
+                <img src="research/atvacs/VD-RTL.png" class="rounded w-80 h-48 my-2 md:m-0" />
+            </div>
+        </div>
+        <div class="w-full md:w-1/2 px-10 py-10 md:py-2">
+            <p class="text-gray-600 font-bold mb-0">Bachelor of Technology in Civil Engineering</p>
+            <p class="text-gray-600 mb-4">National Institute of Technology, Srinagar</p>
+
+            <h3 class="text-3xl font-bold text-gray-800 my-2">ATVACS</h3>
+            <p class="text-xl text-gray-800 mb-4">Automatic Traffic Volume Analysis and Classification System</p>
+            <p class="mb-10">
+                <span 
+                    v-for="item in ['Python', 'Computer Vision', 'Background Subtraction', 'Object Detection', 'Object Recognition', 'Machine Learning', 'You Only Look Once (YOLO)']" :key="item" v-text="item"
+                    style="background: linear-gradient(120deg, #fb8817, #ff4b01, #c12127, #e02aff)" class="text-white px-2 py-1 mr-2 mt-2 w-56 rounded block shadow hover:shadow-lg">
+                </span>
+            </p>
+        </div>
+    </div>
+
+    <div class="flex flex-wrap my-10 py-10">
+        <div class="w-full md:w-1/2 px-10 py-10 md:py-2">
+            <p class="text-gray-600 font-bold mb-0">Bachelor of Technology in Civil Engineering</p>
+            <p class="text-gray-600 mb-4">National Institute of Technology, Srinagar</p>
+
+            <h3 class="text-3xl font-bold text-gray-800 my-2">PCU Impact</h3>
+            <p class="text-xl text-gray-800 mb-4">Impact of Road Surface Conditions on the PCU of vehicle categories</p>
+            <p class="mb-10">
+                <span 
+                    v-for="item in ['PCU', 'Road Surface Conditions', 'Snowy Roads', 'Potholes', 'Car', 'LCV', 'Bus', 'Truck']" :key="item" v-text="item"
+                    style="background: linear-gradient(120deg, #fb8817, #ff4b01, #c12127, #e02aff)" class="text-white px-2 py-1 mr-2 mt-2 w-56 rounded block shadow hover:shadow-lg">
+                </span>
+            </p>
+        </div>
+        <div class="w-full md:w-1/2 flex flex-wrap justify-center py-3">
+            <div class="px-1 w-full flex justify-center">
+                <img src="research/pcu/pcu_snow.png" class="rounded my-2 md:m-0" />
+            </div>
+            <div class="px-1 w-full flex justify-center">
+                <img src="research/pcu/pcu_potholes.png" class="rounded my-2 md:m-0" />
+            </div>
+        </div>
+    </div>
+</section>
+<!-- / Research Projects -->
+
+<!-- GitHub stats -->
+<div class="py-5" style="background: linear-gradient(270deg, #8034cc 0%,#991a79 100%)">
+    <section class="container mx-auto px-6 p-10">
+        <h2 class="text-4xl font-bold text-center mb-5 text-white">GitHub Stats</h2>
+        <div class="flex justify-center flex-wrap">
+            <div class="w-full md:w-1/2 py-4 flex justify-center">
+                <img src="https://github-readme-stats.vercel.app/api?username=AfaanBilal&show_icons=true&include_all_commits=true&count_private=true&custom_title=GitHub+Stats" alt="github stats" />
+            </div>
+            <div class="w-full md:w-1/2 py-4 flex justify-center">
+                <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=AfaanBilal&layout=compact&langs_count=10" alt="github top languages" />
+            </div>
+        </div>
+    </section>
+</div>
+<!-- / GitHub stats -->
+
 <!-- Open source -->
 <section class="container mx-auto px-6 p-10">
     <h2 class="text-4xl font-bold text-center text-gray-800 mb-10">Open source projects</h2>
@@ -82,21 +159,11 @@
 </section>
 <!-- / Open source -->
 
-<!-- GitHub stats -->
+<!-- ? -->
 <div class="py-5" style="background: linear-gradient(270deg, #8034cc 0%,#991a79 100%)">
-    <section class="container mx-auto px-6 p-10">
-        <h2 class="text-4xl font-bold text-center mb-5 text-white">GitHub Stats</h2>
-        <div class="flex justify-center flex-wrap">
-            <div class="w-full md:w-1/2 py-4 flex justify-center">
-                <img src="https://github-readme-stats.vercel.app/api?username=AfaanBilal&show_icons=true&include_all_commits=true&count_private=true&custom_title=GitHub+Stats" alt="github stats" />
-            </div>
-            <div class="w-full md:w-1/2 py-4 flex justify-center">
-                <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=AfaanBilal&layout=compact&langs_count=10" alt="github top languages" />
-            </div>
-        </div>
-    </section>
+    <section class="container mx-auto p-2"></section>
 </div>
-<!-- / GitHub stats -->
+<!-- / ? -->
 
 <!-- Skills -->
 <section class="container mx-auto px-6 p-5">
