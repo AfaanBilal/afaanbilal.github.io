@@ -28,15 +28,21 @@ new Vue({
         },
     },
     mounted() {
-        this.repoFullName = (new URLSearchParams(window.location.search)).get('p') || 'AfaanBilal/game-of-life'
+        this.repoFullName = window.location.hash.replace('#','') || 'AfaanBilal/game-of-life'
 
         if (!['afaanbilal', 'amx-infinity'].includes(this.repoFullName.split('/')[0].toLowerCase())) { window.location = '/' }
         
         var converter = new showdown.Converter()
         fetch('https://api.github.com/repos/' + this.repoFullName)
             .then(r => {  if (!r.ok) {  window.location = '/' } else { return r.json() } })
-            .then(d => { this.repo = d })
-            .then(() => {  fetch(this.repo.languages_url).then(r => r.json()).then(d => { this.langs = d }) })
+            .then(d => { 
+                if (['afaanbilal', 'amx-infinity'].includes(d.full_name.split('/')[0].toLowerCase())) {
+                    this.repo = d
+                } else { 
+                    window.location = '/'
+                }
+            })
+            .then(() => { fetch(this.repo.languages_url).then(r => r.json()).then(d => { this.langs = d }) })
             .then(() => {
                 fetch('https://raw.githubusercontent.com/' + this.repoFullName + '/' + this.repo.default_branch + '/README.md').then(r => r.text())
                     .then(d => {  this.readmeHtml = converter.makeHtml(d) })
