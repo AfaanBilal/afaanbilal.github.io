@@ -115,6 +115,7 @@ new Vue({
             { name: 'Tailwind', type: 'skill' },
             { name: 'OAuth', type: 'skill' },
             { name: 'jQuery', type: 'skill' },
+            { name: 'Traefik', type: 'skill' },
 
             { name: '@afaanbilal/random-string', type: 'npm', link: 'https://www.npmjs.com/package/@afaanbilal/random-string' },
         ],
