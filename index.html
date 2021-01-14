@@ -57,7 +57,9 @@
     <div class="grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-10">
 
         <div class="border shadow hover:shadow-2xl border-l-4 rounded border-purple-600 p-3 pl-5" v-for="r in repos" :key="r.id">
-            <h4 class="text-2xl text-gray-800 font-bold mb-3" v-text="r.name.split('-').join(' ').toTitleCase()"></h4>
+            <a :href="'project.html?p=' + r.full_name" class="hover:underline">
+                <h4 class="text-2xl text-gray-800 font-bold mb-3" v-text="r.name.split('-').join(' ').toTitleCase()"></h4>
+            </a>
             <div class="text-gray-700">
                 {{ r.description }}
 
@@ -205,7 +207,8 @@
 
 </div><!-- /app -->
 
-<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/vue@2"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 <script src="assets/main.js"></script>
 </body>
 </html>
