@@ -13,7 +13,7 @@ new Vue({
     data: { 
         allRepos: [], 
         skillTypes: [
-            'npm', 'framework', 'platform', 'language', 'service', 'hardware', 'skill', 'software'
+            'npm', 'framework', 'platform', 'language', 'database', 'service', 'hardware', 'skill', 'software'
         ],
         skills: [
             { name: 'JavaScript', type: 'language' },
@@ -32,6 +32,12 @@ new Vue({
             { name: 'JSON', type: 'language' },
             { name: 'Go', type: 'language' },
 
+            { name: 'Redis', type: 'database' },
+            { name: 'MySQL', type: 'database' },
+            { name: 'MariaDB', type: 'database' },
+            { name: 'SQLite', type: 'database' },
+            { name: 'Firebase', type: 'database' },
+            
             { name: 'Laravel', type: 'framework' },
             { name: 'VueJS', type: 'framework' },
             { name: 'CodeIgniter', type: 'framework' },
@@ -48,7 +54,6 @@ new Vue({
             { name: 'DigitalOcean Spaces', type: 'service' },
             { name: 'SendGrid', type: 'service' },
             { name: 'Twilio', type: 'service' },
-            { name: 'Firebase', type: 'service' },
             { name: 'Draw.io', type: 'service' },
 
             { name: 'Android', type: 'platform' },
@@ -61,9 +66,6 @@ new Vue({
 
             { name: 'VSCode', type: 'software' },
             { name: 'Apache', type: 'software' },
-            { name: 'MySQL', type: 'software' },
-            { name: 'MariaDB', type: 'software' },
-            { name: 'SQLite', type: 'software' },
             { name: 'Docker', type: 'software' },
             { name: 'Docker Swarm', type: 'software' },
             { name: 'Git', type: 'software' },
@@ -143,6 +145,7 @@ new Vue({
                 case 'service': return 'linear-gradient(to right, #e55d87, #9f73c4)'
                 case 'platform': return 'linear-gradient(to right, #f2709c, #ff9472)'
                 case 'npm': return 'linear-gradient(139deg, #fb8817, #ff4b01, #c12127, #e02aff)'
+                case 'database': return 'linear-gradient(139deg, #c12127, #e02aff, #fb8817, #ff4b01)'
             }
         },
         getPlural(t) {
