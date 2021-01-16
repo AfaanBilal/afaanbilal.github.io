@@ -50,8 +50,30 @@
 </div>
 <!-- / Hero -->
 
+<!-- Nav -->
+<nav class="bg-gray-100 py-5">
+    <div class="flex flex-wrap justify-center">
+        <div class="w-full flex justify-center mb-4 md:my-0 md:w-auto px-6 border-b md:border-b-0 md:border-r pb-4 md:py-0">
+            <a href="#research-projects">Research projects</a>
+        </div>
+        <div class="w-full flex justify-center mb-4 md:my-0 md:w-auto px-6 border-b md:border-b-0 md:border-r pb-4 md:py-0">
+            <a href="#github-stats">GitHub stats</a>
+        </div>
+        <div class="w-full flex justify-center mb-4 md:my-0 md:w-auto px-6 border-b md:border-b-0 md:border-r pb-4 md:py-0">
+            <a href="#open-source">Open source</a>
+        </div>
+        <div class="w-full flex justify-center mb-4 md:my-0 md:w-auto px-6 border-b md:border-b-0 md:border-r pb-4 md:py-0">
+            <a href="#skills">Skills</a>
+        </div>
+        <div class="w-full flex justify-center mb-4 md:my-0 md:w-auto px-6">
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+</nav>
+<!-- /Nav -->
 
 <!-- Research Projects -->
+<a name="research-projects"></a>
 <section class="container mx-auto px-6 p-5">
     <h2 class="text-4xl font-bold text-center text-gray-800 my-10">Research Projects</h2>
 
@@ -112,6 +134,7 @@
 <!-- / Research Projects -->
 
 <!-- GitHub stats -->
+<a name="github-stats"></a>
 <div class="py-5" style="background: linear-gradient(270deg, #8034cc 0%,#991a79 100%)">
     <section class="container mx-auto px-6 p-10">
         <h2 class="text-4xl font-bold text-center mb-5 text-white">GitHub Stats</h2>
@@ -128,6 +151,7 @@
 <!-- / GitHub stats -->
 
 <!-- Open source -->
+<a name="open-source"></a>
 <section class="container mx-auto px-6 p-10">
     <h2 class="text-4xl font-bold text-center text-gray-800 mt-10 mb-16">Open source projects</h2>
 
@@ -166,6 +190,7 @@
 <!-- / ? -->
 
 <!-- Skills -->
+<a name="skills"></a>
 <section class="container mx-auto px-6 p-5">
     <div v-for="(t, i) in skillTypes" :key="t" class="mb-10 pt-10 md:mx-36" :class="{'border-t': i}">
         <h3 class="text-2xl font-bold text-center text-gray-800 mb-5">{{ getPlural(t) }}</h3>
@@ -179,6 +204,7 @@
 <!-- / Skills -->
 
 <!-- Contact -->
+<a name="contact"></a>
 <div class="py-5" style="background: linear-gradient(270deg, #8034cc 0%,#991a79 100%)">
     <section class="container mx-auto px-6 p-10">
         <h2 class="text-4xl font-bold text-center mb-8 text-white">Let's talk!</h2>
