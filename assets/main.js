@@ -13,7 +13,7 @@ new Vue({
     data: { 
         allRepos: [], 
         skillTypes: [
-            'npm', 'framework', 'platform', 'language', 'database', 'service', 'hardware', 'skill', 'software'
+            'npm', 'framework', 'composer', 'platform', 'language', 'database', 'service', 'hardware', 'skill', 'software'
         ],
         skills: [
             { name: 'JavaScript', type: 'language' },
@@ -120,6 +120,8 @@ new Vue({
             { name: 'Traefik', type: 'skill' },
 
             { name: '@afaanbilal/random-string', type: 'npm', link: 'https://www.npmjs.com/package/@afaanbilal/random-string' },
+
+            { name: 'afaanbilal/php-random-string', type: 'composer', link: 'https://packagist.org/packages/afaanbilal/php-random-string' },
         ],
 
         name: '', 
@@ -146,10 +148,12 @@ new Vue({
                 case 'platform': return 'linear-gradient(to right, #f2709c, #ff9472)'
                 case 'npm': return 'linear-gradient(139deg, #fb8817, #ff4b01, #c12127, #e02aff)'
                 case 'database': return 'linear-gradient(139deg, #c12127, #e02aff, #fb8817, #ff4b01)'
+                case 'composer': return 'linear-gradient(139deg, #fb8817, #ff4b01, #c12127, #e02aff)'
             }
         },
         getPlural(t) {
             if (t == 'npm') return 'NPM Packages'
+            if (t == 'composer') return 'Composer Packages'
             return (t == 'hardware' ? t : t + 's').toTitleCase()
         },
         sendMessage() { 
