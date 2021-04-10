@@ -13,7 +13,7 @@ new Vue({
     data: {
         allRepos: [],
         skillTypes: [
-            'npm', 'framework', 'composer', 'platform', 'language', 'database', 'service', 'hardware', 'skill', 'software'
+            'npm', 'framework', 'composer', 'platform', 'language', 'database', 'service', 'skill', 'software'
         ],
         skills: [
             { name: 'JavaScript', type: 'language' },
@@ -82,27 +82,6 @@ new Vue({
             { name: 'Android Studio', type: 'software' },
             { name: 'Microsoft Visual Studio', type: 'software' },
 
-            { name: 'Apple MacBook 16"', type: 'hardware' },
-            { name: 'Intel i9', type: 'hardware' },
-            { name: 'Logitech MX Master 3', type: 'hardware' },
-            { name: 'Logitech MX Keys', type: 'hardware' },
-            { name: 'Logitech c922 Pro', type: 'hardware' },
-            { name: 'Ryzen 5950X', type: 'hardware' },
-            { name: 'Nvidia RTX 3080', type: 'hardware' },
-            { name: 'Logitech G502 Hero', type: 'hardware' },
-            { name: 'HP 27es', type: 'hardware' },
-            { name: 'HyperX Cloud Alpha S', type: 'hardware' },
-            { name: 'Intel i7', type: 'hardware' },
-            { name: 'HyperX Alloy FPS Mechanical', type: 'hardware' },
-            { name: 'Corsair K70 MK.2 Mechanical', type: 'hardware' },
-            { name: 'BenQ Zowie XL2546 240Hz', type: 'hardware' },
-            { name: 'XP Pen Deco Pro Medium', type: 'hardware' },
-            { name: 'Acer Predator Helios 300', type: 'hardware' },
-            { name: 'Nvidia GTX 1060', type: 'hardware' },
-            { name: 'OnePlus Nord', type: 'hardware' },
-            { name: 'Mi Soundbar', type: 'hardware' },
-            { name: 'TP Link Powered USB Hub', type: 'hardware' },
-
             { name: 'Programming', type: 'skill' },
             { name: 'FullStack', type: 'skill' },
             { name: 'WebDev', type: 'skill' },
@@ -125,6 +104,41 @@ new Vue({
             { name: 'afaanbilal/php-random-string', type: 'composer', link: 'https://packagist.org/packages/afaanbilal/php-random-string' },
         ],
 
+        hardwareTypes: [ 'hardware', 'headset', 'hub', 'laptop', 'cpu', 'gpu', 'monitor', 'keyboard', 'mouse', 'webcam', 'phone', 'speaker' ],
+        hardware: [
+            { name: 'HyperX Cloud Alpha S', type: 'headset' },
+            { name: 'XP Pen Deco Pro Medium', type: 'hardware' },
+            { name: 'TP Link Powered USB Hub', type: 'hub' },
+
+            { name: 'Apple MacBook 16"', type: 'laptop' },
+            { name: 'Acer Predator Helios 300', type: 'laptop' },
+
+            { name: 'Logitech c922 Pro', type: 'webcam' },
+
+            { name: 'OnePlus Nord', type: 'phone' },
+
+            { name: 'Mi Soundbar', type: 'speaker' },
+
+            { name: 'Ryzen 9 5950X', type: 'cpu' },
+            { name: 'Intel i9 10th Gen', type: 'cpu' },
+            { name: 'Intel i7 7th Gen', type: 'cpu' },
+
+            { name: 'Nvidia RTX 3080', type: 'gpu' },
+            { name: 'AMD Radeon Pro 5500M', type: 'gpu' },
+            { name: 'Nvidia GTX 1060', type: 'gpu' },
+
+            { name: 'BenQ Zowie XL2546 240Hz', type: 'monitor' },
+            { name: 'HP 27es', type: 'monitor' },
+
+            { name: 'Corsair K70 MK.2 Mechanical', type: 'keyboard' },
+            { name: 'HyperX Alloy FPS Mechanical', type: 'keyboard' },
+            { name: 'Logitech MX Keys', type: 'keyboard' },
+
+            { name: 'Logitech MX Master 3', type: 'mouse' },
+            { name: 'Logitech G502 Hero', type: 'mouse' },
+            { name: 'Logitech G402 FPS', type: 'mouse' },
+        ],
+
         name: '',
         email: '',
         message: '',
@@ -141,7 +155,6 @@ new Vue({
         getBackground(t) {
             switch (t) {
                 case 'skill': return 'linear-gradient(90deg, #8034cc 0%,#991a79 100%)'
-                case 'hardware': return 'linear-gradient(90deg, #3471cc 0%,#25a48b 100%)'
                 case 'software': return 'linear-gradient(to right, #5f2c82, #49a09d)'
                 case 'language': return 'linear-gradient(to right, #ff00cc, #333399)'
                 case 'framework': return 'linear-gradient(90deg, #40e0e6 0%,#e4256e 100%)'
@@ -155,6 +168,9 @@ new Vue({
         getPlural(t) {
             if (t == 'npm') return 'NPM Packages'
             if (t == 'composer') return 'Composer Packages'
+            if (t == 'mouse') return 'Mice'
+            if (t == 'cpu') return 'CPUs'
+            if (t == 'gpu') return 'GPUs'
             return (t == 'hardware' ? t : t + 's').toTitleCase()
         },
         sendMessage() {
