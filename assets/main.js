@@ -111,7 +111,7 @@ new Vue({
             { name: 'Computer Vision', type: 'skill' },
             { name: 'Object Detection', type: 'skill' },
             { name: 'Object Recognition', type: 'skill' },
-            { name: 'Maching Learning', type: 'skill' },
+            { name: 'Machine Learning', type: 'skill' },
             { name: 'REST', type: 'skill' },
             { name: 'API', type: 'skill' },
             { name: 'Bootstrap', type: 'skill' },
