@@ -1,6 +1,4 @@
 Source of [afaanbilal.github.io](https://afaanbilal.github.io)
-==============
+==============================================================
 
-Author: **[Afaan Bilal](https://afaan.dev)**  
-
----
+Author: **[Afaan Bilal](https://afaan.dev)**

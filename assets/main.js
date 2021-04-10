@@ -1,8 +1,8 @@
 /**
  * Afaan Bilal's Portfolio
- * 
+ *
  * https://afaan.dev
- * 
+ *
  * (c) Afaan Bilal
  */
 
@@ -10,8 +10,8 @@ String.prototype.toTitleCase = function () { return this.replace(/\w\S*/g, funct
 
 new Vue({
     el: '#app',
-    data: { 
-        allRepos: [], 
+    data: {
+        allRepos: [],
         skillTypes: [
             'npm', 'framework', 'composer', 'platform', 'language', 'database', 'service', 'hardware', 'skill', 'software'
         ],
@@ -37,7 +37,7 @@ new Vue({
             { name: 'MariaDB', type: 'database' },
             { name: 'SQLite', type: 'database' },
             { name: 'Firebase', type: 'database' },
-            
+
             { name: 'Laravel', type: 'framework' },
             { name: 'VueJS', type: 'framework' },
             { name: 'CodeIgniter', type: 'framework' },
@@ -94,6 +94,7 @@ new Vue({
             { name: 'HyperX Cloud Alpha S', type: 'hardware' },
             { name: 'Intel i7', type: 'hardware' },
             { name: 'HyperX Alloy FPS Mechanical', type: 'hardware' },
+            { name: 'Corsair K70 MK.2 Mechanical', type: 'hardware' },
             { name: 'BenQ Zowie XL2546 240Hz', type: 'hardware' },
             { name: 'XP Pen Deco Pro Medium', type: 'hardware' },
             { name: 'Acer Predator Helios 300', type: 'hardware' },
@@ -124,14 +125,14 @@ new Vue({
             { name: 'afaanbilal/php-random-string', type: 'composer', link: 'https://packagist.org/packages/afaanbilal/php-random-string' },
         ],
 
-        name: '', 
-        email: '', 
+        name: '',
+        email: '',
         message: '',
         sent: false,
         sending: false,
     },
     computed: {
-        repos() { 
+        repos() {
             let excludeNames = ["AfaanBilal", "afaanbilal.github.io", "musings", "amx-infinity.github.io", "SoftSolutions"]
             return this.allRepos.filter(o => !excludeNames.includes(o.name)).sort((b, a) => a.stargazers_count - b.stargazers_count)
         },
@@ -156,13 +157,13 @@ new Vue({
             if (t == 'composer') return 'Composer Packages'
             return (t == 'hardware' ? t : t + 's').toTitleCase()
         },
-        sendMessage() { 
+        sendMessage() {
             this.sending = true
             fetch('https://script.google.com/macros/s/AKfycby3_0eYQLINNn3KgorICGzH4yru0FLvqdZ8BYfeQMRVddG0m51GV_mB/exec', {
                 method: 'post',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: 'name=' + encodeURIComponent(this.name) + '&email=' + encodeURIComponent(this.email) + '&message=' + encodeURIComponent(this.message)
-            }).then(r => r.text()).then((d) => { 
+            }).then(r => r.text()).then((d) => {
                 if (d == 'success') {
                     this.name = ''
                     this.email = ''
@@ -174,7 +175,7 @@ new Vue({
         },
     },
     mounted() {
-        fetch('https://api.github.com/users/AfaanBilal/repos?per_page=100').then(r => r.json()).then((d) => { this.allRepos = d }).then(() => { 
+        fetch('https://api.github.com/users/AfaanBilal/repos?per_page=100').then(r => r.json()).then((d) => { this.allRepos = d }).then(() => {
             fetch('https://api.github.com/orgs/AMX-Infinity/repos?per_page=100').then(r => r.json()).then((d) => { this.allRepos.push(...d) })
         })
     },
