@@ -40,6 +40,7 @@ new Vue({
 
             { name: 'Laravel', type: 'framework' },
             { name: 'VueJS', type: 'framework' },
+            { name: 'React Native', type: 'framework' },
             { name: 'CodeIgniter', type: 'framework' },
 
             { name: 'GitHub', type: 'service' },
