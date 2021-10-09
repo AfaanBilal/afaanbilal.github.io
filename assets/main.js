@@ -111,6 +111,7 @@ new Vue({
         hardwareTypes: [ 'hardware', 'headset', 'hub', 'laptop', 'cpu', 'gpu', 'monitor', 'keyboard', 'mouse', 'webcam', 'phone', 'speaker' ],
         hardware: [
             { name: 'HyperX Cloud Alpha S', type: 'headset' },
+            { name: 'Sony WH-1000XM3', type: 'headset' },
             { name: 'XP Pen Deco Pro Medium', type: 'hardware' },
             { name: 'TP Link Powered USB Hub', type: 'hub' },
 
@@ -120,6 +121,7 @@ new Vue({
             { name: 'Logitech c922 Pro', type: 'webcam' },
 
             { name: 'OnePlus Nord', type: 'phone' },
+            { name: 'iPhone 12', type: 'phone' },
 
             { name: 'Mi Soundbar', type: 'speaker' },
 
