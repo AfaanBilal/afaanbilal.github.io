@@ -55,13 +55,16 @@
 <nav class="bg-gray-100 py-5">
     <div class="flex flex-wrap justify-center">
         <div class="w-full flex justify-center mb-4 md:my-0 md:w-auto px-6 border-b md:border-b-0 md:border-r pb-4 md:py-0">
-            <a href="#research-projects">Research projects</a>
+            <a href="#research-projects">Research Projects</a>
         </div>
         <div class="w-full flex justify-center mb-4 md:my-0 md:w-auto px-6 border-b md:border-b-0 md:border-r pb-4 md:py-0">
-            <a href="#github-stats">GitHub stats</a>
+            <a href="#tech-stack">Tech Stack</a>
         </div>
         <div class="w-full flex justify-center mb-4 md:my-0 md:w-auto px-6 border-b md:border-b-0 md:border-r pb-4 md:py-0">
-            <a href="#open-source">Open source</a>
+            <a href="#github-stats">GitHub Stats</a>
+        </div>
+        <div class="w-full flex justify-center mb-4 md:my-0 md:w-auto px-6 border-b md:border-b-0 md:border-r pb-4 md:py-0">
+            <a href="#open-source">Open Source</a>
         </div>
         <div class="w-full flex justify-center mb-4 md:my-0 md:w-auto px-6 border-b md:border-b-0 md:border-r pb-4 md:py-0">
             <a href="#skills">Skills</a>
@@ -75,7 +78,7 @@
 
 <!-- Research Projects -->
 <a name="research-projects"></a>
-<section class="container mx-auto px-6 p-5">
+<section class="container mx-auto px-6 py-8">
     <h2 class="text-4xl font-bold text-center text-gray-800 my-10">Research Projects</h2>
 
     <div class="flex flex-wrap my-4 border-b py-4">
@@ -133,6 +136,30 @@
     </div>
 </section>
 <!-- / Research Projects -->
+
+<!-- separator -->
+<div class="py-5" style="background: linear-gradient(270deg, #8034cc 0%,#991a79 100%)">
+    <section class="container mx-auto p-2"></section>
+</div>
+<!-- / separator -->
+
+<!-- Tech Stack -->
+<a name="tech-stack"></a>
+<section class="container mx-auto px-6 py-12">
+    <h2 class="text-4xl font-bold text-center my-10">Tech Stack</h2>
+    <div class="flex flex-wrap my-6 pb-8">
+        <div class="w-full my-4 pb-8">
+            <div class="md:mx-20 flex flex-wrap justify-center">
+                <img
+                    v-for="t in stack"
+                    class="m-4"
+                    :alt="t.name"
+                    :title="t.name.split('-')[0]"
+                    :src="'https://icongr.am/devicon/' + t.name +'.svg?size=96&color=' + t.color" />
+            </div>
+        </div>
+    </div>
+</section>
 
 <!-- GitHub stats -->
 <a name="github-stats"></a>
