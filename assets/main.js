@@ -169,10 +169,10 @@ new Vue({
             { name: 'apple-original', color: 'currentColor' },
             { name: 'android-original', color: 'currentColor' },
 
-            { name: 'trello-plain', color: '026aa7' },
-
-            { name: 'inkscape', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/inkscape/inkscape-original.svg' },
             { name: 'docker-original', color: 'currentColor' },
+            { name: 'Traefik', url: 'assets/traefik-icon.svg' },
+            { name: 'Cloudflare', url: 'assets/cloudflare.svg' },
+
             { name: 'html5-original', color: 'currentColor' },
             { name: 'css3-original', color: 'currentColor' },
             { name: 'SASS', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg' },
@@ -181,6 +181,9 @@ new Vue({
             { name: 'javascript-original', color: 'currentColor' },
             { name: 'vuejs-original', color: 'currentColor' },
             { name: 'react-original', color: 'currentColor' },
+            { name: 'React Native', url: 'assets/react-native.svg' },
+            { name: 'Expo', url: 'assets/expo.svg' },
+            { name: 'Zapier', url: 'assets/zapier.svg' },
             { name: 'jquery-original', color: 'currentColor' },
 
             { name: 'python-original', color: 'currentColor' },
@@ -189,10 +192,18 @@ new Vue({
             { name: 'csharp-original', color: 'currentColor' },
             { name: 'java-original', color: 'currentColor' },
 
-            { name: 'apache-original', color: 'currentColor' },
+            { name: 'DotNet', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-plain-wordmark.svg' },
 
+            { name: 'apache-original', color: 'currentColor' },
+            { name: 'ssh-original-wordmark', color: 'currentColor' },
+
+            { name: 'inkscape', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/inkscape/inkscape-original.svg' },
             { name: 'bash', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg' },
             { name: 'vscode', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg' },
+            { name: 'visualstudio-plain', color: 'currentColor' },
+            { name: 'Postman', url: 'assets/postman.svg' },
+            { name: 'DbForge Studio', url: 'https://www.devart.com/images/products/logos/dbforge-mysql-studio.svg' },
+            { name: 'trello-plain', color: '026aa7' },
             { name: 'figma', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg' },
             { name: 'slack', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original.svg' },
         ],
