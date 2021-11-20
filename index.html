@@ -153,9 +153,10 @@
                 <img
                     v-for="t in stack"
                     class="m-4"
-                    :alt="t.name"
-                    :title="t.name.split('-')[0]"
-                    :src="'https://icongr.am/devicon/' + t.name +'.svg?size=96&color=' + t.color" />
+                    :alt="getStackItemName(t)"
+                    :title="getStackItemName(t)"
+                    width="96px"
+                    :src="t.url || 'https://icongr.am/devicon/' + t.name +'.svg?size=96&color=' + t.color" />
             </div>
         </div>
     </div>

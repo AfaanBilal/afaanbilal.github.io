@@ -147,35 +147,54 @@ new Vue({
 
         stack: [
             { name: 'amazonwebservices-original', color: 'currentColor' },
+            { name: 'digitalocean', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/digitalocean/digitalocean-original.svg' },
+            { name: 'firebase', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg' },
+
             { name: 'git-original', color: 'currentColor' },
-            { name: 'gitlab-original', color: 'currentColor' },
             { name: 'github-original', color: 'currentColor' },
-            { name: 'php-plain', color: 'currentColor' },
+            { name: 'gitlab-original', color: 'currentColor' },
+
+            { name: 'PHP', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-plain.svg' },
+            { name: 'Composer', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/composer/composer-original.svg' },
             { name: 'laravel-plain', color: 'ff2d20' },
             { name: 'codeigniter-plain', color: 'dd4814' },
+            { name: 'wordpress', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg' },
+
             { name: 'mysql-original-wordmark', color: 'currentColor' },
             { name: 'redis-original', color: 'currentColor' },
+
+            { name: 'linux', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg' },
             { name: 'ubuntu-plain', color: 'e95420' },
             { name: 'windows8-original', color: 'currentColor' },
+            { name: 'apple-original', color: 'currentColor' },
+            { name: 'android-original', color: 'currentColor' },
+
             { name: 'trello-plain', color: '026aa7' },
-            { name: 'python-original', color: 'currentColor' },
-            { name: 'jquery-original', color: 'currentColor' },
-            { name: 'inkscape-plain', color: 'currentColor' },
+
+            { name: 'inkscape', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/inkscape/inkscape-original.svg' },
             { name: 'docker-original', color: 'currentColor' },
             { name: 'html5-original', color: 'currentColor' },
             { name: 'css3-original', color: 'currentColor' },
+            { name: 'SASS', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg' },
             { name: 'bootstrap-plain', color: '7952b3' },
+            { name: 'tailwind', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg' },
             { name: 'javascript-original', color: 'currentColor' },
             { name: 'vuejs-original', color: 'currentColor' },
             { name: 'react-original', color: 'currentColor' },
+            { name: 'jquery-original', color: 'currentColor' },
+
+            { name: 'python-original', color: 'currentColor' },
             { name: 'c-original', color: 'currentColor' },
             { name: 'cplusplus-original', color: 'currentColor' },
             { name: 'csharp-original', color: 'currentColor' },
             { name: 'java-original', color: 'currentColor' },
+
             { name: 'apache-original', color: 'currentColor' },
-            { name: 'android-original', color: 'currentColor' },
-            { name: 'apple-original', color: 'currentColor' },
-            { name: 'visualstudio-plain', color: '21a1f1' },
+
+            { name: 'bash', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg' },
+            { name: 'vscode', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg' },
+            { name: 'figma', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg' },
+            { name: 'slack', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original.svg' },
         ],
 
         name: '',
@@ -227,6 +246,10 @@ new Vue({
                     this.sent = true
                 }
             })
+        },
+        getStackItemName(t) {
+            let string = t.name.split('-')[0]
+            return string.charAt(0).toUpperCase() + string.slice(1)
         },
     },
     mounted() {
