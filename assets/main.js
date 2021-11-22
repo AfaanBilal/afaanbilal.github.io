@@ -145,69 +145,6 @@ new Vue({
             { name: 'Logitech G402 FPS', type: 'mouse' },
         ],
 
-        stack: [
-            { name: 'amazonwebservices-original', color: 'currentColor' },
-            { name: 'digitalocean', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/digitalocean/digitalocean-original.svg' },
-            { name: 'firebase', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg' },
-
-            { name: 'git-original', color: 'currentColor' },
-            { name: 'github-original', color: 'currentColor' },
-            { name: 'gitlab-original', color: 'currentColor' },
-
-            { name: 'PHP', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-plain.svg' },
-            { name: 'Composer', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/composer/composer-original.svg' },
-            { name: 'laravel-plain', color: 'ff2d20' },
-            { name: 'codeigniter-plain', color: 'dd4814' },
-            { name: 'wordpress', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg' },
-
-            { name: 'mysql-original-wordmark', color: 'currentColor' },
-            { name: 'redis-original', color: 'currentColor' },
-
-            { name: 'linux', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg' },
-            { name: 'ubuntu-plain', color: 'e95420' },
-            { name: 'windows8-original', color: 'currentColor' },
-            { name: 'apple-original', color: 'currentColor' },
-            { name: 'android-original', color: 'currentColor' },
-
-            { name: 'docker-original', color: 'currentColor' },
-            { name: 'Traefik', url: 'assets/traefik-icon.svg' },
-            { name: 'Cloudflare', url: 'assets/cloudflare.svg' },
-
-            { name: 'html5-original', color: 'currentColor' },
-            { name: 'css3-original', color: 'currentColor' },
-            { name: 'SASS', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg' },
-            { name: 'bootstrap-plain', color: '7952b3' },
-            { name: 'tailwind', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg' },
-            { name: 'javascript-original', color: 'currentColor' },
-            { name: 'vuejs-original', color: 'currentColor' },
-            { name: 'react-original', color: 'currentColor' },
-            { name: 'React Native', url: 'assets/react-native.svg' },
-            { name: 'Expo', url: 'assets/expo.svg' },
-            { name: 'Zapier', url: 'assets/zapier.svg' },
-            { name: 'jquery-original', color: 'currentColor' },
-
-            { name: 'python-original', color: 'currentColor' },
-            { name: 'c-original', color: 'currentColor' },
-            { name: 'cplusplus-original', color: 'currentColor' },
-            { name: 'csharp-original', color: 'currentColor' },
-            { name: 'java-original', color: 'currentColor' },
-
-            { name: 'DotNet', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-plain-wordmark.svg' },
-
-            { name: 'apache-original', color: 'currentColor' },
-            { name: 'ssh-original-wordmark', color: 'currentColor' },
-
-            { name: 'inkscape', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/inkscape/inkscape-original.svg' },
-            { name: 'bash', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg' },
-            { name: 'vscode', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg' },
-            { name: 'visualstudio-plain', color: 'currentColor' },
-            { name: 'Postman', url: 'assets/postman.svg' },
-            { name: 'DbForge Studio', url: 'https://www.devart.com/images/products/logos/dbforge-mysql-studio.svg' },
-            { name: 'trello-plain', color: '026aa7' },
-            { name: 'figma', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg' },
-            { name: 'slack', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/slack/slack-original.svg' },
-        ],
-
         name: '',
         email: '',
         message: '',
@@ -269,3 +206,37 @@ new Vue({
         })
     },
 })
+
+function startAnim(elementID, elementWidth) {
+    function restart() {
+        $('#' + elementID + '.tech-stack').first().css({
+            'margin-left': '0px'
+        });
+        start();
+    }
+
+    function start() {
+        var techStack = $('#' + elementID + '.tech-stack').first(),
+            duration = (elementWidth * 20);
+
+        techStack.animate({
+            'margin-left': '-' + elementWidth + 'px'
+        }, duration, 'linear', restart);
+    }
+
+    $('#' + elementID + '.tech-stack img').hover(() => {
+        $('#' + elementID + '.tech-stack').first().stop();
+    }, () => { start(); });
+
+    start();
+}
+
+function setupAnim(id) {
+    var stripWidth = $('#' + id + ' .tech-stack-item').length * (92);
+    $('#' + id + ' .tech-stack-list').parent().append($('#' + id + ' .tech-stack-list').clone());
+    startAnim(id, stripWidth);
+}
+
+setupAnim('tech-stack-1')
+$('#tech-stack-1').parent().append($('#tech-stack-1').clone().attr('id', 'tech-stack-2').css('margin-left', '-2300px'));
+setupAnim('tech-stack-2')
