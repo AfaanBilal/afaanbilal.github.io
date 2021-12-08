@@ -232,7 +232,7 @@ function startAnim(elementID, elementWidth) {
 }
 
 function setupAnim(id) {
-    var stripWidth = $('#' + id + ' .tech-stack-item').length * (92);
+    var stripWidth = $('#' + id + ' .tech-stack-item').length * 92;
     $('#' + id + ' .tech-stack-list').parent().append($('#' + id + ' .tech-stack-list').clone());
     startAnim(id, stripWidth);
 }
