@@ -104,8 +104,10 @@ new Vue({
             { name: '@afaanbilal/random-string', type: 'npm', link: 'https://www.npmjs.com/package/@afaanbilal/random-string' },
             { name: 'react-native-multitap', type: 'npm', link: 'https://www.npmjs.com/package/react-native-multitap' },
             { name: 'react-native-pagination-dots', type: 'npm', link: 'https://www.npmjs.com/package/react-native-pagination-dots' },
+            { name: 'hyperdb-js', type: 'npm', link: 'https://www.npmjs.com/package/hyperdb-js' },
 
             { name: 'afaanbilal/php-random-string', type: 'composer', link: 'https://packagist.org/packages/afaanbilal/php-random-string' },
+            { name: 'afaanbilal/hyperdb-php', type: 'composer', link: 'https://packagist.org/packages/afaanbilal/hyperdb-php' },
         ],
 
         hardwareTypes: [ 'hardware', 'headset', 'hub', 'laptop', 'cpu', 'gpu', 'monitor', 'keyboard', 'mouse', 'webcam', 'phone', 'speaker' ],
