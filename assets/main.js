@@ -101,6 +101,7 @@ new Vue({
             { name: 'jQuery', type: 'skill' },
             { name: 'Traefik', type: 'skill' },
 
+            { name: 'pulse', type: 'npm', link: 'https://www.npmjs.com/package/@afaanbilal/pulse' },
             { name: '@afaanbilal/random-string', type: 'npm', link: 'https://www.npmjs.com/package/@afaanbilal/random-string' },
             { name: 'react-native-multitap', type: 'npm', link: 'https://www.npmjs.com/package/react-native-multitap' },
             { name: 'react-native-pagination-dots', type: 'npm', link: 'https://www.npmjs.com/package/react-native-pagination-dots' },
