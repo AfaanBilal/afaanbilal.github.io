@@ -69,8 +69,8 @@ new Vue({
             { name: 'Draw.io', type: 'service' },
 
             { name: 'Android', type: 'platform' },
-            { name: 'Ubuntu', type: 'platform' },
             { name: 'Web', type: 'platform' },
+            { name: 'Ubuntu', type: 'platform' },
             { name: 'Amazon Linux', type: 'platform' },
             { name: 'MacOS', type: 'platform' },
             { name: 'Windows', type: 'platform' },
