@@ -66,6 +66,7 @@ new Vue({
             { name: 'DigitalOcean Droplets', type: 'service' },
             { name: 'DigitalOcean Spaces', type: 'service' },
             { name: 'SendGrid', type: 'service' },
+            { name: 'Sentry', type: 'service' },
             { name: 'Twilio', type: 'service' },
             { name: 'Draw.io', type: 'service' },
 
