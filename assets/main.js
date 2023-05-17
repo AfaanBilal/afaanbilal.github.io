@@ -61,6 +61,7 @@ new Vue({
             { name: 'AWS ACM', type: 'service' },
             { name: 'AWS CloudWatch', type: 'service' },
             { name: 'AWS SES', type: 'service' },
+            { name: 'AWS GuardDuty', type: 'service' },
             { name: 'DigitalOcean', type: 'service' },
             { name: 'DigitalOcean Droplets', type: 'service' },
             { name: 'DigitalOcean Spaces', type: 'service' },
