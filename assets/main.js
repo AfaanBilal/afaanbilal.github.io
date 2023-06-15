@@ -41,6 +41,9 @@ new Vue({
             { name: 'Firebase RealtimeDB', type: 'database' },
 
             { name: 'Laravel', type: 'framework' },
+            { name: 'NodeJS', type: 'framework' },
+            { name: 'ExpressJS', type: 'framework' },
+            { name: 'NestJS', type: 'framework' },
             { name: 'ReactJS', type: 'framework' },
             { name: 'React Native', type: 'framework' },
             { name: 'VueJS', type: 'framework' },
