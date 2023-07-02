@@ -204,7 +204,7 @@ new Vue({
         },
         sendMessage() {
             this.sending = true
-            fetch('https://script.google.com/macros/s/AKfycby3_0eYQLINNn3KgorICGzH4yru0FLvqdZ8BYfeQMRVddG0m51GV_mB/exec', {
+            fetch('https://script.google.com/macros/s/AKfycbwtTjzs_oPZOpGj7CoG6oxxL1QQhEnRvT_SmVPPxvto91_RV5hfsZXwEih3lRJ2rkim/exec', {
                 method: 'post',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: 'name=' + encodeURIComponent(this.name) + '&email=' + encodeURIComponent(this.email) + '&message=' + encodeURIComponent(this.message)
