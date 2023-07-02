@@ -202,7 +202,7 @@ new Vue({
             if (t == 'mouse') return 'Mice'
             if (t == 'cpu') return 'CPUs'
             if (t == 'gpu') return 'GPUs'
-            return (t == 'hardware' ? t : t + 's').toTitleCase()
+            return (['hardware', 'software'].includes(t) ? t : t + 's').toTitleCase()
         },
         sendMessage() {
             this.sending = true
