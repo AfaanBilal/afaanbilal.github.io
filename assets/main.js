@@ -45,6 +45,8 @@ new Vue({
             { name: 'ExpressJS', type: 'framework' },
             { name: 'NestJS', type: 'framework' },
             { name: 'AdonisJS', type: 'framework' },
+            { name: 'Rocket', type: 'framework' },
+            { name: 'Actix-Web', type: 'framework' },
             { name: 'ReactJS', type: 'framework' },
             { name: 'React Native', type: 'framework' },
             { name: 'VueJS', type: 'framework' },
