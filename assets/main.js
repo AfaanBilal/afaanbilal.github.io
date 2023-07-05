@@ -230,6 +230,7 @@ new Vue({
     mounted() {
         fetch('https://api.github.com/users/AfaanBilal/repos?per_page=100').then(r => r.json()).then((d) => { this.allRepos = d }).then(() => {
             fetch('https://api.github.com/orgs/AMX-Infinity/repos?per_page=100').then(r => r.json()).then((d) => { this.allRepos.push(...d) })
+            fetch('https://api.github.com/orgs/eonyxio/repos?per_page=100').then(r => r.json()).then((d) => { this.allRepos.push(...d) })
         })
     },
 })
