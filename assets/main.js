@@ -266,5 +266,5 @@ function setupAnim(id) {
 }
 
 setupAnim('tech-stack-1')
-$('#tech-stack-1').parent().append($('#tech-stack-1').clone().attr('id', 'tech-stack-2').css('margin-left', '-2300px'));
+// $('#tech-stack-1').parent().append($('#tech-stack-1').clone().attr('id', 'tech-stack-2').css('margin-left', '-2300px'));
 setupAnim('tech-stack-2')
