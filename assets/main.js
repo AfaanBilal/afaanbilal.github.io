@@ -261,7 +261,7 @@ function startAnim(elementID, elementWidth) {
 
 function setupAnim(id) {
     var stripWidth = $('#' + id + ' .tech-stack-item').length * 92;
-    $('#' + id + ' .tech-stack-list').parent().append($('#' + id + ' .tech-stack-list').clone());
+    // $('#' + id + ' .tech-stack-list').parent().append($('#' + id + ' .tech-stack-list').clone());
     startAnim(id, stripWidth);
 }
 
