@@ -6,7 +6,7 @@
  * (c) Afaan Bilal
  */
 
-String.prototype.toTitleCase = function () { return this.replace(/\w\S*/g, function(txt) { return txt.charAt(0).toUpperCase() + txt.substr(1) }) }
+String.prototype.toTitleCase = function () { return this.replace(/\w\S*/g, function (txt) { return txt.charAt(0).toUpperCase() + txt.substr(1) }) }
 
 new Vue({
     el: '#app',
@@ -135,7 +135,7 @@ new Vue({
             { name: 'afaanbilal/laravel-has-uuid', type: 'composer', link: 'https://packagist.org/packages/afaanbilal/laravel-has-uuid' },
         ],
 
-        hardwareTypes: [ 'hardware', 'headset', 'hub', 'laptop', 'cpu', 'gpu', 'monitor', 'keyboard', 'mouse', 'webcam', 'phone', 'speaker' ],
+        hardwareTypes: ['hardware', 'headset', 'hub', 'laptop', 'cpu', 'gpu', 'monitor', 'keyboard', 'mouse', 'webcam', 'phone', 'speaker'],
         hardware: [
             { name: 'HyperX Cloud Alpha S', type: 'headset' },
             { name: 'Sony WH-1000XM3', type: 'headset' },
@@ -237,9 +237,7 @@ new Vue({
 
 function startAnim(elementID, elementWidth) {
     function restart() {
-        $('#' + elementID + '.tech-stack').first().css({
-            'margin-left': '0px'
-        });
+        $('#' + elementID + '.tech-stack').first().css({ 'margin-left': '0px' });
         start();
     }
 
@@ -247,14 +245,10 @@ function startAnim(elementID, elementWidth) {
         var techStack = $('#' + elementID + '.tech-stack').first(),
             duration = (elementWidth * 20);
 
-        techStack.animate({
-            'margin-left': '-' + elementWidth + 'px'
-        }, duration, 'linear', restart);
+        techStack.animate({ 'margin-left': '-' + elementWidth + 'px' }, duration, 'linear', restart);
     }
 
-    $('#' + elementID + '.tech-stack img').hover(() => {
-        $('#' + elementID + '.tech-stack').first().stop();
-    }, () => { start(); });
+    $('#' + elementID + '.tech-stack img').hover(() => { $('#' + elementID + '.tech-stack').first().stop(); }, () => { start(); });
 
     start();
 }
