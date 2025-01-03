@@ -10,7 +10,7 @@
     <meta name="viewport" content="initial-scale=1.0, width=device-width">
 
     <title>Afaan Bilal &middot; Senior Software Development Engineer at Centiment</title>
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700" rel="stylesheet" />
     <link rel="shortcut icon" href="assets/Afaan.png" type="image/png">
     <style>.bg-hardware { background: linear-gradient(90deg, #3471cc 0%,#25a48b 100%); color: white; }</style>
@@ -413,7 +413,7 @@
     </div>
     <div class="flex flex-col">
         <div class="flex justify-between text-lg bg-gray-900 p-2 px-4 rounded-t mt-4">
-            HyperDB
+            <div>HyperDB</div>
             <div class="flex gap-2 text-sm">
                 <span style="background: linear-gradient(139deg, #c12127, #e02aff, #fb8817, #ff4b01);" class="text-white px-2 py-1 rounded inline-block shadow hover:shadow-lg flex gap-1">
                     <img src="https://icongr.am/clarity/lightning.svg?size=14&color=ffffff" />
@@ -425,14 +425,14 @@
                 </span>
             </div>
         </div>
-        <div class="flex flex-wrap">
-            <div class="bg-pink-500 p-2 px-4 w-32 border-b border-pink-600">Server:</div>
+        <div class="flex">
+            <div class="bg-pink-500 p-2 px-4 w-28 border-b border-pink-600">Server</div>
             <div class="font-mono bg-gray-800 p-2 px-4 flex-1 border-b border-gray-700">
                 docker run --rm -it -p 8765:8765 afaanbilal/hyperdb
             </div>
         </div>
-        <div class="flex flex-wrap">
-            <div class="bg-pink-500 p-2 px-4 w-32 rounded-bl">CLI:</div>
+        <div class="flex">
+            <div class="bg-pink-500 p-2 px-4 w-28 rounded-bl">CLI</div>
             <div class="font-mono bg-gray-800 p-2 px-4 flex-1 rounded-br">
                 docker run --rm -it afaanbilal/hyperdb-cli -a http://host.docker.internal:8765
             </div>
@@ -442,33 +442,33 @@
             Client Libraries
             <a href="https://afaan.dev/hyperdb-docs" target="_blank" rel="noopener" class="text-gray-400 text-sm hover:text-blue-500">afaan.dev/hyperdb-docs</a>
         </div>
-        <div class="flex flex-wrap">
-            <div class="bg-pink-500 p-2 px-4 w-32 border-b border-pink-600">Javascript:</div>
+        <div class="flex">
+            <div class="bg-pink-500 p-2 px-4 w-28 border-b border-pink-600">Javascript</div>
             <div class="font-mono bg-gray-800 p-2 px-4 flex-1 border-b border-gray-700">
                 npm i hyperdb-js
             </div>
         </div>
-        <div class="flex flex-wrap">
-            <div class="bg-pink-500 p-2 px-4 w-32 border-b border-pink-600">Rust:</div>
+        <div class="flex">
+            <div class="bg-pink-500 p-2 px-4 w-28 border-b border-pink-600">Rust</div>
             <div class="font-mono bg-gray-800 p-2 px-4 flex-1 border-b border-gray-700">
                 cargo add hyperdb-rs
             </div>
         </div>
-        <div class="flex flex-wrap">
-            <div class="bg-pink-500 p-2 px-4 w-32 border-b border-pink-600">PHP:</div>
+        <div class="flex">
+            <div class="bg-pink-500 p-2 px-4 w-28 border-b border-pink-600">PHP</div>
             <div class="font-mono bg-gray-800 p-2 px-4 flex-1 border-b border-gray-700">
                 composer require afaanbilal/hyperdb-php
             </div>
         </div>
-        <div class="flex flex-wrap">
-            <div class="bg-pink-500 p-2 px-4 w-32 border-b border-pink-600">Python:</div>
+        <div class="flex">
+            <div class="bg-pink-500 p-2 px-4 w-28 border-b border-pink-600">Python</div>
             <div class="font-mono bg-gray-800 p-2 px-4 flex-1 border-b border-gray-700">
                 pip install hyperdb-py
             </div>
         </div>
-        <div class="flex flex-wrap">
-            <div class="bg-pink-500 p-2 px-4 w-32 rounded-bl">Go:</div>
-            <div class="font-mono bg-gray-800 p-2 px-4 flex-1 rounded-br">
+        <div class="flex">
+            <div class="bg-pink-500 p-2 px-4 w-28 rounded-bl">Go</div>
+            <div class="font-mono bg-gray-800 p-2 px-4 flex-1 rounded-br break-words">
                 go get -u github.com/AfaanBilal/hyperdb-go
             </div>
         </div>
