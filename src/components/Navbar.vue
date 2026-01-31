@@ -67,14 +67,11 @@ onUnmounted(() => {
 const links = [
     { text: 'Research', href: '#research-projects' },
     { text: 'Courses', href: '#courses' },
-    { text: 'Apps', href: '#mobile-apps' }, // Combined or main apps section
+    { text: 'Apps', href: '#mobile-apps' },
+    { text: 'NanoCore', href: '#nanocore' },
     { text: 'HyperDB', href: '#hyperdb' },
     { text: 'Tech', href: '#tech-stack' },
     { text: 'Open Source', href: '#open-source' },
     { text: 'Contact', href: '#contact' }
 ]
-// Note: Reduced link count for cleaner navbar, or we can use a "More" dropdown.
-// For now, I've selected the most important top-level sections.
-// If 'Web Apps' and 'Desktop Apps' are visually separate, we might want to group them or just link the first one.
-// Let's stick to the main ones to prevent overcrowding.
 </script>

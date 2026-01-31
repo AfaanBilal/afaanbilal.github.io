@@ -15,7 +15,7 @@
                 <div class="w-full md:w-1/2 text-center md:text-left space-y-6 animate-slide-in-left">
                     <div
                         class="inline-block px-4 py-1.5 rounded-full bg-purple-50 dark:bg-purple-900/30 border border-purple-100 dark:border-purple-800 text-purple-600 dark:text-purple-300 text-sm font-bold tracking-wide uppercase">
-                        Software Engineer & Researcher
+                        Principal Software Engineer & CISO
                     </div>
 
                     <h1

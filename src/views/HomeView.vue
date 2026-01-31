@@ -6,11 +6,12 @@
     <Courses />
     <MobileApps />
     <WebApps />
-    <HyperDB />
+    <NanoCore />
     <DesktopApps />
     <QuickLinks />
     <TechStack />
     <GitHubStats />
+    <HyperDB />
     <OpenSource />
     <Skills />
     <Contact />
@@ -30,6 +31,7 @@ import DesktopApps from '../components/DesktopApps.vue'
 import QuickLinks from '../components/QuickLinks.vue'
 import TechStack from '../components/TechStack.vue'
 import GitHubStats from '../components/GitHubStats.vue'
+import NanoCore from '../components/NanoCore.vue'
 import OpenSource from '../components/OpenSource.vue'
 import Skills from '../components/Skills.vue'
 import Contact from '../components/Contact.vue'
