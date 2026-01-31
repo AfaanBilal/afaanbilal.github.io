@@ -17,7 +17,11 @@ const router = createRouter({
     ],
     scrollBehavior(to, from, savedPosition) {
         if (to.hash) {
-            return { el: to.hash, behavior: 'smooth' }
+            return {
+                el: to.hash,
+                behavior: 'smooth',
+                top: 80 // Offset for fixed header
+            }
         }
         return { top: 0 }
     }

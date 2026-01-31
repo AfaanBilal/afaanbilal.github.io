@@ -14,7 +14,7 @@
       <div v-for="tech in stack" :key="tech"
         class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 flex items-center justify-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group">
         <span class="font-bold text-gray-700 dark:text-gray-200 group-hover:text-blue-600 transition-colors">{{ tech
-          }}</span>
+        }}</span>
       </div>
     </div>
   </section>

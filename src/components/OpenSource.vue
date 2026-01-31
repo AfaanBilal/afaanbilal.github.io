@@ -1,13 +1,13 @@
 <template>
-    <section id="open-source" class="container mx-auto px-4 py-8 md:p-10">
+    <section id="open-source" class="container mx-auto px-4 py-16 md:p-10">
         <div class="text-center mb-12">
             <h2
                 class="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 mb-4 animate-fade-in-up">
                 Open Source
             </h2>
-            <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto animate-fade-in-up delay-100">
-                Contributing to the community with <span class="font-bold text-purple-600">{{ sortedRepos.length
-                    }}</span>
+            <p class="text-lg text-gray-600 dark:text-gray-500 max-w-2xl mx-auto animate-fade-in-up delay-100">
+                Contributing to the community with
+                <span class="font-bold text-purple-600">{{ sortedRepos.length }}</span>
                 repositories and counting.
             </p>
         </div>
