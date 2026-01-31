@@ -154,7 +154,7 @@ const skills = {
         "AWS", "EC2", "VPC", "ECS", "Fargate", "ECR", "Systems Manager", "Sentry", "Terraform", "Docker", "GitHub Actions", "Nginx", "Cloudflare"
     ],
     databases: [
-        "MySQL", "Redis", "Elasticsearch", "SQLite", "HyperDB", "Valkey"
+        "Aurora", "MySQL", "Redis", "Elasticsearch", "SQLite", "HyperDB", "Valkey"
     ],
     security: [
         "SOC 2 Type II", "HIPAA", "GDPR", "OWASP", "OAuth2 / OIDC", "SAML / SSO", "AWS IAM", "WAF", "GuardDuty", "Inspector", "Dependabot", "Vanta"

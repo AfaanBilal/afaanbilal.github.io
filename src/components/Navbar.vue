@@ -22,7 +22,7 @@
 
             <!-- Desktop Links -->
             <div class="hidden md:flex space-x-1">
-                <router-link v-for="(link, index) in links" :key="index" :to="{ name: 'home', hash: link.href }"
+                <router-link v-for="(link, index) in links" :key="index" :to="link.to"
                     class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:text-purple-600 hover:bg-purple-50 transition-all">
                     {{ link.text }}
                 </router-link>
@@ -35,8 +35,7 @@
                 leave-to-class="opacity-0 -translate-y-2">
                 <div v-if="isOpen"
                     class="absolute top-full left-0 w-full bg-white/95 backdrop-blur-lg shadow-xl md:hidden flex flex-col p-4 space-y-2 border-t border-gray-100">
-                    <router-link v-for="(link, index) in links" :key="index" :to="{ name: 'home', hash: link.href }"
-                        @click="isOpen = false"
+                    <router-link v-for="(link, index) in links" :key="index" :to="link.to" @click="isOpen = false"
                         class="block px-4 py-3 rounded-lg text-gray-700 hover:bg-purple-50 hover:text-purple-600 font-medium transition-colors">
                         {{ link.text }}
                     </router-link>
@@ -65,13 +64,13 @@ onUnmounted(() => {
 })
 
 const links = [
-    { text: 'Courses', href: '#courses' },
-    { text: 'NanoCore', href: '#nanocore' },
-    { text: 'HyperDB', href: '#hyperdb' },
-    { text: 'Open Source', href: '#open-source' },
-    { text: 'Skills', href: '#skills' },
-    { text: 'Research', href: '#research-projects' },
-    { text: 'Apps', href: '#mobile-apps' },
-    { text: 'Contact', href: '#contact' }
+    { text: 'Courses', to: { name: 'home', hash: '#courses' } },
+    { text: 'NanoCore', to: { name: 'home', hash: '#nanocore' } },
+    { text: 'HyperDB', to: { name: 'home', hash: '#hyperdb' } },
+    { text: 'Open Source', to: { name: 'home', hash: '#open-source' } },
+    { text: 'Skills', to: { name: 'home', hash: '#skills' } },
+    { text: 'Research', to: { name: 'home', hash: '#research-projects' } },
+    { text: 'Apps', to: { name: 'home', hash: '#mobile-apps' } },
+    { text: 'Contact', to: { name: 'home', hash: '#contact' } }
 ]
 </script>
