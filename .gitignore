@@ -136,5 +136,7 @@ dist
 ehthumbs.db
 Thumbs.db
 
+
 # Vite
 dist/
+.vite/
