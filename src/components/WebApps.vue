@@ -7,9 +7,9 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div v-for="app in apps" :key="app.name"
                 class="group bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col">
-                <div class="relative overflow-hidden h-48 bg-gray-50 flex items-center justify-center p-4">
+                <div class="relative overflow-hidden h-48 bg-gray-50 dark:bg-gray-900">
                     <img :src="app.image" :alt="app.name"
-                        class="max-h-full w-full object-contain transform group-hover:scale-105 transition-transform duration-500 rounded" />
+                        class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" />
                     <div
                         class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                         <a :href="app.link" target="_blank" rel="noopener"
