@@ -7,14 +7,13 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div v-for="app in apps" :key="app.name"
                 class="group bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col">
-                <div class="relative overflow-hidden h-40 bg-gray-50 flex items-center justify-center p-4">
+                <div class="relative overflow-hidden h-48 bg-gray-100 dark:bg-gray-900">
                     <img :src="app.image" :alt="app.name"
-                        class="max-h-full w-full object-contain transform group-hover:scale-105 transition-transform duration-500 rounded" />
+                        class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" />
                 </div>
 
                 <div class="p-6 flex-1 flex flex-col">
-                    <h3
-                        class="text-lg font-bold text-gray-800 dark:text-white mb-4 group-hover:text-gray-600 transition-colors text-center">
+                    <h3 class="text-lg font-bold text-gray-800 dark:text-white mb-4 transition-colors text-center">
                         {{ app.name }}</h3>
 
                     <div class="flex justify-center flex-wrap gap-2 mt-auto">
@@ -25,8 +24,13 @@
                     </div>
 
                     <a :href="app.link" target="_blank" rel="noopener"
-                        class="mt-4 block w-full py-2 text-center text-sm font-bold border border-gray-200 rounded-lg hover:bg-gray-800 hover:text-white transition-colors">
+                        class="mt-4 inline-flex items-center justify-center text-gray-700 dark:text-gray-300 font-bold hover:text-black dark:hover:text-white transition-colors group">
                         View Project
+                        <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
                     </a>
                 </div>
             </div>
