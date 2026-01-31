@@ -13,7 +13,7 @@
             <div class="container mx-auto px-6 relative z-10">
                 <!-- Back Navigation -->
                 <div class="flex justify-start mb-8">
-                    <router-link to="/"
+                    <router-link :to="{ path: '/', hash: '#open-source' }"
                         class="group flex items-center gap-2 text-gray-400 hover:text-white transition-colors">
                         <div
                             class="p-2 rounded-full bg-gray-800/50 group-hover:bg-purple-600/20 backdrop-blur-sm border border-gray-700 group-hover:border-purple-500/50 transition-all">
