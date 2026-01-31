@@ -143,6 +143,7 @@ async function loadRepo() {
 
         if (['afaanbilal', 'amx-infinity'].includes(repoData.full_name.split('/')[0].toLowerCase())) {
             repo.value = repoData
+            document.title = repoTitle.value + ' | Afaan Bilal'
         } else {
              router.push('/')
              return

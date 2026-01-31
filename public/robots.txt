@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://afaan.dev/sitemap.xml
