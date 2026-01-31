@@ -48,6 +48,20 @@
                     </div>
                 </div>
 
+                <!-- AI -->
+                <div
+                    class="bg-gray-800/50 backdrop-blur-md rounded-2xl p-8 shadow-2xl border border-gray-700 hover:border-gray-600 transition-all duration-300">
+                    <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+                        <span class="text-teal-400">#</span> AI
+                    </h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span v-for="skill in skills.ai" :key="skill"
+                            class="px-4 py-2 rounded-full bg-gray-900/50 text-gray-300 font-medium hover:bg-teal-900/40 hover:text-teal-300 border border-gray-700 transition-colors cursor-default">
+                            {{ skill }}
+                        </span>
+                    </div>
+                </div>
+
                 <!-- Cloud & DevOps -->
                 <div
                     class="bg-gray-800/50 backdrop-blur-md rounded-2xl p-8 shadow-2xl border border-gray-700 hover:border-gray-600 transition-all duration-300">
@@ -100,10 +114,13 @@ const skills = {
         "Rust", "Go", "PHP", "TypeScript", "JavaScript", "C++", "Python", "SQL", "Terraform"
     ],
     backend: [
-        "Actix-Web", "Laravel", "Node.js", "SeaORM", "SQLx", "WebSockets"
+        "Actix-Web", "Rocket", "Laravel", "Node.js", "Bun", "Express.js", "SeaORM", "SQLx", "WebSockets"
     ],
     frontend: [
         "React", "Vue.js", "React Native", "Flutter", "Expo", "Tailwind CSS", "OpenGL"
+    ],
+    ai: [
+        "LLMs", "AI Agents", "RAG", "LangChain", "Generative AI", "Cloudflare AI"
     ],
     cloud: [
         "AWS", "EC2", "VPC", "ECS", "Fargate", "ECR", "Systems Manager", "Terraform", "Docker", "GitHub Actions", "Nginx", "Cloudflare"
