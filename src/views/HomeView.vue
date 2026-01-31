@@ -13,7 +13,6 @@
     <MobileApps />
     <DesktopApps />
     <QuickLinks />
-    <GitHubStats />
     <Contact />
     <Footer />
   </div>
@@ -30,7 +29,7 @@ import HyperDB from '../components/HyperDB.vue'
 import DesktopApps from '../components/DesktopApps.vue'
 import QuickLinks from '../components/QuickLinks.vue'
 import TechStack from '../components/TechStack.vue'
-import GitHubStats from '../components/GitHubStats.vue'
+
 import NanoCore from '../components/NanoCore.vue'
 import OpenSource from '../components/OpenSource.vue'
 import Skills from '../components/Skills.vue'
