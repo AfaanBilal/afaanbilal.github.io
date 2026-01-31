@@ -2,18 +2,18 @@
   <div class="home">
     <Hero />
     <Navbar />
-    <ResearchProjects />
     <Courses />
-    <MobileApps />
-    <WebApps />
     <NanoCore />
-    <DesktopApps />
-    <QuickLinks />
-    <TechStack />
-    <GitHubStats />
     <HyperDB />
     <OpenSource />
     <Skills />
+    <TechStack />
+    <ResearchProjects />
+    <WebApps />
+    <MobileApps />
+    <DesktopApps />
+    <QuickLinks />
+    <GitHubStats />
     <Contact />
     <Footer />
   </div>
