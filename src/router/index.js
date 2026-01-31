@@ -20,7 +20,7 @@ const router = createRouter({
             return {
                 el: to.hash,
                 behavior: 'smooth',
-                top: 80 // Offset for fixed header
+                top: 50,
             }
         }
         return { top: 0 }
