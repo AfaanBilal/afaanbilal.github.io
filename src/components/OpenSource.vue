@@ -6,7 +6,8 @@
                 Open Source
             </h2>
             <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto animate-fade-in-up delay-100">
-                Contributing to the community with <span class="font-bold text-purple-600">{{ repos.length }}</span>
+                Contributing to the community with <span class="font-bold text-purple-600">{{ sortedRepos.length
+                    }}</span>
                 repositories and counting.
             </p>
         </div>
@@ -30,8 +31,8 @@
         </div>
 
         <!-- Repository Grid -->
-        <div v-else class="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-10">
-            <div v-for="(r, index) in repos" :key="r.id"
+        <div v-else class="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-12">
+            <div v-for="(r, index) in displayedRepos" :key="r.id"
                 class="group relative bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 overflow-hidden"
                 :style="{ animationDelay: `${index * 50}ms` }">
                 <!-- Gradient Border/Glow Effect on Hover -->
@@ -96,6 +97,13 @@
                 </div>
             </div>
         </div>
+
+        <div v-if="sortedRepos.length > 9" class="text-center">
+            <button @click="showAll = !showAll"
+                class="px-8 py-3 bg-white dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 font-bold rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-all transform hover:-translate-y-1 shadow-sm hover:shadow-md">
+                {{ showAll ? 'Show Less' : `Show All (${sortedRepos.length})` }}
+            </button>
+        </div>
     </section>
 </template>
 
@@ -107,6 +115,8 @@ const loading = ref(true)
 const error = ref(false)
 
 const excludeNames = ["AfaanBilal", "afaanbilal.github.io", "musings", "amx-infinity.github.io", "SoftSolutions"]
+
+const showAll = ref(false)
 
 onMounted(async () => {
     try {
@@ -129,10 +139,17 @@ onMounted(async () => {
     }
 })
 
-const repos = computed(() => {
+const sortedRepos = computed(() => {
     return allRepos.value
         .filter(o => !excludeNames.includes(o.name))
         .sort((a, b) => b.stargazers_count - a.stargazers_count)
+})
+
+const displayedRepos = computed(() => {
+    if (showAll.value) {
+        return sortedRepos.value
+    }
+    return sortedRepos.value.slice(0, 9)
 })
 
 function toTitleCase(str) {
