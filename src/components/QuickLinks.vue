@@ -1,6 +1,6 @@
 <template>
   <div id="quick-links" class="py-6" style="background: linear-gradient(270deg, #8034cc 0%,#991a79 100%)">
-      <section class="container mx-auto px-6 p-10">
+      <section class="container mx-auto px-4 py-8 md:p-10">
           <h2 class="text-4xl font-bold text-center mb-8 text-white">Quick Links</h2>
           <div class="pt-8 flex justify-center gap-4 flex-wrap text-white">
               <a v-for="link in links" :key="link.title" :href="link.url" target="_blank" rel="noopener">

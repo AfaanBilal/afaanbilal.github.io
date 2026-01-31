@@ -1,5 +1,5 @@
 <template>
-  <section id="open-source" class="container mx-auto px-6 p-10">
+  <section id="open-source" class="container mx-auto px-4 py-8 md:p-10">
       <h2 class="text-4xl font-bold text-center text-gray-800 mt-10 mb-4">Open source projects</h2>
       <p class="text-xl text-center text-gray-500 mb-16">{{ repos.length }} repositories</p>
 

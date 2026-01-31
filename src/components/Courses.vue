@@ -1,5 +1,5 @@
 <template>
-  <section id="courses" class="container mx-auto p-10">
+  <section id="courses" class="container mx-auto px-4 py-8 md:p-10">
       <h2 class="text-4xl font-bold text-center text-gray-800 my-10">Courses</h2>
       <a href="/assets/API-Server-Development-in-Rust-with-Actix-Web-SQLx-and-JWT.pdf" class="text-gray-800 border p-2 rounded hover:border-gray-300 block text-center md:inline-block">
           📄 Course Overview: API Server Development in Rust with Actix Web, SQLx and JWT

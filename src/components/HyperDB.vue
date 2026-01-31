@@ -1,5 +1,5 @@
 <template>
-  <div id="hyperdb" class="py-12 flex flex-col gap-4 justify-center items-center text-white" style="background: linear-gradient(270deg, #8034cc 0%,#991a79 100%)">
+  <div id="hyperdb" class="px-4 py-8 md:py-12 flex flex-col gap-4 justify-center items-center text-white" style="background: linear-gradient(270deg, #8034cc 0%,#991a79 100%)">
       <a href="https://github.com/AfaanBilal/hyperdb" target="_blank" rel="noopener"><h2 class="text-4xl font-bold hover:text-pink-500">HyperDB</h2></a>
       <div>
           An in-memory hyper-fast key-value store with an HTTP API <br>

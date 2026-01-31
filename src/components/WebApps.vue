@@ -1,5 +1,5 @@
 <template>
-  <section id="web-apps" class="container mx-auto p-10">
+  <section id="web-apps" class="container mx-auto px-4 py-8 md:p-10">
       <h2 class="text-4xl font-bold text-center text-gray-800 mt-8">Web Apps</h2>
       <div class="pt-8 flex flex-wrap gap-2 justify-center items-center">
           <div v-for="app in apps" :key="app.name" class="border rounded p-2 w-full md:w-96">

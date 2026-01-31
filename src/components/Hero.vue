@@ -2,13 +2,13 @@
     <div class="pt-5 pb-10 md:py-32" style="background: linear-gradient(110deg, #672ba3 0%,#b3218e 100%)">
         <div class="container mx-auto px-6">
             <div class="flex justify-center items-center flex-wrap">
-                <div class="py-5 mx-5 md:mx-10">
-                    <h2 class="text-6xl font-bold mb-2 text-white">Afaan Bilal</h2>
+                <div class="py-5 mx-5 md:mx-10 text-center md:text-left">
+                    <h2 class="text-4xl md:text-6xl font-bold mb-2 text-white">Afaan Bilal</h2>
                     <h3 class="text-sm md:text-md text-gray-200 hover:text-white">Principal Software Engineer, CISO at <a class="font-bold hover:underline" href="https://www.centiment.co" target="_blank" rel="noopener">Centiment</a></h3>
                     <h3 class="text-sm md:text-md text-gray-200 hover:text-white">Bachelor of Technology in Civil Engineering from <a class="font-bold hover:underline" href="https://www.nitsri.ac.in" target="_blank" rel="noopener">National Institute of Technology, Srinagar</a></h3>
                 </div>
-                <div class="py-5 md:mx-10">
-                    <img src="/assets/Afaan.png" alt="Afaan Bilal" class="rounded-full md:float-right" />
+                <div class="py-5 md:mx-10 flex justify-center md:block">
+                    <img src="/assets/Afaan.png" alt="Afaan Bilal" class="rounded-full md:float-right w-40 md:w-auto" />
                 </div>
             </div>
 

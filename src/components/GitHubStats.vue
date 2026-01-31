@@ -1,6 +1,6 @@
 <template>
   <div id="github-stats" class="py-5" style="background: linear-gradient(270deg, #8034cc 0%,#991a79 100%)">
-      <section class="container mx-auto px-6 p-10">
+      <section class="container mx-auto px-4 py-8 md:p-10">
           <h2 class="text-4xl font-bold text-center mb-5 text-white">GitHub Stats</h2>
           <div class="flex justify-center flex-wrap">
               <div class="w-full md:w-1/3 py-4 flex justify-center">

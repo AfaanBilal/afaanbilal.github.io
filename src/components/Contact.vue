@@ -1,6 +1,6 @@
 <template>
   <div id="contact" class="py-5" style="background: linear-gradient(270deg, #8034cc 0%,#991a79 100%)">
-      <section class="container mx-auto px-6 p-10">
+      <section class="container mx-auto px-4 py-8 md:p-10">
           <h2 class="text-4xl font-bold text-center mb-8 text-white">Let's talk!</h2>
 
           <div class="flex justify-center my-2" v-show="sent">
