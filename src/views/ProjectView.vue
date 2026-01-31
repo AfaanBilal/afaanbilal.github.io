@@ -39,7 +39,7 @@
                         <!-- Languages -->
                         <div class="flex flex-wrap gap-2 pt-2">
                             <span v-for="l in languages" :key="l"
-                                class="px-3 py-1 rounded-full text-xs font-bold bg-white/10 text-white/90 border border-white/20 backdrop-blur-sm shadow-sm">
+                                class="px-4 py-2 rounded-full bg-gray-900/50 text-gray-300 font-medium hover:bg-purple-900/40 hover:text-purple-300 border border-gray-700 transition-colors cursor-default">
                                 {{ l }}
                             </span>
                         </div>
@@ -88,7 +88,7 @@
                 </div>
 
                 <div
-                    class="bg-white dark:bg-gray-800 rounded-3xl p-8 md:p-12 shadow-sm border border-gray-100 dark:border-gray-700">
+                    class="bg-white dark:bg-gray-800 rounded-3xl p-6 md:p-12 shadow-sm border border-gray-100 dark:border-gray-700">
                     <div class="markdown-body dark:prose-invert" v-html="readmeHtml"></div>
                 </div>
             </section>
@@ -105,7 +105,8 @@
                     </div>
                     <h2 class="text-3xl font-bold text-gray-900 dark:text-white">License</h2>
                 </div>
-                <div class="bg-gray-50 dark:bg-gray-800/50 rounded-2xl p-8 border border-gray-200 dark:border-gray-700">
+                <div
+                    class="bg-gray-50 dark:bg-gray-800/50 rounded-2xl p-6 md:p-8 border border-gray-200 dark:border-gray-700">
                     <div class="markdown-body dark:prose-invert" v-html="licenseHtml"></div>
                 </div>
             </section>
