@@ -6,6 +6,20 @@
             </h2>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Security & Compliance -->
+                <div
+                    class="bg-gray-800/50 backdrop-blur-md rounded-2xl p-8 shadow-2xl border border-gray-700 hover:border-gray-600 transition-all duration-300">
+                    <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+                        <span class="text-green-400">#</span> Security & Compliance
+                    </h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span v-for="skill in skills.security" :key="skill"
+                            class="px-4 py-2 rounded-full bg-gray-900/50 text-gray-300 font-medium hover:bg-green-900/40 hover:text-green-300 border border-gray-700 transition-colors cursor-default">
+                            {{ skill }}
+                        </span>
+                    </div>
+                </div>
+
                 <!-- Languages -->
                 <div
                     class="bg-gray-800/50 backdrop-blur-md rounded-2xl p-8 shadow-2xl border border-gray-700 hover:border-gray-600 transition-all duration-300">
@@ -90,15 +104,29 @@
                     </div>
                 </div>
 
-                <!-- Security & Compliance -->
+                <!-- Architecture & Leadership -->
                 <div
                     class="bg-gray-800/50 backdrop-blur-md rounded-2xl p-8 shadow-2xl border border-gray-700 hover:border-gray-600 transition-all duration-300">
                     <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-                        <span class="text-green-400">#</span> Security & Compliance
+                        <span class="text-red-400">#</span> Architecture & Leadership
                     </h3>
                     <div class="flex flex-wrap gap-3">
-                        <span v-for="skill in skills.security" :key="skill"
-                            class="px-4 py-2 rounded-full bg-gray-900/50 text-gray-300 font-medium hover:bg-green-900/40 hover:text-green-300 border border-gray-700 transition-colors cursor-default">
+                        <span v-for="skill in skills.architecture" :key="skill"
+                            class="px-4 py-2 rounded-full bg-gray-900/50 text-gray-300 font-medium hover:bg-red-900/40 hover:text-red-300 border border-gray-700 transition-colors cursor-default">
+                            {{ skill }}
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Integrations & SaaS -->
+                <div
+                    class="bg-gray-800/50 backdrop-blur-md rounded-2xl p-8 shadow-2xl border border-gray-700 hover:border-gray-600 transition-all duration-300">
+                    <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+                        <span class="text-indigo-400">#</span> Integrations & SaaS
+                    </h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span v-for="skill in skills.integrations" :key="skill"
+                            class="px-4 py-2 rounded-full bg-gray-900/50 text-gray-300 font-medium hover:bg-indigo-900/40 hover:text-indigo-300 border border-gray-700 transition-colors cursor-default">
                             {{ skill }}
                         </span>
                     </div>
@@ -123,13 +151,19 @@ const skills = {
         "LLMs", "AI Agents", "RAG", "LangChain", "Generative AI", "Cloudflare AI"
     ],
     cloud: [
-        "AWS", "EC2", "VPC", "ECS", "Fargate", "ECR", "Systems Manager", "Terraform", "Docker", "GitHub Actions", "Nginx", "Cloudflare"
+        "AWS", "EC2", "VPC", "ECS", "Fargate", "ECR", "Systems Manager", "Sentry", "Terraform", "Docker", "GitHub Actions", "Nginx", "Cloudflare"
     ],
     databases: [
         "MySQL", "Redis", "Elasticsearch", "SQLite", "HyperDB", "Valkey"
     ],
     security: [
-        "SOC 2 Type II", "GuardDuty", "Inspector", "Dependabot", "Vanta"
+        "SOC 2 Type II", "HIPAA", "GDPR", "OWASP", "OAuth2 / OIDC", "SAML / SSO", "AWS IAM", "WAF", "GuardDuty", "Inspector", "Dependabot", "Vanta"
+    ],
+    architecture: [
+        "Microservices", "Event-Driven Architecture", "System Design", "Serverless", "Technical Leadership"
+    ],
+    integrations: [
+        "Stripe", "Plaid", "PayPal", "SendGrid", "Resend"
     ]
 }
 </script>
