@@ -7,7 +7,6 @@
     <HyperDB />
     <OpenSource />
     <Skills />
-    <TechStack />
     <ResearchProjects />
     <WebApps />
     <MobileApps />
