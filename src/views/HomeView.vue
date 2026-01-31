@@ -27,8 +27,6 @@ import WebApps from '../components/WebApps.vue'
 import HyperDB from '../components/HyperDB.vue'
 import DesktopApps from '../components/DesktopApps.vue'
 import QuickLinks from '../components/QuickLinks.vue'
-import TechStack from '../components/TechStack.vue'
-
 import NanoCore from '../components/NanoCore.vue'
 import OpenSource from '../components/OpenSource.vue'
 import Skills from '../components/Skills.vue'

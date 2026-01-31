@@ -1,101 +1,125 @@
 <template>
-  <div class="project-view">
-    <div class="py-20 md:pt-20 md:pb-40" style="background: linear-gradient(110deg, #672ba3 0%,#b3218e 100%)">
-        <div class="container mx-auto px-6">
-
-            <h3 class="flex justify-center py-2">
-                <div>
-                    <router-link to="/" class="font-bold text-white hover:underline text-xl"><img class="w-16 transform rotate-180" src="/assets/arrow.svg" alt="back" /></router-link>
-                </div>
-            </h3>
-
-            <div class="flex justify-center items-center flex-wrap">
-                <div class="py-5 mx-5 md:mx-10">
-                    <h2 class="text-6xl font-bold mb-2 text-white">{{ repoTitle }}</h2>
-                    <h3 class="text-1xl text-gray-200 hover:text-white">{{ repo.description }}</h3>
-                    <h3 class="text-1xl text-gray-200 hover:text-white">
-                        <a v-show="repo.homepage" :href="repo.homepage" class="font-bold hover:underline" target="_blank" rel="noopener">Homepage</a>
-                        <span class="mx-2" v-show="repo.homepage">&middot;</span>
-                        <a v-show="repo.html_url" :href="repo.html_url" class="font-bold hover:underline" target="_blank" rel="noopener">Source code</a>
-                    </h3>
-                </div>
-                <div class="py-5 md:mx-10">
-                    <a :href="repo.html_url" target="_blank" rel="noopener"><img class="w-32" src="/assets/github.svg" alt="github" /></a>
+    <div
+        class="project-view min-h-screen bg-gray-50 dark:bg-gray-900 font-sans text-gray-900 dark:text-gray-100 transition-colors duration-300">
+        <!-- Header Section -->
+        <div class="relative py-20 pb-32 bg-gradient-to-br from-gray-900 to-black text-white overflow-hidden">
+            <!-- Background Effects -->
+            <div class="absolute top-0 right-0 w-2/3 h-full overflow-hidden z-0 pointer-events-none opacity-20">
+                <div
+                    class="absolute top-[10%] right-[10%] w-[80%] h-[80%] rounded-full bg-gradient-to-br from-purple-500 to-pink-500 blur-3xl animate-pulse">
                 </div>
             </div>
 
-            <div class="text-white text-2xl w-full text-center mb-14 flex justify-center mt-6">
-                hello <img class="w-5 mx-1" src="/assets/at.svg" alt="at" /> afaan <img class="w-2 mx-1 pt-2" src="/assets/dot.svg" alt="dot" /> dev
-            </div>
+            <div class="container mx-auto px-6 relative z-10">
+                <!-- Back Navigation -->
+                <div class="flex justify-start mb-8">
+                    <router-link to="/"
+                        class="group flex items-center gap-2 text-gray-400 hover:text-white transition-colors">
+                        <div
+                            class="p-2 rounded-full bg-gray-800/50 group-hover:bg-purple-600/20 backdrop-blur-sm border border-gray-700 group-hover:border-purple-500/50 transition-all">
+                            <svg class="w-6 h-6 transform rotate-180" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </div>
+                        <span class="font-medium">Back to Portfolio</span>
+                    </router-link>
+                </div>
 
-            <div class="flex justify-center mt-10">
-                <div class="pr-4 md:pr-16"><a href="https://linkedin.com/in/AfaanBilal" target="_blank" rel="noopener"><img style="width: 32px;" src="/assets/linkedin.svg" alt="linkedin" /></a></div>
-                <div class="px-4 md:px-16"><a href="https://medium.com/@AfaanBilal" target="_blank" rel="noopener"><img style="width: 32px;" src="/assets/medium.svg" alt="medium" /></a></div>
-                <div class="px-4 md:px-16"><a href="https://github.com/AfaanBilal" target="_blank" rel="noopener"><img style="width: 32px;" src="/assets/github.svg" alt="github" /></a></div>
-                <div class="px-4 md:px-16"><a href="https://twitter.com/AfaanBilal" target="_blank" rel="noopener"><img style="width: 32px;" src="/assets/twitter.svg" alt="twitter" /></a></div>
-                <div class="px-4 md:px-16"><a href="https://instagram.com/AfaanBilal" target="_blank" rel="noopener"><img style="width: 32px;" src="/assets/instagram.svg" alt="instagram" /></a></div>
-                <div class="pl-4 md:pl-16"><a href="https://facebook.com/AfaanBilal" target="_blank" rel="noopener"><img style="width: 32px;" src="/assets/facebook.svg" alt="facebook" /></a></div>
+                <!-- Title & Meta -->
+                <div
+                    class="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 animate-fade-in-up">
+                    <div class="space-y-4 max-w-3xl">
+                        <h1 class="text-5xl md:text-6xl font-black tracking-tight text-white mb-2">
+                            {{ repoTitle }}
+                        </h1>
+                        <p class="text-xl text-gray-300 leading-relaxed font-light">{{ repo.description }}</p>
+
+                        <!-- Languages -->
+                        <div class="flex flex-wrap gap-2 pt-2">
+                            <span v-for="l in languages" :key="l"
+                                class="px-3 py-1 rounded-full text-xs font-bold bg-white/10 text-white/90 border border-white/20 backdrop-blur-sm shadow-sm">
+                                {{ l }}
+                            </span>
+                        </div>
+
+                        <!-- Links -->
+                        <div class="flex flex-wrap gap-4 pt-4">
+                            <a v-if="repo.homepage" :href="repo.homepage" target="_blank" rel="noopener"
+                                class="inline-flex items-center gap-2 px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-xl transition-all transform hover:-translate-y-1 shadow-lg shadow-purple-900/50">
+                                <span>Live Demo</span>
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
+                                    </path>
+                                </svg>
+                            </a>
+                            <a v-if="repo.html_url" :href="repo.html_url" target="_blank" rel="noopener"
+                                class="inline-flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 hover:text-white text-gray-200 font-bold rounded-xl backdrop-blur-md border border-white/10 transition-all transform hover:-translate-y-1">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                                </svg>
+                                <span>Source Code</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
 
-    <section class="container mx-auto py-10">
-        <div class="mb-10 pt-10 md:mx-36">
-            <h3 class="text-2xl font-bold text-center text-gray-800 mb-5">Languages</h3>
-            <div class="md:mx-20 flex flex-wrap justify-center">
-                <span
-                    v-for="l in languages"
-                    :key="l"
-                    style="background: linear-gradient(139deg, #fb8817, #ff4b01, #c12127, #e02aff)" class="text-white px-2 py-1 rounded m-2 inline-block shadow hover:shadow-lg">
-                    {{ l }}
-                </span>
-            </div>
-        </div>
-    </section>
 
-    <div class="py-5" style="background: linear-gradient(270deg, #8034cc 0%,#991a79 100%)">
-        <section class="container mx-auto px-6 p-10">
-            <h2 class="text-4xl font-bold text-center mb-5 text-white">GitHub Stats</h2>
-            <div class="flex justify-center flex-wrap">
-                <div class="w-full py-4 flex justify-center" v-if="repo.full_name">
-                    <img :src="'https://github-readme-stats.vercel.app/api/pin/?username=' + repo.full_name.split('/')[0] + '&repo=' + repo.name" alt="github stats" />
+
+        <!-- Content Section -->
+        <main class="container mx-auto px-6 py-16 space-y-16">
+            <!-- Readme -->
+            <section class="w-full">
+                <div class="flex items-center gap-4 mb-8">
+                    <div
+                        class="p-3 bg-purple-100 dark:bg-purple-900/30 rounded-xl text-purple-600 dark:text-purple-400">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Project Details</h2>
                 </div>
-            </div>
-        </section>
-    </div>
 
-    <section class="container mx-auto py-10">
-        <h2 class="text-4xl font-bold text-center mb-5">Readme</h2>
-        <div class="text-gray-800 justify-center flex">
-            <div id="readme" class="markdown-body">
-                <div v-html="readmeHtml"></div>
-            </div>
-        </div>
-    </section>
-
-    <div class="py-5" style="background: linear-gradient(270deg, #8034cc 0%,#991a79 100%)">
-        <section class="container mx-auto px-6 p-10">
-            <h2 class="text-4xl font-bold text-center mb-5 text-white">License</h2>
-            <div class="text-white justify-center flex">
-                <div id="license" class="markdown-body">
-                    <div v-html="licenseHtml"></div>
+                <div
+                    class="bg-white dark:bg-gray-800 rounded-3xl p-8 md:p-12 shadow-sm border border-gray-100 dark:border-gray-700">
+                    <div class="markdown-body dark:prose-invert" v-html="readmeHtml"></div>
                 </div>
-            </div>
-        </section>
-    </div>
+            </section>
 
-    <Footer />
+            <!-- License -->
+            <section class="w-full" v-if="licenseHtml">
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="p-3 bg-gray-100 dark:bg-gray-800 rounded-xl text-gray-600 dark:text-gray-400">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3">
+                            </path>
+                        </svg>
+                    </div>
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white">License</h2>
+                </div>
+                <div class="bg-gray-50 dark:bg-gray-800/50 rounded-2xl p-8 border border-gray-200 dark:border-gray-700">
+                    <div class="markdown-body dark:prose-invert" v-html="licenseHtml"></div>
+                </div>
+            </section>
+        </main>
 
-    <div class="text-center text-white py-2" style="background: linear-gradient(110deg, #672ba3 0%,#b3218e 100%)">
-        Copyright &copy; Afaan Bilal
+        <Footer />
     </div>
-  </div>
 </template>
 
 <script setup>
 import { ref, onMounted, computed, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import showdown from 'showdown'
+import 'github-markdown-css/github-markdown.css' // Import GitHub styles
 import Footer from '../components/Footer.vue'
 
 const route = useRoute()
@@ -119,10 +143,12 @@ function toTitleCase(str) {
 
 onMounted(() => {
     loadRepo()
+    window.scrollTo(0, 0)
 })
 
 watch(() => route.params.name, () => {
     loadRepo()
+    window.scrollTo(0, 0)
 })
 
 async function loadRepo() {
@@ -135,6 +161,8 @@ async function loadRepo() {
     }
 
     const converter = new showdown.Converter()
+    // Styles for markdown tables etc
+    converter.setOption('tables', true)
 
     try {
         const repoRes = await fetch('https://api.github.com/repos/' + repoFullName.value)
@@ -145,8 +173,8 @@ async function loadRepo() {
             repo.value = repoData
             document.title = repoTitle.value + ' | Afaan Bilal'
         } else {
-             router.push('/')
-             return
+            router.push('/')
+            return
         }
 
         const langsRes = await fetch(repo.value.languages_url)
@@ -156,9 +184,15 @@ async function loadRepo() {
         const readmeText = await readmeRes.text()
         readmeHtml.value = converter.makeHtml(readmeText)
 
-        const licenseRes = await fetch('https://raw.githubusercontent.com/' + repoFullName.value + '/' + repo.value.default_branch + '/LICENSE')
-        const licenseText = await licenseRes.text()
-        licenseHtml.value = converter.makeHtml(licenseText)
+        try {
+            const licenseRes = await fetch('https://raw.githubusercontent.com/' + repoFullName.value + '/' + repo.value.default_branch + '/LICENSE')
+            if (licenseRes.ok) {
+                const licenseText = await licenseRes.text()
+                licenseHtml.value = converter.makeHtml(licenseText)
+            } else {
+                licenseHtml.value = ''
+            }
+        } catch (e) { licenseHtml.value = '' }
 
     } catch (e) {
         console.error(e)
@@ -168,51 +202,70 @@ async function loadRepo() {
 </script>
 
 <style>
-/* Markdown Styles from project.html */
-.markdown-body h1, .markdown-body h2, .markdown-body h3, .markdown-body h4 {
-    color: inherit;
-    font-weight: 500;
+/* Markdown Content Customization for Dark Mode + Tailwind Typography compatibility */
+.markdown-body {
+    background: transparent !important;
+    font-family: inherit !important;
+    line-height: 1.8 !important;
 }
-.markdown-body h1, .markdown-body h2, .markdown-body h3, .markdown-body h4, .markdown-body h5, .markdown-body p {
-    margin-bottom: 12px;
-    padding: 0;
+
+/* Invert colors for dark mode context */
+.dark .markdown-body {
+    color: #e5e7eb !important;
+    /* gray-200 */
 }
-.markdown-body h1 { font-size: 28px; }
-.markdown-body h2 { font-size: 24px; margin: 12px 0 6px; }
-.markdown-body h3 { font-size: 20px; }
-.markdown-body h4 { font-size: 18px; }
-.markdown-body h5 { font-size: 16px; }
-.markdown-body a {
-    color: #0099ff;
-    margin: 0;
-    padding: 0;
-    vertical-align: baseline;
+
+.dark .markdown-body h1,
+.dark .markdown-body h2,
+.dark .markdown-body h3 {
+    color: #fff !important;
+    border-bottom-color: #374151 !important;
+    /* gray-700 */
 }
-.markdown-body ul, .markdown-body ol { padding: 0; margin: 0; }
-.markdown-body li { line-height: 24px; }
-.markdown-body li ul, .markdown-body li ul { margin-left: 24px; }
-.markdown-body p, .markdown-body ul, .markdown-body ol { font-size: 14px; line-height: 22px; }
-.markdown-body pre {
-    padding: 0px 24px;
-    white-space: pre-wrap;
-    max-width: 700px;
-    background: #f4f4f4;
-    border-radius: 4px;
-    padding: 10px;
+
+.dark .markdown-body a {
+    color: #c084fc !important;
+    /* purple-400 */
 }
-.markdown-body code {
-    font-family: Consolas, Monaco, Andale Mono, monospace;
-    line-height: 1.5;
-    font-size: 13px;
-    background: rgba(0,0,0,0.05);
-    padding: 2px 4px;
-    border-radius: 3px;
+
+.dark .markdown-body code {
+    background-color: #1f2937 !important;
+    /* gray-800 */
+    color: #e5e7eb !important;
 }
-.markdown-body blockquote { margin: 1em 2em; max-width: 476px; border-left: 4px solid #ccc; padding-left: 10px; }
-.markdown-body hr {
-    width: 540px;
-    text-align: left;
-    margin: 0 auto 0 0;
-    color: #999;
+
+.dark .markdown-body pre {
+    background-color: #111827 !important;
+    /* gray-900 */
+    border: 1px solid #374151;
+}
+
+.dark .markdown-body blockquote {
+    color: #9ca3af !important;
+    /* gray-400 */
+    border-left-color: #4b5563 !important;
+    /* gray-600 */
+}
+
+.dark .markdown-body table tr {
+    background-color: transparent !important;
+    border-top-color: #374151 !important;
+}
+
+.dark .markdown-body table tr:nth-child(2n) {
+    background-color: #1f2937 !important;
+    /* gray-800 */
+}
+
+.dark .markdown-body table th,
+.dark .markdown-body table td {
+    border-color: #374151 !important;
+}
+
+/* Base styles cleanup */
+.markdown-body img {
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
 }
 </style>
