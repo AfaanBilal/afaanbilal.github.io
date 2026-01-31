@@ -1,26 +1,54 @@
 <template>
-  <section id="courses" class="container mx-auto px-4 py-8 md:p-10">
-      <h2 class="text-4xl font-bold text-center text-gray-800 my-10">Courses</h2>
-      <a href="/assets/API-Server-Development-in-Rust-with-Actix-Web-SQLx-and-JWT.pdf" class="text-gray-800 border p-2 rounded hover:border-gray-300 block text-center md:inline-block">
-          📄 Course Overview: API Server Development in Rust with Actix Web, SQLx and JWT
-      </a>
-      <div class="pt-8 flex gap-4 flex-wrap">
-          <a v-for="course in courses" :key="course.title" class="w-full" :href="course.url" target="_blank" rel="noopener">
-              <div style="background: linear-gradient(240deg, #fb8817, #ff4b01, #c12127, #e02aff)" class="text-white p-4 border rounded hover:border-black">
-                  <div class="flex gap-6 items-center flex-wrap">
-                      <img class="w-full md:w-32 rounded" :src="course.image" :alt="course.title" />
-                      <div>
-                          <div class="text-2xl font-bold">
-                              {{ course.title }}
-                              <small><code>[Udemy]</code></small>
-                          </div>
-                          {{ course.description }}
-                      </div>
-                  </div>
-              </div>
-          </a>
-      </div>
-  </section>
+    <section id="courses" class="container mx-auto px-4 py-16">
+        <h2 class="text-4xl font-bold text-center text-gray-800 dark:text-white mb-12">
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-600">Courses</span>
+        </h2>
+
+        <div class="flex justify-center mb-10">
+            <a href="/assets/API-Server-Development-in-Rust-with-Actix-Web-SQLx-and-JWT.pdf"
+                class="inline-flex items-center gap-2 px-6 py-3 bg-orange-50 text-orange-700 rounded-full border border-orange-200 hover:bg-orange-100 transition-colors font-medium">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                </svg>
+                Download Course Curriculum
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <a v-for="course in courses" :key="course.title" :href="course.url" target="_blank" rel="noopener"
+                class="group bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col">
+                <div class="relative h-48 overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
+                    <img :src="course.image" :alt="course.title"
+                        class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" />
+                    <div class="absolute bottom-4 left-4 z-20">
+                        <span
+                            class="px-2 py-1 bg-orange-500 text-white text-xs font-bold rounded uppercase tracking-wide">Udemy</span>
+                    </div>
+                </div>
+
+                <div class="p-6 flex-1 flex flex-col">
+                    <h3
+                        class="text-xl font-bold text-gray-800 dark:text-white mb-3 group-hover:text-orange-600 transition-colors line-clamp-2">
+                        {{ course.title }}</h3>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm line-clamp-3 mb-4 flex-1">
+                        {{ course.description }}
+                    </p>
+
+                    <div
+                        class="mt-auto pt-4 border-t border-gray-100 dark:border-gray-700 text-orange-600 font-bold group-hover:text-orange-700 flex items-center gap-1">
+                        Enroll Now
+                        <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
 </template>
 
 <script setup>

@@ -1,66 +1,92 @@
 <template>
-  <div id="hyperdb" class="px-4 py-8 md:py-12 flex flex-col gap-4 justify-center items-center text-white" style="background: linear-gradient(270deg, #8034cc 0%,#991a79 100%)">
-      <a href="https://github.com/AfaanBilal/hyperdb" target="_blank" rel="noopener"><h2 class="text-4xl font-bold hover:text-pink-500">HyperDB</h2></a>
-      <div>
-          An in-memory hyper-fast key-value store with an HTTP API <br>
-      </div>
-      <div class="flex gap-2">
-          <span style="background: linear-gradient(139deg, #fb8817, #ff4b01, #c12127, #e02aff);" class="text-white px-2 py-1 rounded inline-block shadow hover:shadow-lg">Rust</span>
-          <span style="background: linear-gradient(139deg, #fb8817, #ff4b01, #c12127, #e02aff);" class="text-white px-2 py-1 rounded inline-block shadow hover:shadow-lg">Actix-Web</span>
-          <span style="background: linear-gradient(139deg, #fb8817, #ff4b01, #c12127, #e02aff);" class="text-white px-2 py-1 rounded inline-block shadow hover:shadow-lg">JWT</span>
-      </div>
-      <div class="flex flex-col">
-          <div class="flex justify-between text-lg bg-gray-900 p-2 px-4 rounded-t mt-4">
-              <div>HyperDB</div>
-              <div class="flex gap-2 text-sm">
-                  <span style="background: linear-gradient(139deg, #c12127, #e02aff, #fb8817, #ff4b01);" class="text-white px-2 py-1 rounded inline-block shadow hover:shadow-lg flex gap-1">
-                      <img src="https://icongr.am/clarity/lightning.svg?size=14&color=ffffff" />
-                      Read: 50,675 RPS
-                  </span>
-                  <span style="background: linear-gradient(139deg, #c12127, #e02aff, #fb8817, #ff4b01);" class="text-white px-2 py-1 rounded inline-block shadow hover:shadow-lg flex gap-1">
-                      <img src="https://icongr.am/clarity/lightning.svg?size=14&color=ffffff" />
-                      Write: 49,797 RPS
-                  </span>
-              </div>
-          </div>
-          <div class="flex">
-              <div class="bg-pink-500 p-2 px-4 w-28 border-b border-pink-600">Server</div>
-              <div class="font-mono bg-gray-800 p-2 px-4 flex-1 border-b border-gray-700">
-                  docker run --rm -it -p 8765:8765 afaanbilal/hyperdb
-              </div>
-          </div>
-          <div class="flex">
-              <div class="bg-pink-500 p-2 px-4 w-28 rounded-bl">CLI</div>
-              <div class="font-mono bg-gray-800 p-2 px-4 flex-1 rounded-br">
-                  docker run --rm -it afaanbilal/hyperdb-cli -a http://host.docker.internal:8765
-              </div>
-          </div>
+    <section id="hyperdb"
+        class="py-20 bg-gradient-to-br from-purple-900 to-indigo-900 text-white relative overflow-hidden">
+        <!-- Background Patterns -->
+        <div
+            class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]">
+        </div>
 
-          <div class="flex justify-between items-center text-lg bg-gray-900 p-2 px-4 rounded-t mt-4">
-              Client Libraries
-              <a href="https://afaan.dev/hyperdb-docs" target="_blank" rel="noopener" class="text-gray-400 text-sm hover:text-blue-500">afaan.dev/hyperdb-docs</a>
-          </div>
-          <div v-for="lib in clientLibs" :key="lib.lang" class="flex">
-              <div class="bg-pink-500 p-2 px-4 w-28 border-b border-pink-600">{{ lib.lang }}</div>
-              <div class="font-mono bg-gray-800 p-2 px-4 flex-1 border-b border-gray-700">
-                  {{ lib.cmd }}
-              </div>
-          </div>
-           <div class="flex">
-              <div class="bg-pink-500 p-2 px-4 w-28 rounded-bl">Go</div>
-              <div class="font-mono bg-gray-800 p-2 px-4 flex-1 rounded-br break-words">
-                  go get -u github.com/AfaanBilal/hyperdb-go
-              </div>
-          </div>
-      </div>
-  </div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2">
+                    <div
+                        class="inline-block px-3 py-1 bg-purple-500/30 border border-purple-400/50 rounded-full text-purple-200 text-sm font-bold mb-6">
+                        Featured Project
+                    </div>
+                    <h2 class="text-5xl font-black mb-6 tracking-tight">HyperDB</h2>
+                    <p class="text-xl text-purple-100 mb-8 leading-relaxed">
+                        An in-memory <span class="text-yellow-400 font-bold">hyper-fast</span> key-value store with an
+                        HTTP API. Designed for speed, simplicity, and ease of use.
+                    </p>
+
+                    <div class="flex gap-4 mb-10">
+                        <span
+                            class="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-lg backdrop-blur-sm border border-white/20">
+                            <span class="w-3 h-3 rounded-full bg-orange-500"></span> Rust
+                        </span>
+                        <span
+                            class="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-lg backdrop-blur-sm border border-white/20">
+                            <span class="w-3 h-3 rounded-full bg-green-500"></span> Actix-Web
+                        </span>
+                        <span
+                            class="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-lg backdrop-blur-sm border border-white/20">
+                            <span class="w-3 h-3 rounded-full bg-blue-500"></span> JWT
+                        </span>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <a href="https://github.com/AfaanBilal/hyperdb" target="_blank" rel="noopener"
+                            class="px-8 py-4 bg-white text-purple-900 font-bold rounded-xl hover:bg-gray-100 transition-transform hover:-translate-y-1 shadow-lg">
+                            View on GitHub
+                        </a>
+                        <a href="https://afaan.dev/hyperdb-docs" target="_blank" rel="noopener"
+                            class="px-8 py-4 bg-purple-800/50 text-white border border-purple-500/50 font-bold rounded-xl hover:bg-purple-800 transition-transform hover:-translate-y-1">
+                            Documentation
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:w-1/2 w-full">
+                    <div
+                        class="bg-gray-900 rounded-xl shadow-2xl border border-gray-700 overflow-hidden font-mono text-sm leading-relaxed">
+                        <div class="flex justify-between items-center bg-gray-800 px-4 py-3 border-b border-gray-700">
+                            <span class="text-gray-400">Terminal</span>
+                            <div class="flex gap-2">
+                                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                            </div>
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <!-- Benchmarks -->
+                            <div class="grid grid-cols-2 gap-4 mb-6">
+                                <div class="bg-gray-800 p-4 rounded-lg border border-gray-700">
+                                    <div class="text-gray-400 text-xs mb-1">Read Operations</div>
+                                    <div class="text-2xl font-bold text-green-400">50,675 <span
+                                            class="text-sm text-gray-500">RPS</span></div>
+                                </div>
+                                <div class="bg-gray-800 p-4 rounded-lg border border-gray-700">
+                                    <div class="text-gray-400 text-xs mb-1">Write Operations</div>
+                                    <div class="text-2xl font-bold text-yellow-400">49,797 <span
+                                            class="text-sm text-gray-500">RPS</span></div>
+                                </div>
+                            </div>
+
+                            <!-- Commands -->
+                            <div>
+                                <div class="text-gray-500 mb-2"># Run Server</div>
+                                <div class="text-purple-300">docker run <span class="text-white">--rm -it -p
+                                        8765:8765</span> afaanbilal/hyperdb</div>
+                            </div>
+                            <div>
+                                <div class="text-gray-500 mb-2"># Install JS Client</div>
+                                <div class="text-purple-300">npm <span class="text-white">install</span> hyperdb-js
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </template>
-
-<script setup>
-const clientLibs = [
-    { lang: 'Javascript', cmd: 'npm i hyperdb-js' },
-    { lang: 'Rust', cmd: 'cargo add hyperdb-rs' },
-    { lang: 'PHP', cmd: 'composer require afaanbilal/hyperdb-php' },
-    { lang: 'Python', cmd: 'pip install hyperdb-py' }
-]
-</script>

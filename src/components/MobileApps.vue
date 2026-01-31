@@ -1,68 +1,87 @@
 <template>
-  <section id="mobile-apps" class="container mx-auto px-4 py-8 md:p-10">
-      <h2 class="text-4xl font-bold text-center text-gray-800 mt-8">Mobile Apps</h2>
-      <div class="pt-8 flex flex-wrap gap-2 justify-center items-center">
-          <div v-for="app in apps" :key="app.name" class="border rounded p-2 w-full md:w-96">
-              <a :name="app.anchor"></a>
-              <div v-if="app.isFxRate" class="flex justify-between">
-                  <a :href="app.link" target="_blank" rel="noopener" class="text-xl font-bold text-center hover:text-pink-400 mb-4">{{ app.name }}</a>
-                  <a :href="app.playStore" target="_blank" rel="noopener" title="Play Store">
-                      <img src="/images/playstore.png" class="w-8" />
-                  </a>
-              </div>
-              <a v-else :href="app.link" target="_blank" rel="noopener"><h2 class="text-xl font-bold text-center hover:text-pink-400 mb-4">{{ app.name }}</h2></a>
+    <section id="mobile-apps" class="container mx-auto px-4 py-16">
+        <h2 class="text-4xl font-bold text-center text-gray-800 dark:text-white mb-12">
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-teal-500">Mobile Apps</span>
+        </h2>
 
-              <div class="flex justify-center"><img class="rounded" :src="app.image" :alt="app.name" /></div>
-              <div class="pt-2 text-sm">
-                  <span v-for="tech in app.tech" :key="tech" style="background: linear-gradient(139deg, #fb8817, #ff4b01, #c12127, #e02aff);" class="text-white px-2 py-1 rounded m-2 inline-block shadow hover:shadow-lg">{{ tech }}</span>
-              </div>
-          </div>
-      </div>
-  </section>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div v-for="app in apps" :key="app.name"
+                class="group bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col">
+                <div
+                    class="relative overflow-hidden h-48 bg-gray-100 dark:bg-gray-900 flex items-center justify-center p-4">
+                    <img :src="app.image" :alt="app.name"
+                        class="max-h-full max-w-full rounded shadow-sm object-contain transform group-hover:scale-105 transition-transform duration-500" />
+                    <div
+                        class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+                        <a :href="app.link" target="_blank" rel="noopener"
+                            class="p-3 bg-white rounded-full text-black hover:bg-green-500 hover:text-white transition-colors">
+                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                            </svg>
+                        </a>
+                        <a v-if="app.playStore" :href="app.playStore" target="_blank" rel="noopener"
+                            class="p-3 bg-white rounded-full text-black hover:bg-green-500 hover:text-white transition-colors">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.84L14.5,13.41L16.81,15.12M14.5,10.59L6.05,2.15L16.81,8.88L14.5,10.59M18.27,9.96L19.66,10.79V10.8L18.27,11.63L15.65,9.69L18.27,9.96Z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="p-6 flex-1 flex flex-col">
+                    <h3
+                        class="text-xl font-bold text-gray-800 dark:text-white mb-2 group-hover:text-green-600 transition-colors">
+                        {{ app.name }}</h3>
+
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span v-for="tech in app.tech" :key="tech"
+                            class="text-xs px-2 py-1 bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-md font-medium">
+                            {{ tech }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </template>
 
 <script setup>
 const apps = [
     {
         name: 'FxRate',
-        anchor: 'fxrate',
         link: 'https://github.com/AfaanBilal/fxrate',
         image: 'https://raw.githubusercontent.com/AfaanBilal/fxrate/master/screenshots/fxrate-hero.png',
         tech: ['React Native', 'Typescript', 'Expo'],
-        isFxRate: true,
         playStore: 'https://play.google.com/store/apps/details?id=dev.afaan.fxrate'
     },
     {
         name: 'Meeqat',
-        anchor: 'meeqat',
         link: 'https://github.com/AfaanBilal/meeqat',
         image: 'https://raw.githubusercontent.com/AfaanBilal/meeqat/master/screenshots/meeqat-hero.png',
         tech: ['React Native', 'Typescript', 'Expo']
     },
     {
         name: 'One Dua',
-        anchor: 'one-dua',
         link: 'https://github.com/AfaanBilal/one-dua',
         image: 'https://raw.githubusercontent.com/AfaanBilal/one-dua/master/screenshots/one-dua.png',
         tech: ['React Native', 'Typescript', 'Expo']
     },
     {
         name: 'Whisper',
-        anchor: 'whisper',
         link: 'https://github.com/AfaanBilal/whisper-app',
         image: 'https://raw.githubusercontent.com/AfaanBilal/whisper-app/master/screenshots/whisper.png',
         tech: ['React Native', 'Typescript', 'Expo']
     },
     {
         name: 'Word Hunt',
-        anchor: 'word-hunt',
         link: 'https://github.com/AfaanBilal/word_hunt',
         image: 'https://afaan.dev/screenshots/word_hunt.png',
         tech: ['Flutter', 'Dart']
     },
     {
         name: 'Statistical Analysis',
-        anchor: 'statistical-analysis',
         link: 'https://github.com/AfaanBilal/Statistical-Analysis-Android',
         image: 'https://afaan.dev/screenshots/Statistical-Analysis.png',
         tech: ['Java', 'Android']

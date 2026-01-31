@@ -1,90 +1,69 @@
 <template>
-  <div id="contact" class="py-5" style="background: linear-gradient(270deg, #8034cc 0%,#991a79 100%)">
-      <section class="container mx-auto px-4 py-8 md:p-10">
-          <h2 class="text-4xl font-bold text-center mb-8 text-white">Let's talk!</h2>
+  <section id="contact" class="container mx-auto px-4 py-24">
+    <div
+      class="max-w-4xl mx-auto bg-white dark:bg-gray-800 rounded-3xl shadow-2xl overflow-hidden border border-gray-100 dark:border-gray-700">
+      <div class="grid md:grid-cols-2">
+        <div class="p-10 bg-gradient-to-br from-purple-600 to-pink-600 text-white flex flex-col justify-between">
+          <div>
+            <h2 class="text-3xl font-bold mb-6">Let's Chat!</h2>
+            <p class="mb-8 text-purple-100 leading-relaxed">
+              Have a project idea or just want to say hi? I'd love to hear from you.
+            </p>
 
-          <div class="flex justify-center my-2" v-show="sent">
-              <div class="alert flex flex-row items-center bg-green-200 p-2 rounded border-b-2 border-green-300 w-64">
-                  <div class="alert-icon flex items-center bg-green-100 border-2 border-green-500 justify-center h-10 w-10 flex-shrink-0 rounded-full">
-                      <span class="text-green-500">
-                          <svg fill="currentColor" viewBox="0 0 20 20" class="h-6 w-6">
-                              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                          </svg>
-                      </span>
-                  </div>
-                  <div class="alert-content ml-4">
-                      <div class="alert-title font-semibold text-lg text-green-800">Success</div>
-                      <div class="alert-description text-sm text-green-600">Message sent!</div>
-                  </div>
+            <div class="space-y-4">
+              <a href="mailto:afaanbilal@gmail.com"
+                class="flex items-center gap-3 hover:text-purple-200 transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                  </path>
+                </svg>
+                <span>afaanbilal@gmail.com</span>
+              </a>
+              <div class="flex items-center gap-3">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+                <span>India</span>
               </div>
+            </div>
           </div>
 
-          <div class="flex justify-center my-2" v-show="sending">
-             <div class="text-white">Sending...</div>
+          <div class="mt-12 flex space-x-4">
+            <!-- Social Icons here if needed -->
           </div>
+        </div>
 
-          <form @submit.prevent="sendMessage" v-if="!sent" class="w-full max-w-lg mx-auto">
-             <div class="flex flex-wrap -mx-3 mb-6">
-                <div class="w-full px-3">
-                  <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2" for="grid-name">
-                    Name
-                  </label>
-                  <input v-model="name" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-name" type="text" placeholder="Jane Doe">
-                </div>
-              </div>
-              <div class="flex flex-wrap -mx-3 mb-6">
-                <div class="w-full px-3">
-                  <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2" for="grid-email">
-                    E-mail
-                  </label>
-                  <input v-model="email" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-email" type="email" placeholder="jane@example.com">
-                </div>
-              </div>
-              <div class="flex flex-wrap -mx-3 mb-6">
-                <div class="w-full px-3">
-                  <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2" for="grid-message">
-                    Message
-                  </label>
-                  <textarea v-model="message" class="no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none" id="grid-message" placeholder="Hello..."></textarea>
-                </div>
-              </div>
-              <div class="md:flex md:items-center">
-                <div class="md:w-1/3">
-                  <button class="shadow bg-purple-600 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="submit">
-                    Send
-                  </button>
-                </div>
-                <div class="md:w-2/3"></div>
-              </div>
-            </form>
-
-      </section>
-  </div>
+        <div class="p-10 bg-white dark:bg-gray-800">
+          <form action="#" method="POST" class="space-y-6">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Name</label>
+              <input type="text"
+                class="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:ring-2 focus:ring-purple-500 outline-none transition-all"
+                placeholder="John Doe">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email</label>
+              <input type="email"
+                class="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:ring-2 focus:ring-purple-500 outline-none transition-all"
+                placeholder="john@example.com">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Message</label>
+              <textarea rows="4"
+                class="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:ring-2 focus:ring-purple-500 outline-none transition-all"
+                placeholder="Tell me about your project..."></textarea>
+            </div>
+            <button type="submit"
+              class="w-full py-4 bg-gray-900 text-white font-bold rounded-lg hover:bg-gray-800 transition-colors transform hover:-translate-y-1 shadow-lg">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
 </template>
-
-<script setup>
-import { ref } from 'vue'
-
-const name = ref('')
-const email = ref('')
-const message = ref('')
-const sent = ref(false)
-const sending = ref(false)
-
-function sendMessage() {
-    sending.value = true
-    fetch('https://script.google.com/macros/s/AKfycbyr7UVSG3tsVPZagH79m1MMvBVaKDj6WNdWiCKvS8ws4pkRX9wm5cOAIr3ZCq20btgS/exec', {
-        method: 'post',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: 'name=' + encodeURIComponent(name.value) + '&email=' + encodeURIComponent(email.value) + '&message=' + encodeURIComponent(message.value)
-    }).then(r => r.text()).then((d) => {
-        if (d == 'success') {
-            name.value = ''
-            email.value = ''
-            message.value = ''
-            sending.value = false
-            sent.value = true
-        }
-    })
-}
-</script>
