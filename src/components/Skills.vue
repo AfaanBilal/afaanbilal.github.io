@@ -106,7 +106,7 @@ const skills = {
         "React", "Vue.js", "React Native", "Flutter", "Expo", "Tailwind CSS", "OpenGL"
     ],
     cloud: [
-        "AWS", "Terraform", "Docker", "ECS", "GitHub Actions", "Nginx", "Cloudflare"
+        "AWS", "EC2", "VPC", "ECS", "Fargate", "ECR", "Systems Manager", "Terraform", "Docker", "GitHub Actions", "Nginx", "Cloudflare"
     ],
     databases: [
         "MySQL", "Redis", "Elasticsearch", "SQLite", "HyperDB", "Valkey"
