@@ -131,6 +131,20 @@
                         </span>
                     </div>
                 </div>
+
+                <!-- System Internals -->
+                <div
+                    class="bg-gray-800/50 backdrop-blur-md rounded-2xl p-8 shadow-2xl border border-gray-700 hover:border-gray-600 transition-all duration-300">
+                    <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+                        <span class="text-blue-500">#</span> System Internals
+                    </h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span v-for="skill in skills.internals" :key="skill"
+                            class="px-4 py-2 rounded-full bg-gray-900/50 text-gray-300 font-medium hover:bg-blue-900/40 hover:text-blue-300 border border-gray-700 transition-colors cursor-default">
+                            {{ skill }}
+                        </span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -164,6 +178,9 @@ const skills = {
     ],
     integrations: [
         "Stripe", "Plaid", "PayPal", "SendGrid", "Resend"
+    ],
+    internals: [
+        "Concurrency", "Memory Management", "Multithreading", "SIMD", "Low-level Optimization"
     ]
 }
 </script>
