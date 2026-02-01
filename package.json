@@ -5,7 +5,7 @@
   "description": "Afaan Bilal's Portfolio",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && copy dist\\index.html dist\\404.html",
     "preview": "vite preview"
   },
   "dependencies": {
