@@ -1,6 +1,6 @@
 <template>
     <nav class="fixed top-0 w-full z-50 transition-all duration-300"
-        :class="{ 'bg-white/80 backdrop-blur-md shadow-md py-2': scrolled, 'bg-transparent py-4': !scrolled }">
+        :class="{ 'bg-white/80 backdrop-blur-md shadow-md py-2 text-gray-800': scrolled, 'bg-transparent py-4 text-gray-200': !scrolled }">
         <div class="container mx-auto px-6 flex justify-between items-center">
 
             <!-- Logo / Brand -->
@@ -23,7 +23,7 @@
             <!-- Desktop Links -->
             <div class="hidden md:flex space-x-1">
                 <a v-for="(link, index) in links" :key="index" :href="link.to"
-                    class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:text-purple-600 hover:bg-purple-50 transition-all">
+                    class="px-3 py-2 rounded-lg text-sm font-medium hover:text-purple-600 hover:bg-purple-50 transition-all">
                     {{ link.text }}
                 </a>
             </div>
