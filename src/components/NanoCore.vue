@@ -89,8 +89,8 @@
                                         </button>
                                     </div>
                                 </div>
-                                <div ref="codeContainer"
-                                    class="bg-gray-900 p-4 rounded-lg border border-gray-800 text-gray-300 font-mono text-sm leading-relaxed overflow-x-auto transition-[height] duration-300 ease-in-out"
+                                <div class="bg-gray-900 p-4 rounded-lg border border-gray-800 text-gray-300 font-mono text-sm leading-relaxed overflow-x-auto transition-[height] duration-300 ease-in-out"
+                                    style="interpolate-size: allow-keywords; height: auto;"
                                     v-html="examples[activeTab].code">
                                 </div>
                             </div>
@@ -114,29 +114,9 @@
 </template>
 
 <script setup>
-import { ref, watch, nextTick } from 'vue';
+import { ref } from 'vue';
 
 const activeTab = ref('abcde');
-const codeContainer = ref(null);
-
-watch(activeTab, async () => {
-    if (codeContainer.value) {
-        // Lock height to current
-        codeContainer.value.style.height = `${codeContainer.value.scrollHeight}px`;
-
-        await nextTick();
-
-        // Transition to new height
-        codeContainer.value.style.height = `${codeContainer.value.scrollHeight}px`;
-
-        // Reset to auto after transition
-        setTimeout(() => {
-            if (codeContainer.value) {
-                codeContainer.value.style.height = 'auto';
-            }
-        }, 300);
-    }
-});
 
 const examples = {
     abcde: {
