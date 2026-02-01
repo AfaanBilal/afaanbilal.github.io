@@ -1,5 +1,5 @@
 <template>
-    <section id="open-source" class="container mx-auto px-4 py-16 md:p-10 scroll-mt-12">
+    <section id="open-source" ref="sectionRef" class="container mx-auto px-4 py-16 md:p-10 scroll-mt-12">
         <div class="text-center mb-12">
             <h2
                 class="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 mb-4 animate-fade-in-up">
@@ -117,7 +117,9 @@ const excludeNames = ["AfaanBilal", "afaanbilal.github.io", "musings", "amx-infi
 
 const showAll = ref(false)
 
-onMounted(async () => {
+const sectionRef = ref(null)
+
+const fetchRepos = async () => {
     try {
         loading.value = true
         const userReposPromise = fetch('https://api.github.com/users/AfaanBilal/repos?per_page=100').then(r => r.json())
@@ -135,6 +137,19 @@ onMounted(async () => {
         error.value = true
     } finally {
         loading.value = false
+    }
+}
+
+onMounted(() => {
+    const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+            fetchRepos()
+            observer.disconnect()
+        }
+    }, { threshold: 0.1 })
+
+    if (sectionRef.value) {
+        observer.observe(sectionRef.value)
     }
 })
 

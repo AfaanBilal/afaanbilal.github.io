@@ -30,8 +30,10 @@ import HyperDB from '../components/HyperDB.vue'
 import DesktopApps from '../components/DesktopApps.vue'
 import QuickLinks from '../components/QuickLinks.vue'
 import NanoCore from '../components/NanoCore.vue'
-import OpenSource from '../components/OpenSource.vue'
 import Skills from '../components/Skills.vue'
 import Contact from '../components/Contact.vue'
 import Footer from '../components/Footer.vue'
+import { defineAsyncComponent } from 'vue'
+
+const OpenSource = defineAsyncComponent(() => import('../components/OpenSource.vue'))
 </script>
