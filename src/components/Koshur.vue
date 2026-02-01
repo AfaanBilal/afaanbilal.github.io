@@ -12,7 +12,7 @@
                         <div class="text-orange-400 font-bold uppercase tracking-wider text-sm mb-1">Featured Project
                         </div>
                         <p class="text-orange-200 italic text-lg">Preserving culture through code — the first language
-                            that thinks in کٲشُر (Koshur).</p>
+                            that thinks in <span class="text-white font-bold not-italic">کٲشُر</span> (Koshur).</p>
                     </div>
                     <h2 class="text-5xl font-black mb-6 tracking-tight">Koshur</h2>
                     <p class="text-xl text-orange-100 mb-8 leading-relaxed">
