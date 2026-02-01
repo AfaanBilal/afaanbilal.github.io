@@ -80,19 +80,39 @@
                             <!-- Assembly Code Snippet -->
                             <div>
                                 <div class="text-gray-500 mb-2"># Example Assembly Code</div>
-                                <div class="bg-gray-900 p-4 rounded-lg border border-gray-800 text-gray-300">
-                                    <span class="text-purple-400">MOV</span> R1, <span
-                                        class="text-orange-400">0x05</span> <span class="text-gray-600">; Load 5 into
-                                        R1</span><br>
-                                    <span class="text-purple-400">MOV</span> R2, <span
-                                        class="text-orange-400">0x03</span> <span class="text-gray-600">; Load 3 into
-                                        R2</span><br>
-                                    <span class="text-purple-400">ADD</span> R1, R2 <span class="text-gray-600">; R1 =
-                                        R1 + R2</span><br>
-                                    <span class="text-purple-400">OUT</span> R1 <span class="text-gray-600">; Output
-                                        result</span><br>
-                                    <span class="text-purple-400">HLT</span> <span class="text-gray-600">; Halt
-                                        execution</span>
+                                <div
+                                    class="bg-gray-900 p-4 rounded-lg border border-gray-800 text-gray-300 font-mono text-sm leading-relaxed">
+                                    <span class="text-gray-500">; Prints ABCDE</span><br>
+                                    <span class="text-yellow-400">start:</span><br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                    <span class="text-purple-400">LDI</span> R0, <span class="text-orange-400">65</span>
+                                    &nbsp;&nbsp;<span class="text-gray-600">; Load 'A' (65)</span><br>
+
+                                    <span class="text-yellow-400">loop:</span><br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">PRINT</span> R0
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                    <span class="text-gray-600">; Print char</span><br>
+
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">INC</span> R0
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <span class="text-gray-600">; Next char</span><br>
+                                    <br>
+
+                                    &nbsp;&nbsp;&nbsp;
+                                    <span class="text-purple-400">LDI</span> R1, <span class="text-orange-400">70</span>
+                                    &nbsp;&nbsp;&nbsp;<span class="text-gray-600">; Load 'F' (70)</span><br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">SUB</span> R1, R0
+                                    &nbsp;&nbsp;&nbsp;<span class="text-gray-600">; Diff</span><br>
+
+                                    &nbsp;&nbsp;&nbsp;
+                                    <span class="text-purple-400">JNZ</span> <span class="text-yellow-400">loop</span>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                    <span class="text-gray-600">; Loop if diff != 0</span><br>
+                                    <br>
+
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">HLT</span>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <span class="text-gray-600">; Stop</span>
                                 </div>
                             </div>
 
