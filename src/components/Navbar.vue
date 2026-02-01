@@ -52,7 +52,9 @@ const isOpen = ref(false)
 const scrolled = ref(false)
 
 const handleScroll = () => {
-    scrolled.value = window.scrollY > 20
+    window.requestAnimationFrame(() => {
+        scrolled.value = window.scrollY > 20
+    })
 }
 
 onMounted(() => {
