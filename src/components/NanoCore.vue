@@ -9,9 +9,11 @@
         <div class="container mx-auto px-6 relative z-10">
             <div class="flex flex-col lg:flex-row items-start gap-12">
                 <div class="lg:w-1/2">
-                    <div
-                        class="inline-block px-3 py-1 bg-green-500/20 border border-green-400/50 rounded-full text-green-300 text-sm font-bold mb-6">
-                        Featured Project
+                    <div class="mb-6 pl-4 border-l-4 border-green-500">
+                        <div class="text-green-400 font-bold uppercase tracking-wider text-sm mb-1">Featured Project
+                        </div>
+                        <p class="text-gray-400 italic text-lg">A deep dive into systems design under extreme
+                            constraints.</p>
                     </div>
                     <h2
                         class="text-5xl font-black mb-6 tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-600">
