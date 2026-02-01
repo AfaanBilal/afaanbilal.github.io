@@ -7,6 +7,9 @@
                     Research Projects
                 </span>
             </h2>
+            <p class="text-center text-gray-400 text-lg mb-12 -mt-8 max-w-2xl mx-auto">
+                Applied research exploring systems, performance, and real-world constraints.
+            </p>
 
             <div class="space-y-12">
                 <!-- ATVACS -->
