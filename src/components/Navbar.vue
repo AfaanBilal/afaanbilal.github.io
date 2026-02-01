@@ -10,9 +10,9 @@
             </a>
 
             <!-- Mobile Menu Button -->
-            <button @click="isOpen = !isOpen"
+            <button @click="isOpen = !isOpen" :aria-expanded="isOpen" aria-label="Toggle navigation menu"
                 class="md:hidden text-gray-700 hover:text-purple-600 focus:outline-none transition-colors">
-                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                     <path v-if="!isOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M4 6h16M4 12h16M4 18h16" />
                     <path v-else stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

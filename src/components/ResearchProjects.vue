@@ -87,11 +87,12 @@
 
                             <div
                                 class="absolute w-80 h-56 rounded-xl shadow-2xl border-2 border-gray-700/50 transform -rotate-6 -translate-x-6 z-10 group-hover/images:rotate-0 group-hover/images:scale-105 transition-all duration-500">
-                                <img src="/research/pcu/pcu_snow.png" class="w-full h-full object-cover rounded-xl" />
+                                <img src="/research/pcu/pcu_snow.png" class="w-full h-full object-cover rounded-xl"
+                                    alt="Road showing snow conditions" />
                             </div>
                             <div
                                 class="absolute w-80 h-56 rounded-xl shadow-2xl border-2 border-gray-700/50 transform rotate-6 translate-x-6 translate-y-4 z-0 group-hover/images:rotate-0 group-hover/images:translate-x-0 group-hover:translate-y-0 group-hover:scale-105 transition-all duration-500">
-                                <img src="/research/pcu/pcu_potholes.png"
+                                <img src="/research/pcu/pcu_potholes.png" alt="Road showing potholes"
                                     class="w-full h-full object-cover rounded-xl" />
                             </div>
                         </div>
