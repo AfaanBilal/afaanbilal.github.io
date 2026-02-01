@@ -132,138 +132,139 @@ const examples = {
         label: 'ABCDE',
         code: `<span class="text-gray-500">; Prints ABCDE</span><br>
 <span class="text-yellow-400">start:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R0 <span class="text-orange-400">65</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R0 <span class="text-orange-400">65</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Init R0 with 'A'</span><br>
 <span class="text-yellow-400">loop:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">PRINT</span> R0<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">INC</span> R0<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R1 <span class="text-orange-400">70</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">SUB</span> R1 R0<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">JNZ</span> <span class="text-yellow-400">loop</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">PRINT</span> R0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Print character</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">INC</span> R0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Increment char</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R1 <span class="text-orange-400">70</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Load 'F' limit</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">SUB</span> R1 R0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Check vs limit</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">JNZ</span> <span class="text-yellow-400">loop</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Repeat if != 0</span><br>
 <br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">HLT</span>`
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">HLT</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Stop execution</span>`
     },
     counter: {
         label: 'Counter',
         code: `<span class="text-gray-500">; Count down from 5</span><br>
-<span class="text-purple-400">LDI</span> R0 <span class="text-orange-400">5</span><br>
-<span class="text-purple-400">LDI</span> R1 <span class="text-orange-400">1</span><br>
-<span class="text-purple-400">LDI</span> R2 <span class="text-orange-400">48</span><br>
-<span class="text-purple-400">ADD</span> R2 R0<br>
-<span class="text-purple-400">PRINT</span> R2<br>
-<span class="text-purple-400">SUB</span> R0 R1<br>
-<span class="text-purple-400">JZ</span> <span class="text-orange-400">0x13</span><br>
-<span class="text-purple-400">JMP</span> <span class="text-orange-400">0x06</span><br>
-<span class="text-purple-400">HLT</span>`
+<span class="text-yellow-400">start:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R0 <span class="text-orange-400">5</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Start count at 5</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R1 <span class="text-orange-400">1</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Decrement step</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R2 <span class="text-orange-400">48</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; ASCII '0' offset</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">ADD</span> R2 R0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Convert to char</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">PRINT</span> R2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Print digit</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">SUB</span> R0 R1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Decrement count</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">JZ</span> <span class="text-orange-400">0x13</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Jump if zero</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">JMP</span> <span class="text-orange-400">0x06</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Loop back</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">HLT</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Stop execution</span>`
     },
     fib: {
         label: 'Fibonacci',
-        code: `<span class="text-gray-500">; Print the fibonacci sequence (first 7)</span><br>
+        code: `<span class="text-gray-500">; Print Fibonacci seq (first 7)</span><br>
 <span class="text-yellow-400">start:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R0 <span class="text-orange-400">0</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R1 <span class="text-orange-400">1</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R2 <span class="text-orange-400">7</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R0 <span class="text-orange-400">0</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Fib(0)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R1 <span class="text-orange-400">1</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Fib(1)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R2 <span class="text-orange-400">7</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Terms to print</span><br>
 <span class="text-yellow-400">loop:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R4 <span class="text-orange-400">48</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">ADD</span> R4 R0<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">PRINT</span> R4<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R4 <span class="text-orange-400">48</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; ASCII '0' offset</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">ADD</span> R4 R0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Convert to char</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">PRINT</span> R4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Print term</span><br>
 <br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">MOV</span> R3 R1<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">ADD</span> R1 R0<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">MOV</span> R0 R3<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">DEC</span> R2<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">JNZ</span> <span class="text-yellow-400">loop</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">MOV</span> R3 R1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Temp = Next</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">ADD</span> R1 R0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Next += Curr</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">MOV</span> R0 R3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Curr = Temp</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">DEC</span> R2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Decrement count</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">JNZ</span> <span class="text-yellow-400">loop</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Repeat if > 0</span><br>
 <span class="text-yellow-400">end:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">HLT</span>`
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">HLT</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Stop execution</span>`
     },
     rect: {
         label: 'Rectangle',
         code: `<span class="text-gray-500">; Draw a rectangle</span><br>
 <span class="text-yellow-400">start:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R10 <span class="text-orange-400">10</span> <span class="text-gray-600">; newline</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R11 <span class="text-orange-400">32</span> <span class="text-gray-600">; space</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R12 <span class="text-orange-400">35</span> <span class="text-gray-600">; #</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R10 <span class="text-orange-400">10</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Newline char</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R11 <span class="text-orange-400">32</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Space char</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R12 <span class="text-orange-400">35</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; '#' char</span><br>
 <br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R2 <span class="text-orange-400">20</span> <span class="text-gray-600">; width</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R3 <span class="text-orange-400">6</span>  <span class="text-gray-600">; height</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R4 <span class="text-orange-400">2</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R2 <span class="text-orange-400">20</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Width</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R3 <span class="text-orange-400">6</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Height</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R4 <span class="text-orange-400">2</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Border thickness</span><br>
 <br>
 <span class="text-yellow-400">print_border_line:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">PRINT</span> R12<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">DEC</span> R2<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">JNZ</span> <span class="text-yellow-400">print_border_line</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">DEC</span> R4<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">JZ</span> <span class="text-yellow-400">end</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">PRINT</span> R10<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">PRINT</span> R12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Print border</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">DEC</span> R2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Decr width</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">JNZ</span> <span class="text-yellow-400">print_border_line</span>&nbsp;&nbsp;<span class="text-gray-500">; Loop width</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">DEC</span> R4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Decr thickness</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">JZ</span> <span class="text-yellow-400">end</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Stop if done</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">PRINT</span> R10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Print newline</span><br>
 <br>
 <span class="text-yellow-400">print_line:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">PRINT</span> R12<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">PRINT</span> R12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Left border</span><br>
 <br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R2 <span class="text-orange-400">18</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R2 <span class="text-orange-400">18</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Inner width</span><br>
 <span class="text-yellow-400">print_line_space:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">PRINT</span> R11<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">DEC</span> R2<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">JNZ</span> <span class="text-yellow-400">print_line_space</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">PRINT</span> R12<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">PRINT</span> R10<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">DEC</span> R3<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">JNZ</span> <span class="text-yellow-400">print_line</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">PRINT</span> R11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Print space</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">DEC</span> R2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Decr inner</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">JNZ</span> <span class="text-yellow-400">print_line_space</span>&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Loop inner</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">PRINT</span> R12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Right border</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">PRINT</span> R10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Newline</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">DEC</span> R3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Decr height</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">JNZ</span> <span class="text-yellow-400">print_line</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Loop rows</span><br>
 <br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R2 <span class="text-orange-400">20</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">JMP</span> <span class="text-yellow-400">print_border_line</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R2 <span class="text-orange-400">20</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Reset width</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">JMP</span> <span class="text-yellow-400">print_border_line</span>&nbsp;&nbsp;<span class="text-gray-500">; Bottom border</span><br>
 <br>
 <span class="text-yellow-400">end:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">HLT</span>`
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">HLT</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Stop</span>`
     },
     funcs: {
         label: 'Functions',
         code: `<span class="text-yellow-400">start:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R0 <span class="text-orange-400">2</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R1 <span class="text-orange-400">4</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">CALL</span> <span class="text-yellow-400">raise_to_power</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">CALL</span> <span class="text-yellow-400">print_digits</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R0 <span class="text-orange-400">2</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Base = 2</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R1 <span class="text-orange-400">4</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Exponent = 4</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">CALL</span> <span class="text-yellow-400">raise_to_power</span>&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Calc 2^4</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">CALL</span> <span class="text-yellow-400">print_digits</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Print 16</span><br>
 <br>
 <span class="text-yellow-400">end:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">HLT</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">HLT</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Stop</span><br>
 <br>
 <span class="text-yellow-400">raise_to_power:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">PUSH</span> R10<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">PUSH</span> R11<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">PUSH</span> R10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Save R10</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">PUSH</span> R11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Save R11</span><br>
 <br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">MOV</span> R10 R0<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">MOV</span> R11 R1<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">DEC</span> R11<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">MOV</span> R10 R0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Copy base</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">MOV</span> R11 R1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Copy exp</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">DEC</span> R11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Exp - 1</span><br>
 <span class="text-yellow-400">multiply:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">MUL</span> R10 R0<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">DEC</span> R11<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">JNZ</span> <span class="text-yellow-400">multiply</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">MUL</span> R10 R0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Result *= Base</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">DEC</span> R11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Decr loop</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">JNZ</span> <span class="text-yellow-400">multiply</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Repeat</span><br>
 <br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">MOV</span> R0 R10<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">MOV</span> R0 R10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Store result</span><br>
 <br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">POP</span> R11<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">POP</span> R10<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">RET</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">POP</span> R11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Restore R11</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">POP</span> R10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Restore R10</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">RET</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Return</span><br>
 <br>
 <span class="text-yellow-400">print_digits:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">PUSH</span> R10<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">PUSH</span> R11<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">PUSH</span> R10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Save R10</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">PUSH</span> R11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Save R11</span><br>
 <br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">MOV</span> R10 R0<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">DIVI</span> R10 <span class="text-orange-400">10</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">MOV</span> R10 R0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Copy num</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">DIVI</span> R10 <span class="text-orange-400">10</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Get tens</span><br>
 <br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">JZ</span> <span class="text-yellow-400">unit_digit</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">JZ</span> <span class="text-yellow-400">unit_digit</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Skip if 0</span><br>
 <br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">ADDI</span> R10 <span class="text-orange-400">48</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">PRINT</span> R10<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">ADDI</span> R10 <span class="text-orange-400">48</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; ASCII conv</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">PRINT</span> R10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Print tens</span><br>
 <br>
 <span class="text-yellow-400">unit_digit:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">MOV</span> R11 R0<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">MODI</span> R11 <span class="text-orange-400">10</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">ADDI</span> R11 <span class="text-orange-400">48</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">PRINT</span> R11<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">MOV</span> R11 R0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Copy num</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">MODI</span> R11 <span class="text-orange-400">10</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Get units</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">ADDI</span> R11 <span class="text-orange-400">48</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; ASCII conv</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">PRINT</span> R11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Print units</span><br>
 <br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">POP</span> R11<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">POP</span> R10<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">RET</span>`
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">POP</span> R11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Restore R11</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">POP</span> R10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Restore R10</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">RET</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Return</span>`
     }
 };
 </script>
