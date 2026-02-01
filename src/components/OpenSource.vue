@@ -149,7 +149,7 @@ const displayedRepos = computed(() => {
     if (showAll.value) {
         return sortedRepos.value
     }
-    return sortedRepos.value.slice(0, 9)
+    return sortedRepos.value.slice(0, 12)
 })
 
 function toTitleCase(str) {
