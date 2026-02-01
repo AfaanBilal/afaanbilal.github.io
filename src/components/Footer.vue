@@ -1,10 +1,10 @@
 <template>
     <footer class="bg-gray-50 dark:bg-gray-900 py-16 border-t border-gray-200 dark:border-gray-800">
         <div class="container mx-auto px-6 text-center">
-            <router-link :to="{ name: 'home' }"
+            <a href="/"
                 class="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600 mb-6 inline-block">
                 Afaan Bilal
-            </router-link>
+            </a>
 
             <p class="text-gray-600 dark:text-gray-400 mb-10 max-w-lg mx-auto">
                 Innovating at the intersection of web technology and software engineering.
