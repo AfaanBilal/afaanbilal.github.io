@@ -12,7 +12,7 @@
 
             <div class="flex justify-center space-x-8 mb-12">
                 <a href="https://github.com/AfaanBilal" target="_blank" rel="noopener" aria-label="GitHub Profile"
-                    class="text-gray-400 hover:text-purple-600 transition-colors transform hover:scale-110">
+                    class="text-gray-600 dark:text-gray-400 hover:text-purple-600 transition-colors transform hover:scale-110">
                     <span class="sr-only">GitHub</span>
                     <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path
@@ -21,7 +21,7 @@
                 </a>
                 <a href="https://linkedin.com/in/AfaanBilal" target="_blank" rel="noopener"
                     aria-label="LinkedIn Profile"
-                    class="text-gray-400 hover:text-blue-600 transition-colors transform hover:scale-110">
+                    class="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors transform hover:scale-110">
                     <span class="sr-only">LinkedIn</span>
                     <svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path
@@ -29,7 +29,7 @@
                     </svg>
                 </a>
                 <a href="mailto:hello@afaan.dev" aria-label="Email Me"
-                    class="text-gray-400 hover:text-pink-600 transition-colors transform hover:scale-110">
+                    class="text-gray-600 dark:text-gray-400 hover:text-pink-600 transition-colors transform hover:scale-110">
                     <span class="sr-only">Email</span>
                     <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

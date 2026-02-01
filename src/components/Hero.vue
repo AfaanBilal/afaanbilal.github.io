@@ -110,8 +110,8 @@
                         </div>
 
                         <!-- Float Element 1 -->
-                        <a href="https://github.com/AfaanBilal" target="_blank" rel="noopener"
-                            aria-label="GitHub Profile"
+                        <a href="https://github.com/AfaanBilal" target="_blank" rel="noopener" aria-hidden="true"
+                            tabindex="-1"
                             class="absolute top-0 right-0 bg-white dark:bg-gray-800 p-3 rounded-2xl shadow-xl animate-float hover:scale-110 transition-transform cursor-pointer">
                             <svg class="w-8 h-8 text-[#8034cc]" fill="currentColor" viewBox="0 0 24 24"
                                 aria-hidden="true">

@@ -1,18 +1,20 @@
 <template>
   <div class="home">
-    <Hero />
     <Navbar />
-    <Courses />
-    <NanoCore />
-    <HyperDB />
-    <OpenSource />
-    <Skills />
-    <ResearchProjects />
-    <WebApps />
-    <MobileApps />
-    <DesktopApps />
-    <QuickLinks />
-    <Contact />
+    <main>
+      <Hero />
+      <Courses />
+      <NanoCore />
+      <HyperDB />
+      <OpenSource />
+      <Skills />
+      <ResearchProjects />
+      <WebApps />
+      <MobileApps />
+      <DesktopApps />
+      <QuickLinks />
+      <Contact />
+    </main>
     <Footer />
   </div>
 </template>
