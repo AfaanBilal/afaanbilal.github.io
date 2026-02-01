@@ -183,7 +183,13 @@ async function loadRepo() {
 
         const readmeRes = await fetch('https://raw.githubusercontent.com/' + repoFullName.value + '/' + repo.value.default_branch + '/README.md')
         const readmeText = await readmeRes.text()
-        readmeHtml.value = converter.makeHtml(readmeText)
+        let html = converter.makeHtml(readmeText)
+
+        // Fix relative image paths to point to raw.githubusercontent.com
+        html = html.replace(/src="(?!(?:https?:\/\/|\/\/|data:))([^"]+)"/g,
+            `src="https://raw.githubusercontent.com/${repoFullName.value}/${repo.value.default_branch}/$1"`)
+
+        readmeHtml.value = html
 
         try {
             const licenseRes = await fetch('https://raw.githubusercontent.com/' + repoFullName.value + '/' + repo.value.default_branch + '/LICENSE')
