@@ -69,6 +69,7 @@ const links = [
     { text: 'Courses', to: '/#courses' },
     { text: 'NanoCore', to: '/#nanocore' },
     { text: 'HyperDB', to: '/#hyperdb' },
+    { text: 'Koshur', to: '/#koshur' },
     { text: 'Open Source', to: '/#open-source' },
     { text: 'Skills', to: '/#skills' },
     { text: 'Research', to: '/#research-projects' },
