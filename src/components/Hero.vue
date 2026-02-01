@@ -55,7 +55,7 @@
                     <!-- Social Proof / Mini Stats -->
                     <!-- Social Links & Email -->
                     <div
-                        class="pt-8 flex flex-wrap items-center justify-center md:justify-start gap-6 text-gray-500 dark:text-gray-400">
+                        class="py-8 md:pt-8 flex flex-wrap items-center justify-center md:justify-start gap-6 text-gray-500 dark:text-gray-400">
                         <a href="mailto:hello@afaan.dev"
                             class="flex items-center gap-2 group hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
                             <div
