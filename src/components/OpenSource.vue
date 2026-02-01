@@ -31,16 +31,16 @@
         </div>
 
         <!-- Repository Grid -->
-        <div v-else class="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-12">
+        <div v-else class="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-12">
             <div v-for="(r, index) in displayedRepos" :key="r.id"
-                class="group relative bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 overflow-hidden"
+                class="group relative bg-white dark:bg-gray-800 rounded-xl p-4 border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 overflow-hidden"
                 :style="{ animationDelay: `${index * 50}ms` }">
                 <!-- Gradient Border/Glow Effect on Hover -->
                 <div
                     class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-purple-500 to-pink-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left">
                 </div>
 
-                <div class="flex justify-between items-start mb-4">
+                <div class="flex justify-between items-start mb-2">
                     <router-link :to="{ name: 'project', params: { name: r.full_name } }"
                         class="group-hover:text-purple-600 transition-colors">
                         <h4 class="text-xl font-bold text-gray-800 dark:text-gray-100 truncate"
@@ -59,7 +59,7 @@
                     </div>
                 </div>
 
-                <p class="text-gray-600 dark:text-gray-400 text-sm mb-6 line-clamp-3 h-[60px]">
+                <p class="text-gray-600 dark:text-gray-400 text-sm mb-3 line-clamp-3 h-[60px] leading-snug">
                     {{ r.description || 'No description available for this project.' }}
                 </p>
 
