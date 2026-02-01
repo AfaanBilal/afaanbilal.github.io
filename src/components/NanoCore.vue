@@ -79,47 +79,31 @@
 
                             <!-- Assembly Code Snippet -->
                             <div>
-                                <div class="text-gray-500 mb-2"># Example Assembly Code</div>
-                                <div
-                                    class="bg-gray-900 p-4 rounded-lg border border-gray-800 text-gray-300 font-mono text-sm leading-relaxed">
-                                    <span class="text-gray-500">; Prints ABCDE</span><br>
-                                    <span class="text-yellow-400">start:</span><br>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;
-                                    <span class="text-purple-400">LDI</span> R0, <span class="text-orange-400">65</span>
-                                    &nbsp;&nbsp;<span class="text-gray-600">; Load 'A' (65)</span><br>
-
-                                    <span class="text-yellow-400">loop:</span><br>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">PRINT</span> R0
-                                    &nbsp;&nbsp;&nbsp;&nbsp;
-                                    <span class="text-gray-600">; Print char</span><br>
-
-                                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">INC</span> R0
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <span class="text-gray-600">; Next char</span><br>
-                                    <br>
-
-                                    &nbsp;&nbsp;&nbsp;
-                                    <span class="text-purple-400">LDI</span> R1, <span class="text-orange-400">70</span>
-                                    &nbsp;&nbsp;&nbsp;<span class="text-gray-600">; Load 'F' (70)</span><br>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">SUB</span> R1, R0
-                                    &nbsp;&nbsp;&nbsp;<span class="text-gray-600">; Diff</span><br>
-
-                                    &nbsp;&nbsp;&nbsp;
-                                    <span class="text-purple-400">JNZ</span> <span class="text-yellow-400">loop</span>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;
-                                    <span class="text-gray-600">; Loop if diff != 0</span><br>
-                                    <br>
-
-                                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">HLT</span>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <span class="text-gray-600">; Stop</span>
+                                <div class="flex justify-between items-end mb-2">
+                                    <div class="text-gray-500"># Example Assembly Code</div>
+                                    <div class="flex gap-2">
+                                        <button v-for="(example, key) in examples" :key="key" @click="activeTab = key"
+                                            class="px-3 py-1 rounded text-xs font-bold transition-colors border cursor-pointer"
+                                            :class="activeTab === key ? 'bg-green-500/20 text-green-300 border-green-500/50' : 'bg-gray-800 text-gray-500 border-gray-700 hover:border-gray-600 hover:text-gray-400'">
+                                            {{ example.label }}
+                                        </button>
+                                    </div>
+                                </div>
+                                <div ref="codeContainer"
+                                    class="bg-gray-900 p-4 rounded-lg border border-gray-800 text-gray-300 font-mono text-sm leading-relaxed overflow-x-auto transition-[height] duration-300 ease-in-out"
+                                    v-html="examples[activeTab].code">
                                 </div>
                             </div>
 
-                            <!-- Install Command -->
+                            <!-- Run Command -->
                             <div class="mt-4">
                                 <div class="text-gray-500 mb-2"># Run Emulator</div>
-                                <div class="text-gray-300">cargo <span class="text-green-400">run</span> --release</div>
+                                <div
+                                    class="bg-gray-900 p-4 rounded-lg border border-gray-800 text-gray-300 font-mono text-sm leading-relaxed">
+                                    <div class="text-gray-300">
+                                        cargo <span class="text-green-400">run</span> --release
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -128,3 +112,169 @@
         </div>
     </section>
 </template>
+
+<script setup>
+import { ref, watch, nextTick } from 'vue';
+
+const activeTab = ref('abcde');
+const codeContainer = ref(null);
+
+watch(activeTab, async () => {
+    if (codeContainer.value) {
+        // Lock height to current
+        codeContainer.value.style.height = `${codeContainer.value.scrollHeight}px`;
+
+        await nextTick();
+
+        // Transition to new height
+        codeContainer.value.style.height = `${codeContainer.value.scrollHeight}px`;
+
+        // Reset to auto after transition
+        setTimeout(() => {
+            if (codeContainer.value) {
+                codeContainer.value.style.height = 'auto';
+            }
+        }, 300);
+    }
+});
+
+const examples = {
+    abcde: {
+        label: 'ABCDE',
+        code: `<span class="text-gray-500">; Prints ABCDE</span><br>
+<span class="text-yellow-400">start:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R0 <span class="text-orange-400">65</span><br>
+<span class="text-yellow-400">loop:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">PRINT</span> R0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">INC</span> R0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R1 <span class="text-orange-400">70</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">SUB</span> R1 R0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">JNZ</span> <span class="text-yellow-400">loop</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">HLT</span>`
+    },
+    counter: {
+        label: 'Counter',
+        code: `<span class="text-gray-500">; Count down from 5</span><br>
+<span class="text-purple-400">LDI</span> R0 <span class="text-orange-400">5</span><br>
+<span class="text-purple-400">LDI</span> R1 <span class="text-orange-400">1</span><br>
+<span class="text-purple-400">LDI</span> R2 <span class="text-orange-400">48</span><br>
+<span class="text-purple-400">ADD</span> R2 R0<br>
+<span class="text-purple-400">PRINT</span> R2<br>
+<span class="text-purple-400">SUB</span> R0 R1<br>
+<span class="text-purple-400">JZ</span> <span class="text-orange-400">0x13</span><br>
+<span class="text-purple-400">JMP</span> <span class="text-orange-400">0x06</span><br>
+<span class="text-purple-400">HLT</span>`
+    },
+    fib: {
+        label: 'Fibonacci',
+        code: `<span class="text-gray-500">; Print the fibonacci sequence (first 7)</span><br>
+<span class="text-yellow-400">start:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R0 <span class="text-orange-400">0</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R1 <span class="text-orange-400">1</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R2 <span class="text-orange-400">7</span><br>
+<span class="text-yellow-400">loop:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R4 <span class="text-orange-400">48</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">ADD</span> R4 R0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">PRINT</span> R4<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">MOV</span> R3 R1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">ADD</span> R1 R0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">MOV</span> R0 R3<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">DEC</span> R2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">JNZ</span> <span class="text-yellow-400">loop</span><br>
+<span class="text-yellow-400">end:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">HLT</span>`
+    },
+    rect: {
+        label: 'Rectangle',
+        code: `<span class="text-gray-500">; Draw a rectangle</span><br>
+<span class="text-yellow-400">start:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R10 <span class="text-orange-400">10</span> <span class="text-gray-600">; newline</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R11 <span class="text-orange-400">32</span> <span class="text-gray-600">; space</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R12 <span class="text-orange-400">35</span> <span class="text-gray-600">; #</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R2 <span class="text-orange-400">20</span> <span class="text-gray-600">; width</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R3 <span class="text-orange-400">6</span>  <span class="text-gray-600">; height</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R4 <span class="text-orange-400">2</span><br>
+<br>
+<span class="text-yellow-400">print_border_line:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">PRINT</span> R12<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">DEC</span> R2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">JNZ</span> <span class="text-yellow-400">print_border_line</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">DEC</span> R4<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">JZ</span> <span class="text-yellow-400">end</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">PRINT</span> R10<br>
+<br>
+<span class="text-yellow-400">print_line:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">PRINT</span> R12<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R2 <span class="text-orange-400">18</span><br>
+<span class="text-yellow-400">print_line_space:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">PRINT</span> R11<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">DEC</span> R2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">JNZ</span> <span class="text-yellow-400">print_line_space</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">PRINT</span> R12<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">PRINT</span> R10<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">DEC</span> R3<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">JNZ</span> <span class="text-yellow-400">print_line</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R2 <span class="text-orange-400">20</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">JMP</span> <span class="text-yellow-400">print_border_line</span><br>
+<br>
+<span class="text-yellow-400">end:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">HLT</span>`
+    },
+    funcs: {
+        label: 'Functions',
+        code: `<span class="text-yellow-400">start:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R0 <span class="text-orange-400">2</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R1 <span class="text-orange-400">4</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">CALL</span> <span class="text-yellow-400">raise_to_power</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">CALL</span> <span class="text-yellow-400">print_digits</span><br>
+<br>
+<span class="text-yellow-400">end:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">HLT</span><br>
+<br>
+<span class="text-yellow-400">raise_to_power:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">PUSH</span> R10<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">PUSH</span> R11<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">MOV</span> R10 R0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">MOV</span> R11 R1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">DEC</span> R11<br>
+<span class="text-yellow-400">multiply:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">MUL</span> R10 R0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">DEC</span> R11<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">JNZ</span> <span class="text-yellow-400">multiply</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">MOV</span> R0 R10<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">POP</span> R11<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">POP</span> R10<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">RET</span><br>
+<br>
+<span class="text-yellow-400">print_digits:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">PUSH</span> R10<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">PUSH</span> R11<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">MOV</span> R10 R0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">DIVI</span> R10 <span class="text-orange-400">10</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">JZ</span> <span class="text-yellow-400">unit_digit</span><br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">ADDI</span> R10 <span class="text-orange-400">48</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">PRINT</span> R10<br>
+<br>
+<span class="text-yellow-400">unit_digit:</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">MOV</span> R11 R0<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">MODI</span> R11 <span class="text-orange-400">10</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">ADDI</span> R11 <span class="text-orange-400">48</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">PRINT</span> R11<br>
+<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">POP</span> R11<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">POP</span> R10<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">RET</span>`
+    }
+};
+</script>
