@@ -42,9 +42,8 @@
 
                 <div class="flex justify-between items-start mb-2">
                     <router-link :to="{ name: 'project', params: { name: r.full_name } }"
-                        class="group-hover:text-purple-600 transition-colors">
-                        <h4 class="text-xl font-bold text-gray-800 dark:text-gray-100 truncate"
-                            :title="toTitleCase(r.name.split('-').join(' '))">
+                        class="group-hover:text-purple-400 transition-colors text-gray-800 dark:text-gray-100">
+                        <h4 class="text-xl font-bold truncate" :title="toTitleCase(r.name.split('-').join(' '))">
                             {{ toTitleCase(r.name.split('-').join(' ')) }}
                         </h4>
                     </router-link>
