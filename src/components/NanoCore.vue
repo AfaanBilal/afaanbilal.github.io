@@ -7,7 +7,7 @@
         </div>
 
         <div class="container mx-auto px-6 relative z-10">
-            <div class="flex flex-col lg:flex-row items-center gap-12">
+            <div class="flex flex-col lg:flex-row items-start gap-12">
                 <div class="lg:w-1/2">
                     <div
                         class="inline-block px-3 py-1 bg-green-500/20 border border-green-400/50 rounded-full text-green-300 text-sm font-bold mb-6">
@@ -82,16 +82,15 @@
                                 <div class="flex justify-between items-end mb-2">
                                     <div class="text-gray-500"># Example Assembly Code</div>
                                     <div class="flex gap-2">
-                                        <button v-for="(example, key) in examples" :key="key" @click="activeTab = key"
+                                        <button v-for="(example, key) in examples" :key="key" @click="switchTab(key)"
                                             class="px-3 py-1 rounded text-xs font-bold transition-colors border cursor-pointer"
                                             :class="activeTab === key ? 'bg-green-500/20 text-green-300 border-green-500/50' : 'bg-gray-800 text-gray-500 border-gray-700 hover:border-gray-600 hover:text-gray-400'">
                                             {{ example.label }}
                                         </button>
                                     </div>
                                 </div>
-                                <div class="bg-gray-900 p-4 rounded-lg border border-gray-800 text-gray-300 font-mono text-sm leading-relaxed overflow-x-auto transition-[height] duration-300 ease-in-out"
-                                    style="interpolate-size: allow-keywords; height: auto;"
-                                    v-html="examples[activeTab].code">
+                                <div class="bg-gray-900 p-4 rounded-lg border border-gray-800 text-gray-300 font-mono text-sm leading-relaxed overflow-x-auto"
+                                    style="view-transition-name: code-container;" v-html="examples[activeTab].code">
                                 </div>
                             </div>
 
@@ -117,6 +116,16 @@
 import { ref } from 'vue';
 
 const activeTab = ref('abcde');
+
+const switchTab = (key) => {
+    if (!document.startViewTransition) {
+        activeTab.value = key;
+        return;
+    }
+    document.startViewTransition(() => {
+        activeTab.value = key;
+    });
+};
 
 const examples = {
     abcde: {
