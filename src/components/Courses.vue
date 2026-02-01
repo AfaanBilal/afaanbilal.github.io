@@ -20,7 +20,7 @@
                 class="group bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col">
                 <div class="relative h-48 overflow-hidden">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
-                    <img :src="course.image" :alt="course.title"
+                    <img :src="course.image" :alt="course.title" loading="lazy"
                         class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" />
                     <div class="absolute bottom-4 left-4 z-20">
                         <span

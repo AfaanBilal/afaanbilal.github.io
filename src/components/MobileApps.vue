@@ -10,8 +10,8 @@
                 <div v-for="app in apps" :key="app.name"
                     class="group bg-gray-800/50 backdrop-blur-md rounded-xl shadow-lg border border-gray-700 overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col">
                     <div class="relative overflow-hidden h-48 bg-black/40 border-b border-gray-800">
-                        <img :src="app.image" :alt="app.name"
-                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" />
+                        <img :src="app.image" :alt="app.name" loading="lazy"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                         <div
                             class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
                             <a :href="app.link" target="_blank" rel="noopener"

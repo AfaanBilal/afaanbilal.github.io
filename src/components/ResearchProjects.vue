@@ -25,20 +25,22 @@
                             <div
                                 class="absolute w-64 h-40 rounded-lg shadow-2xl border-2 border-gray-700/50 transform -rotate-12 -translate-y-16 -translate-x-12 group-hover/images:rotate-0 group-hover/images:scale-105 group-hover/images:z-10 transition-all duration-500 cursor-pointer">
                                 <img :src="atvcasImages[0]" class="w-full h-full object-cover rounded-lg"
-                                    alt="Detection" />
+                                    alt="Detection" loading="lazy" />
                             </div>
                             <div
                                 class="absolute w-64 h-40 rounded-lg shadow-2xl border-2 border-gray-700/50 transform rotate-6 -translate-y-8 translate-x-10 group-hover/images:rotate-0 group-hover/images:scale-105 group-hover/images:z-10 transition-all duration-500 cursor-pointer">
                                 <img :src="atvcasImages[1]" class="w-full h-full object-cover rounded-lg"
-                                    alt="Classification" />
+                                    alt="Classification" loading="lazy" />
                             </div>
                             <div
                                 class="absolute w-64 h-40 rounded-lg shadow-2xl border-2 border-gray-700/50 transform -rotate-3 translate-y-12 -translate-x-4 group-hover/images:rotate-0 group-hover/images:scale-105 group-hover/images:z-10 transition-all duration-500 cursor-pointer">
-                                <img :src="atvcasImages[2]" class="w-full h-full object-cover rounded-lg" alt="RTL" />
+                                <img :src="atvcasImages[2]" class="w-full h-full object-cover rounded-lg" alt="RTL"
+                                    loading="lazy" />
                             </div>
                             <div
                                 class="absolute w-64 h-40 rounded-lg shadow-2xl border-2 border-gray-700/50 transform rotate-12 translate-y-24 translate-x-8 group-hover/images:rotate-0 group-hover/images:scale-105 group-hover/images:z-10 transition-all duration-500 cursor-pointer">
-                                <img :src="atvcasImages[3]" class="w-full h-full object-cover rounded-lg" alt="VD" />
+                                <img :src="atvcasImages[3]" class="w-full h-full object-cover rounded-lg" alt="VD"
+                                    loading="lazy" />
                             </div>
                         </div>
 
@@ -88,12 +90,12 @@
                             <div
                                 class="absolute w-80 h-56 rounded-xl shadow-2xl border-2 border-gray-700/50 transform -rotate-6 -translate-x-6 z-10 group-hover/images:rotate-0 group-hover/images:scale-105 transition-all duration-500">
                                 <img src="/research/pcu/pcu_snow.png" class="w-full h-full object-cover rounded-xl"
-                                    alt="Road showing snow conditions" />
+                                    alt="Road showing snow conditions" loading="lazy" />
                             </div>
                             <div
                                 class="absolute w-80 h-56 rounded-xl shadow-2xl border-2 border-gray-700/50 transform rotate-6 translate-x-6 translate-y-4 z-0 group-hover/images:rotate-0 group-hover/images:translate-x-0 group-hover:translate-y-0 group-hover:scale-105 transition-all duration-500">
                                 <img src="/research/pcu/pcu_potholes.png" alt="Road showing potholes"
-                                    class="w-full h-full object-cover rounded-xl" />
+                                    class="w-full h-full object-cover rounded-xl" loading="lazy" />
                             </div>
                         </div>
 

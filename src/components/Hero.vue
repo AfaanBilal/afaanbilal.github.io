@@ -105,7 +105,7 @@
                         <!-- Profile Image -->
                         <div
                             class="absolute inset-4 rounded-full overflow-hidden shadow-2xl border-4 border-white dark:border-gray-800 ring-4 ring-purple-100 dark:ring-purple-900/50">
-                            <img src="/assets/afaan.png" alt="Afaan Bilal"
+                            <img src="/assets/afaan.png" alt="Afaan Bilal" fetchpriority="high"
                                 class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-700" />
                         </div>
 
