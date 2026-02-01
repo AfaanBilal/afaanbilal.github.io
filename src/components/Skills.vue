@@ -10,7 +10,12 @@
                 <div
                     class="bg-gray-800/50 backdrop-blur-md rounded-2xl p-8 shadow-2xl border border-gray-700 hover:border-gray-600 transition-all duration-300">
                     <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-                        <span class="text-green-400">#</span> Security & Compliance
+                        <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+                            </path>
+                        </svg> Security & Compliance
                     </h3>
                     <div class="flex flex-wrap gap-3">
                         <span v-for="skill in skills.security" :key="skill"
@@ -24,7 +29,11 @@
                 <div
                     class="bg-gray-800/50 backdrop-blur-md rounded-2xl p-8 shadow-2xl border border-gray-700 hover:border-gray-600 transition-all duration-300">
                     <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-                        <span class="text-purple-400">#</span> Languages
+                        <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                        </svg> Languages
                     </h3>
                     <div class="flex flex-wrap gap-3">
                         <span v-for="skill in skills.languages" :key="skill"
@@ -38,7 +47,12 @@
                 <div
                     class="bg-gray-800/50 backdrop-blur-md rounded-2xl p-8 shadow-2xl border border-gray-700 hover:border-gray-600 transition-all duration-300">
                     <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-                        <span class="text-pink-400">#</span> Backend
+                        <svg class="w-6 h-6 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01">
+                            </path>
+                        </svg> Backend
                     </h3>
                     <div class="flex flex-wrap gap-3">
                         <span v-for="skill in skills.backend" :key="skill"
@@ -52,7 +66,12 @@
                 <div
                     class="bg-gray-800/50 backdrop-blur-md rounded-2xl p-8 shadow-2xl border border-gray-700 hover:border-gray-600 transition-all duration-300">
                     <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-                        <span class="text-cyan-400">#</span> Frontend
+                        <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                            </path>
+                        </svg> Frontend
                     </h3>
                     <div class="flex flex-wrap gap-3">
                         <span v-for="skill in skills.frontend" :key="skill"
@@ -66,7 +85,11 @@
                 <div
                     class="bg-gray-800/50 backdrop-blur-md rounded-2xl p-8 shadow-2xl border border-gray-700 hover:border-gray-600 transition-all duration-300">
                     <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-                        <span class="text-teal-400">#</span> AI
+                        <svg class="w-6 h-6 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg> AI
                     </h3>
                     <div class="flex flex-wrap gap-3">
                         <span v-for="skill in skills.ai" :key="skill"
@@ -80,7 +103,12 @@
                 <div
                     class="bg-gray-800/50 backdrop-blur-md rounded-2xl p-8 shadow-2xl border border-gray-700 hover:border-gray-600 transition-all duration-300">
                     <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-                        <span class="text-orange-400">#</span> Cloud & DevOps
+                        <svg class="w-6 h-6 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z">
+                            </path>
+                        </svg> Cloud & DevOps
                     </h3>
                     <div class="flex flex-wrap gap-3">
                         <span v-for="skill in skills.cloud" :key="skill"
@@ -94,7 +122,12 @@
                 <div
                     class="bg-gray-800/50 backdrop-blur-md rounded-2xl p-8 shadow-2xl border border-gray-700 hover:border-gray-600 transition-all duration-300">
                     <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-                        <span class="text-yellow-400">#</span> Databases
+                        <svg class="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4">
+                            </path>
+                        </svg> Databases
                     </h3>
                     <div class="flex flex-wrap gap-3">
                         <span v-for="skill in skills.databases" :key="skill"
@@ -108,7 +141,12 @@
                 <div
                     class="bg-gray-800/50 backdrop-blur-md rounded-2xl p-8 shadow-2xl border border-gray-700 hover:border-gray-600 transition-all duration-300">
                     <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-                        <span class="text-red-400">#</span> Architecture & Leadership
+                        <svg class="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
+                            </path>
+                        </svg> Architecture & Leadership
                     </h3>
                     <div class="flex flex-wrap gap-3">
                         <span v-for="skill in skills.architecture" :key="skill"
@@ -122,7 +160,12 @@
                 <div
                     class="bg-gray-800/50 backdrop-blur-md rounded-2xl p-8 shadow-2xl border border-gray-700 hover:border-gray-600 transition-all duration-300">
                     <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-                        <span class="text-indigo-400">#</span> Integrations & SaaS
+                        <svg class="w-6 h-6 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z">
+                            </path>
+                        </svg> Integrations & SaaS
                     </h3>
                     <div class="flex flex-wrap gap-3">
                         <span v-for="skill in skills.integrations" :key="skill"
@@ -136,7 +179,12 @@
                 <div
                     class="bg-gray-800/50 backdrop-blur-md rounded-2xl p-8 shadow-2xl border border-gray-700 hover:border-gray-600 transition-all duration-300">
                     <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-                        <span class="text-blue-500">#</span> System Internals
+                        <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z">
+                            </path>
+                        </svg> System Internals
                     </h3>
                     <div class="flex flex-wrap gap-3">
                         <span v-for="skill in skills.internals" :key="skill"
