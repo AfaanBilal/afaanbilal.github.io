@@ -31,8 +31,10 @@
 
                     <p
                         class="text-xl text-gray-600 dark:text-gray-300 max-w-lg mx-auto md:mx-0 leading-relaxed text-justify md:text-left">
-                        Building secure, SOC 2 Type II certified SaaS platforms serving millions. Specializing in
-                        architecture, cloud infrastructure, and security.
+                        Building secure, SOC 2 Type II certified SaaS platforms serving millions.
+                        <br class="hidden md:block" />
+                        <span class="font-semibold block mt-2">Architecture &bull; Cloud Infrastructure &bull;
+                            Security</span>
                     </p>
 
                     <div>
