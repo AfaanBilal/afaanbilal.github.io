@@ -7,8 +7,8 @@
             </h2>
             <p class="text-lg text-gray-600 dark:text-gray-500 max-w-2xl mx-auto animate-fade-in-up delay-100">
                 Contributing to the community with
-                <span class="font-bold text-purple-600">{{ sortedRepos.length }}</span>
-                repositories and counting.
+                <span class="font-bold text-purple-600">{{ sortedRepos.length }}+</span>
+                repositories.
             </p>
         </div>
 
