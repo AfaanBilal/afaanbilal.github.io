@@ -79,9 +79,9 @@
 
                             <!-- Assembly Code Snippet -->
                             <div>
-                                <div class="flex justify-between items-end mb-2">
+                                <div class="flex flex-col sm:flex-row justify-between sm:items-end gap-4 mb-2">
                                     <div class="text-gray-500"># Example Assembly Code</div>
-                                    <div class="flex gap-2">
+                                    <div class="flex flex-wrap gap-2">
                                         <button v-for="(example, key) in examples" :key="key" @click="switchTab(key)"
                                             class="px-3 py-1 rounded text-xs font-bold transition-colors border cursor-pointer"
                                             :class="activeTab === key ? 'bg-green-500/20 text-green-300 border-green-500/50' : 'bg-gray-800 text-gray-500 border-gray-700 hover:border-gray-600 hover:text-gray-400'">
