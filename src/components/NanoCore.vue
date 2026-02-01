@@ -115,7 +115,7 @@
 <script setup>
 import { ref } from 'vue';
 
-const activeTab = ref('abcde');
+const activeTab = ref('fib');
 
 const switchTab = (key) => {
     if (!document.startViewTransition) {
