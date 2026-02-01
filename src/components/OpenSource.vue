@@ -1,5 +1,5 @@
 <template>
-    <section id="open-source" class="container mx-auto px-4 py-16 md:p-10">
+    <section id="open-source" class="container mx-auto px-4 py-16 md:p-10 scroll-mt-12">
         <div class="text-center mb-12">
             <h2
                 class="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600 mb-4 animate-fade-in-up">

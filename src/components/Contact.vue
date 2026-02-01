@@ -1,5 +1,5 @@
 <template>
-  <section id="contact" class="container mx-auto px-4 py-24">
+  <section id="contact" class="container mx-auto px-4 py-24 scroll-mt-12">
     <div
       class="max-w-4xl mx-auto bg-white dark:bg-gray-800 rounded-3xl shadow-2xl overflow-hidden border border-gray-100 dark:border-gray-700">
       <div class="grid md:grid-cols-2">

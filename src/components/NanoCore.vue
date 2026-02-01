@@ -1,5 +1,6 @@
 <template>
-    <section id="nanocore" class="py-20 bg-gradient-to-br from-gray-900 to-black text-white relative overflow-hidden">
+    <section id="nanocore"
+        class="py-20 bg-gradient-to-br from-gray-900 to-black text-white relative overflow-hidden scroll-mt-12">
         <!-- Background Patterns -->
         <div
             class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/circuit-board.png')]">
