@@ -46,7 +46,7 @@
                             class="px-8 py-4 bg-[#8034cc] text-white font-bold rounded-xl hover:bg-[#6a2aa8] transition-all transform hover:-translate-y-1 shadow-lg shadow-purple-500/30">
                             Get in Touch
                         </a>
-                        <a href="#research-projects"
+                        <a href="#open-source"
                             class="px-8 py-4 bg-white dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 font-bold rounded-xl hover:bg-gray-50 dark:hover:bg-gray-700 transition-all transform hover:-translate-y-1 shadow-sm hover:shadow-md">
                             View Work
                         </a>
