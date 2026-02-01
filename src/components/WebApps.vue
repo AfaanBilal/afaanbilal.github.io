@@ -24,8 +24,9 @@
                         <h3
                             class="text-xl font-bold text-gray-800 dark:text-white group-hover:text-blue-600 transition-colors">
                             {{ app.name }}</h3>
-                        <span class="text-xs text-blue-500 bg-blue-50 dark:bg-blue-900/20 px-2 py-1 rounded">{{
-                            app.domain }}</span>
+                        <span
+                            class="text-xs text-blue-600 bg-blue-50 dark:bg-blue-900/20 dark:text-blue-400 px-2 py-1 rounded">{{
+                                app.domain }}</span>
                     </div>
 
                     <div class="flex flex-wrap gap-2 mt-auto pt-4">

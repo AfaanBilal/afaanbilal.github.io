@@ -48,7 +48,7 @@
                         </h3>
                     </router-link>
 
-                    <div class="flex items-center gap-1 text-yellow-500 bg-yellow-50 dark:bg-yellow-900/20 px-2 py-0.5 rounded-full text-sm font-medium"
+                    <div class="flex items-center gap-1 text-yellow-600 bg-yellow-50 dark:bg-yellow-900/20 dark:text-yellow-400 px-2 py-0.5 rounded-full text-sm font-medium"
                         v-if="r.stargazers_count > 0">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
                             <path

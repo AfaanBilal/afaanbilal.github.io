@@ -42,7 +42,7 @@
 
                     <div class="flex gap-4">
                         <a href="https://github.com/AfaanBilal/NanoCore" target="_blank" rel="noopener"
-                            class="px-8 py-4 bg-green-600 text-white font-bold rounded-xl hover:bg-green-500 transition-transform hover:-translate-y-1 shadow-lg shadow-green-500/20">
+                            class="px-8 py-4 bg-green-700 text-white font-bold rounded-xl hover:bg-green-600 transition-transform hover:-translate-y-1 shadow-lg shadow-green-500/20">
                             View on GitHub
                         </a>
                         <a href="https://deepwiki.com/AfaanBilal/NanoCore" target="_blank" rel="noopener"
@@ -84,7 +84,7 @@
                                     <div class="flex flex-wrap gap-2">
                                         <button v-for="(example, key) in examples" :key="key" @click="switchTab(key)"
                                             class="px-3 py-1 rounded text-xs font-bold transition-colors border cursor-pointer"
-                                            :class="activeTab === key ? 'bg-green-500/20 text-green-300 border-green-500/50' : 'bg-gray-800 text-gray-500 border-gray-700 hover:border-gray-600 hover:text-gray-400'">
+                                            :class="activeTab === key ? 'bg-green-500/20 text-green-300 border-green-500/50' : 'bg-gray-800 text-gray-400 border-gray-700 hover:border-gray-600 hover:text-gray-300'">
                                             {{ example.label }}
                                         </button>
                                     </div>

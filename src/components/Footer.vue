@@ -38,7 +38,7 @@
                 </a>
             </div>
 
-            <div class="text-gray-500 text-sm">
+            <div class="text-gray-600 dark:text-gray-400 text-sm">
                 &copy; {{ new Date().getFullYear() }} Afaan Bilal. All rights reserved.
             </div>
         </div>
