@@ -1,3 +1,11 @@
 @import "tailwindcss";
 
-.bg-hardware { background: linear-gradient(90deg, #3471cc 0%,#25a48b 100%); color: white; }
+.bg-hardware {
+    background: linear-gradient(90deg, #3471cc 0%, #25a48b 100%);
+    color: white;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 0;
+}

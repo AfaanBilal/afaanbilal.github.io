@@ -24,11 +24,9 @@ const router = createRouter({
         if (to.hash) {
             return {
                 el: to.hash,
-                behavior: 'smooth',
-                top: 50,
             }
         }
-        return { top: 0 }
+        return { top: 0, behavior: 'instant' }
     }
 })
 
