@@ -24,13 +24,15 @@
                     <h1
                         class="text-4xl md:text-6xl lg:text-7xl font-black text-gray-900 dark:text-white tracking-tight leading-tight">
                         Hi, I'm <br class="hidden md:block" />
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#8034cc] to-[#991a79]">Afaan
-                            Bilal</span>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#8034cc] to-[#991a79]">
+                            Afaan Bilal
+                        </span>
                     </h1>
 
-                    <p class="text-xl text-gray-600 dark:text-gray-300 max-w-lg mx-auto md:mx-0 leading-relaxed">
-                        I build high-performance applications, conduct advanced research, and contribute to the
-                        open-source community.
+                    <p
+                        class="text-xl text-gray-600 dark:text-gray-300 max-w-lg mx-auto md:mx-0 leading-relaxed text-justify md:text-left">
+                        Building secure, SOC 2 Type II certified SaaS platforms serving millions. Specializing in
+                        architecture, cloud infrastructure, and security.
                     </p>
 
                     <div>

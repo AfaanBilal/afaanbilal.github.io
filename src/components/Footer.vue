@@ -7,7 +7,7 @@
             </a>
 
             <p class="text-gray-600 dark:text-gray-400 mb-10 max-w-lg mx-auto">
-                Innovating at the intersection of web technology and software engineering.
+                Building scalable, high-performance software for the modern web.
             </p>
 
             <div class="flex justify-center space-x-8 mb-12">
