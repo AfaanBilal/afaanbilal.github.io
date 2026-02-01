@@ -7,7 +7,7 @@
         <div class="flex justify-center mb-10">
             <a href="/assets/API-Server-Development-in-Rust-with-Actix-Web-SQLx-and-JWT.pdf"
                 class="inline-flex items-center gap-2 px-6 py-3 bg-orange-50 text-orange-700 rounded-full border border-orange-200 hover:bg-orange-100 transition-colors font-medium">
-                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
                 </svg>
@@ -24,7 +24,7 @@
                         class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" />
                     <div class="absolute bottom-4 left-4 z-20">
                         <span
-                            class="px-2 py-1 bg-orange-500 text-white text-xs font-bold rounded uppercase tracking-wide">Udemy</span>
+                            class="px-2 py-1 bg-orange-500 text-gray-900 text-xs font-bold rounded uppercase tracking-wide">Udemy</span>
                     </div>
                 </div>
 
@@ -37,10 +37,10 @@
                     </p>
 
                     <div
-                        class="mt-auto pt-4 border-t border-gray-100 dark:border-gray-700 text-orange-600 font-bold group-hover:text-orange-700 flex items-center gap-1">
+                        class="mt-auto pt-4 border-t border-gray-100 dark:border-gray-700 text-orange-700 font-bold group-hover:text-orange-800 flex items-center gap-1">
                         Enroll Now
                         <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none"
-                            viewBox="0 0 24 24" stroke="currentColor">
+                            viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M17 8l4 4m0 0l-4 4m4-4H3" />
                         </svg>

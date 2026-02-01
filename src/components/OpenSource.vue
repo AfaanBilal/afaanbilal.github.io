@@ -43,9 +43,9 @@
                 <div class="flex justify-between items-start mb-2">
                     <router-link :to="{ name: 'project', params: { name: r.full_name } }"
                         class="group-hover:text-purple-400 transition-colors text-gray-800 dark:text-gray-100">
-                        <h4 class="text-xl font-bold truncate" :title="toTitleCase(r.name.split('-').join(' '))">
+                        <h3 class="text-xl font-bold truncate" :title="toTitleCase(r.name.split('-').join(' '))">
                             {{ toTitleCase(r.name.split('-').join(' ')) }}
-                        </h4>
+                        </h3>
                     </router-link>
 
                     <div class="flex items-center gap-1 text-yellow-500 bg-yellow-50 dark:bg-yellow-900/20 px-2 py-0.5 rounded-full text-sm font-medium"
@@ -74,7 +74,7 @@
                         <a v-if="r.homepage" :href="r.homepage" target="_blank" rel="noopener"
                             class="text-gray-500 hover:text-purple-600 transition-colors flex items-center gap-1 group/link">
                             Demo
-                            <svg xmlns="http://www.w3.org/2000/svg"
+                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
                                 class="h-3 w-3 transition-transform group-hover/link:translate-x-0.5" fill="none"
                                 viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -84,7 +84,7 @@
                         <a :href="r.html_url" target="_blank" rel="noopener"
                             class="text-gray-500 hover:text-purple-600 transition-colors flex items-center gap-1 group/link">
                             Code
-                            <svg xmlns="http://www.w3.org/2000/svg"
+                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
                                 class="h-4 w-4 transition-transform group-hover/link:-translate-y-0.5"
                                 viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd"

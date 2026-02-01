@@ -14,16 +14,18 @@
                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                         <div
                             class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
-                            <a :href="app.link" target="_blank" rel="noopener"
+                            <a :href="app.link" target="_blank" rel="noopener" aria-label="View Source Code"
                                 class="p-3 bg-white rounded-full text-black hover:bg-green-500 hover:text-white transition-colors transform hover:scale-110">
-                                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                    aria-hidden="true">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                                 </svg>
                             </a>
                             <a v-if="app.playStore" :href="app.playStore" target="_blank" rel="noopener"
+                                aria-label="View on Play Store"
                                 class="p-3 bg-white rounded-full text-black hover:bg-green-500 hover:text-white transition-colors transform hover:scale-110">
-                                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                     <path
                                         d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.84L14.5,13.41L16.81,15.12M14.5,10.59L6.05,2.15L16.81,8.88L14.5,10.59M18.27,9.96L19.66,10.79V10.8L18.27,11.63L15.65,9.69L18.27,9.96Z" />
                                 </svg>
