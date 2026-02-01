@@ -77,6 +77,18 @@
                                 </div>
                             </div>
 
+                            <!-- Run Command -->
+                            <div class="mt-4">
+                                <div class="text-gray-400 mb-2"># Run from Source</div>
+                                <div
+                                    class="bg-black p-4 rounded-lg border border-gray-800 text-gray-300 font-mono text-sm leading-relaxed">
+                                    <div class="text-gray-300">
+                                        node <span class="text-green-400">koshur.js</span>
+                                        {{ examples[activeTab].filename }}
+                                    </div>
+                                </div>
+                            </div>
+
                             <!-- Output -->
                             <div>
                                 <div class="text-gray-400 mb-2"># Output</div>
@@ -110,6 +122,7 @@ const switchTab = (key) => {
 const examples = {
     hello: {
         label: 'Hello World',
+        filename: 'hello.k',
         code: `<span class="text-purple-400">wan</span>(<span class="text-green-400">"Hello, World!"</span>);<br>
 <br>
 <span class="text-purple-400">wan</span>(<span class="text-green-400">"Koshur programming language!"</span>);`,
@@ -118,6 +131,7 @@ Koshur programming language!`
     },
     math: {
         label: 'Arithmetic',
+        filename: 'arithmetic.k',
         code: `<span class="text-purple-400">wan</span>(<span class="text-green-400">"1 + 2 ="</span>, <span class="text-orange-400">1</span> + <span class="text-orange-400">2</span>);<br>
 <span class="text-purple-400">wan</span>(<span class="text-green-400">"1 - 2 ="</span>, <span class="text-orange-400">1</span> - <span class="text-orange-400">2</span>);<br>
 <span class="text-purple-400">wan</span>(<span class="text-green-400">"1 * 2 ="</span>, <span class="text-orange-400">1</span> * <span class="text-orange-400">2</span>);<br>
@@ -129,6 +143,7 @@ Koshur programming language!`
     },
     cond: {
         label: 'Control Flow',
+        filename: 'control-flow.k',
         code: `<span class="text-blue-400">x</span> = <span class="text-orange-400">10</span>;<br>
 <br>
 <span class="text-yellow-400">yeli</span> <span class="text-blue-400">x</span> > <span class="text-orange-400">5</span> {<br>
@@ -140,6 +155,7 @@ Koshur programming language!`
     },
     fact: {
         label: 'Factorial',
+        filename: 'factorial.k',
         code: `<span class="text-blue-400">factorial</span> = <span class="text-yellow-400">banav</span>(<span class="text-blue-400">n</span>) {<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-yellow-400">yeli</span> <span class="text-blue-400">n</span> < <span class="text-orange-400">0</span> {<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-orange-400">0</span>;<br>
