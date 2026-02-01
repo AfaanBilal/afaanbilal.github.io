@@ -44,28 +44,54 @@
         </div>
 
         <div class="p-10 bg-white dark:bg-gray-800">
-          <form action="#" method="POST" class="space-y-6">
+          <div v-if="sent"
+            class="h-full flex flex-col items-center justify-center text-center p-6 bg-green-50 dark:bg-green-900/20 rounded-2xl animate-fade-in">
+            <div class="w-16 h-16 bg-green-100 dark:bg-green-800 rounded-full flex items-center justify-center mb-4">
+              <svg class="w-8 h-8 text-green-600 dark:text-green-400" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Message Sent!</h3>
+            <p class="text-gray-600 dark:text-gray-300">Thanks for reaching out. I'll get back to you shortly.</p>
+            <button @click="sent = false"
+              class="mt-6 text-purple-600 dark:text-purple-400 font-medium hover:underline cursor-pointer">
+              Send another message
+            </button>
+          </div>
+
+          <form v-else @submit.prevent="sendMessage" class="space-y-6">
             <div>
               <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Name</label>
-              <input type="text"
+              <input type="text" v-model="name" required
                 class="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:ring-2 focus:ring-purple-500 outline-none transition-all text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500"
                 placeholder="John Doe">
             </div>
             <div>
               <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email</label>
-              <input type="email"
+              <input type="email" v-model="email" required
                 class="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:ring-2 focus:ring-purple-500 outline-none transition-all text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500"
                 placeholder="john@example.com">
             </div>
             <div>
               <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Message</label>
-              <textarea rows="4"
+              <textarea rows="4" v-model="message" required
                 class="w-full px-4 py-3 rounded-lg bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 focus:ring-2 focus:ring-purple-500 outline-none transition-all text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500"
                 placeholder="Tell me about your project..."></textarea>
             </div>
-            <button type="submit"
-              class="w-full py-4 bg-gray-900 text-white font-bold rounded-lg hover:bg-gray-800 transition-colors transform hover:-translate-y-1 shadow-lg">
-              Send Message
+            <button type="submit" :disabled="sending"
+              class="w-full py-4 bg-gray-900 text-white font-bold rounded-lg hover:bg-gray-800 transition-colors transform hover:-translate-y-1 shadow-lg disabled:opacity-70 disabled:cursor-not-allowed flex justify-center items-center cursor-pointer">
+              <span v-if="sending" class="flex items-center gap-2">
+                <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none"
+                  viewBox="0 0 24 24">
+                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                  <path class="opacity-75" fill="currentColor"
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                  </path>
+                </svg>
+                Sending...
+              </span>
+              <span v-else>Send Message</span>
             </button>
           </form>
         </div>
@@ -73,3 +99,31 @@
     </div>
   </section>
 </template>
+
+<script setup>
+import { ref } from 'vue'
+
+const name = ref('')
+const email = ref('')
+const message = ref('')
+const sent = ref(false)
+const sending = ref(false)
+
+function sendMessage() {
+  sending.value = true
+  fetch('https://script.google.com/macros/s/AKfycbyr7UVSG3tsVPZagH79m1MMvBVaKDj6WNdWiCKvS8ws4pkRX9wm5cOAIr3ZCq20btgS/exec', {
+    method: 'post',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: 'name=' + encodeURIComponent(name.value) + '&email=' + encodeURIComponent(email.value) + '&message=' + encodeURIComponent(message.value)
+  }).then(r => r.text()).then((d) => {
+    if (d == 'success') {
+      name.value = ''
+      email.value = ''
+      message.value = ''
+      sent.value = true
+    }
+  }).finally(() => {
+    sending.value = false
+  })
+}
+</script>
