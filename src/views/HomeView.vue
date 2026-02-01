@@ -6,6 +6,7 @@
       <Courses />
       <NanoCore />
       <HyperDB />
+      <Koshur />
       <OpenSource />
       <Skills />
       <ResearchProjects />
@@ -28,6 +29,7 @@ import MobileApps from '../components/MobileApps.vue'
 import WebApps from '../components/WebApps.vue'
 import HyperDB from '../components/HyperDB.vue'
 import DesktopApps from '../components/DesktopApps.vue'
+import Koshur from '../components/Koshur.vue'
 import QuickLinks from '../components/QuickLinks.vue'
 import NanoCore from '../components/NanoCore.vue'
 import Skills from '../components/Skills.vue'
