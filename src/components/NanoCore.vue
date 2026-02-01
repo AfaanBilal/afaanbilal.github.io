@@ -132,49 +132,49 @@ const examples = {
         label: 'ABCDE',
         code: `<span class="text-gray-500">; Prints ABCDE</span><br>
 <span class="text-yellow-400">start:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R0 <span class="text-orange-400">65</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Init R0 with 'A'</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R0 <span class="text-orange-400">65</span>&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Init R0 with 'A'</span><br>
 <span class="text-yellow-400">loop:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">PRINT</span> R0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Print character</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">INC</span> R0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Increment char</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R1 <span class="text-orange-400">70</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Load 'F' limit</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">SUB</span> R1 R0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Check vs limit</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">JNZ</span> <span class="text-yellow-400">loop</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Repeat if != 0</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">PRINT</span> R0&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Print character</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">INC</span> R0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Increment char</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R1 <span class="text-orange-400">70</span>&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Load 'F' limit</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">SUB</span> R1 R0&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Check vs limit</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">JNZ</span> <span class="text-yellow-400">loop</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Repeat if != 0</span><br>
 <br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">HLT</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Stop execution</span>`
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">HLT</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Stop execution</span>`
     },
     counter: {
         label: 'Counter',
         code: `<span class="text-gray-500">; Count down from 5</span><br>
 <span class="text-yellow-400">start:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R0 <span class="text-orange-400">5</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Start count at 5</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R1 <span class="text-orange-400">1</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Decrement step</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R2 <span class="text-orange-400">48</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; ASCII '0' offset</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">ADD</span> R2 R0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Convert to char</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">PRINT</span> R2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Print digit</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">SUB</span> R0 R1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Decrement count</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">JZ</span> <span class="text-orange-400">0x13</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Jump if zero</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">JMP</span> <span class="text-orange-400">0x06</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Loop back</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">HLT</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Stop execution</span>`
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R0 <span class="text-orange-400">5</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Start count at 5</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R1 <span class="text-orange-400">1</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Decrement step</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R2 <span class="text-orange-400">48</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; ASCII '0' offset</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">ADD</span> R2 R0&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Convert to char</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">PRINT</span> R2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Print digit</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">SUB</span> R0 R1&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Decrement count</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">JZ</span> <span class="text-orange-400">0x13</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Jump if zero</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">JMP</span> <span class="text-orange-400">0x06</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Loop back</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">HLT</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Stop execution</span>`
     },
     fib: {
         label: 'Fibonacci',
         code: `<span class="text-gray-500">; Print Fibonacci seq (first 7)</span><br>
 <span class="text-yellow-400">start:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R0 <span class="text-orange-400">0</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Fib(0)</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R1 <span class="text-orange-400">1</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Fib(1)</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R2 <span class="text-orange-400">7</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Terms to print</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R0 <span class="text-orange-400">0</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Fib(0)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R1 <span class="text-orange-400">1</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Fib(1)</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R2 <span class="text-orange-400">7</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Terms to print</span><br>
 <span class="text-yellow-400">loop:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R4 <span class="text-orange-400">48</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; ASCII '0' offset</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">ADD</span> R4 R0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Convert to char</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">PRINT</span> R4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Print term</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R4 <span class="text-orange-400">48</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; ASCII '0' offset</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">ADD</span> R4 R0&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Convert to char</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">PRINT</span> R4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Print term</span><br>
 <br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">MOV</span> R3 R1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Temp = Next</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">ADD</span> R1 R0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Next += Curr</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">MOV</span> R0 R3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Curr = Temp</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">DEC</span> R2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Decrement count</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">JNZ</span> <span class="text-yellow-400">loop</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Repeat if > 0</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">MOV</span> R3 R1&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Temp = Next</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">ADD</span> R1 R0&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Next += Curr</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">MOV</span> R0 R3&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Curr = Temp</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">DEC</span> R2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Decrement count</span><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">JNZ</span> <span class="text-yellow-400">loop</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Repeat if > 0</span><br>
 <span class="text-yellow-400">end:</span><br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">HLT</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Stop execution</span>`
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">HLT</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-500">; Stop execution</span>`
     },
     rect: {
         label: 'Rectangle',
