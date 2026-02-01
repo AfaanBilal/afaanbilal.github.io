@@ -9,9 +9,11 @@
         <div class="container mx-auto px-6 relative z-10">
             <div class="flex flex-col lg:flex-row items-center gap-12">
                 <div class="lg:w-1/2">
-                    <div
-                        class="inline-block px-3 py-1 bg-purple-500/30 border border-purple-400/50 rounded-full text-purple-200 text-sm font-bold mb-6">
-                        Featured Project
+                    <div class="mb-6 pl-4 border-l-4 border-purple-500">
+                        <div class="text-purple-400 font-bold uppercase tracking-wider text-sm mb-1">Featured Project
+                        </div>
+                        <p class="text-purple-200 italic text-lg">A performance-focused in-memory datastore built for
+                            simplicity and speed.</p>
                     </div>
                     <h2 class="text-5xl font-black mb-6 tracking-tight">HyperDB</h2>
                     <p class="text-xl text-purple-100 mb-8 leading-relaxed">
@@ -70,6 +72,11 @@
                                     <div class="text-2xl font-bold text-yellow-400">49,797 <span
                                             class="text-sm text-gray-400">RPS</span></div>
                                 </div>
+                            </div>
+
+                            <!-- Performance Footnote -->
+                            <div class="text-xs text-gray-500 pl-1 mb-6">
+                                Measured locally with no persistence.
                             </div>
 
                             <!-- Commands -->
