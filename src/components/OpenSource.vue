@@ -72,7 +72,7 @@
 
                     <div class="flex space-x-3 text-sm font-medium">
                         <a v-if="r.homepage" :href="r.homepage" target="_blank" rel="noopener"
-                            class="text-gray-500 hover:text-purple-600 transition-colors flex items-center gap-1 group/link">
+                            class="text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors flex items-center gap-1 group/link">
                             Demo
                             <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
                                 class="h-3 w-3 transition-transform group-hover/link:translate-x-0.5" fill="none"
@@ -82,7 +82,7 @@
                             </svg>
                         </a>
                         <a :href="r.html_url" target="_blank" rel="noopener"
-                            class="text-gray-500 hover:text-purple-600 transition-colors flex items-center gap-1 group/link">
+                            class="text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors flex items-center gap-1 group/link">
                             Code
                             <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
                                 class="h-4 w-4 transition-transform group-hover/link:-translate-y-0.5"

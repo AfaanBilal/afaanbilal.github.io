@@ -37,7 +37,7 @@
                     </p>
 
                     <div
-                        class="mt-auto pt-4 border-t border-gray-100 dark:border-gray-700 text-orange-700 font-bold group-hover:text-orange-800 flex items-center gap-1">
+                        class="mt-auto pt-4 border-t border-gray-100 dark:border-gray-700 text-orange-700 dark:text-orange-400 font-bold group-hover:text-orange-800 dark:group-hover:text-orange-300 flex items-center gap-1">
                         Enroll Now
                         <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none"
                             viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">

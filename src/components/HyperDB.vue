@@ -63,23 +63,23 @@
                                 <div class="bg-gray-800 p-4 rounded-lg border border-gray-700">
                                     <div class="text-gray-400 text-xs mb-1">Read Operations</div>
                                     <div class="text-2xl font-bold text-green-400">50,675 <span
-                                            class="text-sm text-gray-500">RPS</span></div>
+                                            class="text-sm text-gray-400">RPS</span></div>
                                 </div>
                                 <div class="bg-gray-800 p-4 rounded-lg border border-gray-700">
                                     <div class="text-gray-400 text-xs mb-1">Write Operations</div>
                                     <div class="text-2xl font-bold text-yellow-400">49,797 <span
-                                            class="text-sm text-gray-500">RPS</span></div>
+                                            class="text-sm text-gray-400">RPS</span></div>
                                 </div>
                             </div>
 
                             <!-- Commands -->
                             <div>
-                                <div class="text-gray-500 mb-2"># Run Server</div>
+                                <div class="text-gray-400 mb-2"># Run Server</div>
                                 <div class="text-purple-300">docker run <span class="text-white">--rm -it -p
                                         8765:8765</span> afaanbilal/hyperdb</div>
                             </div>
                             <div>
-                                <div class="text-gray-500 mb-2"># Install JS Client</div>
+                                <div class="text-gray-400 mb-2"># Install JS Client</div>
                                 <div class="text-purple-300">npm <span class="text-white">install</span> hyperdb-js
                                 </div>
                             </div>
