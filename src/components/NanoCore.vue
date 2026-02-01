@@ -45,6 +45,10 @@
                             class="px-8 py-4 bg-green-600 text-white font-bold rounded-xl hover:bg-green-500 transition-transform hover:-translate-y-1 shadow-lg shadow-green-500/20">
                             View on GitHub
                         </a>
+                        <a href="https://deepwiki.com/AfaanBilal/NanoCore" target="_blank" rel="noopener"
+                            class="px-8 py-4 bg-green-900/30 text-green-300 border border-green-500/30 font-bold rounded-xl hover:bg-green-900/50 transition-transform hover:-translate-y-1">
+                            Documentation
+                        </a>
                     </div>
                 </div>
 
