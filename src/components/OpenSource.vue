@@ -97,10 +97,30 @@
             </div>
         </div>
 
-        <div v-if="sortedRepos.length > 9" class="text-center">
-            <button @click="showAll = !showAll"
-                class="px-8 py-3 bg-white dark:bg-gray-800 text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 font-bold rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-all transform hover:-translate-y-1 shadow-sm hover:shadow-md cursor-pointer">
-                {{ showAll ? 'Show Less' : `Show All (${sortedRepos.length})` }}
+        <!-- Pagination Controls -->
+        <div v-if="totalPages > 1" class="flex justify-center items-center gap-2 mt-12 animate-fade-in-up">
+            <button @click="changePage(currentPage - 1)" :disabled="currentPage === 1"
+                class="p-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-500 hover:text-purple-600 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer transition-all hover:shadow-md focus:outline-none focus:ring-2 focus:ring-purple-500/50"
+                aria-label="Previous Page">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd"
+                        d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                        clip-rule="evenodd" />
+                </svg>
+            </button>
+
+            <div class="flex gap-2 items-center px-4 font-medium text-gray-600">
+                Page {{ currentPage }} of {{ totalPages }}
+            </div>
+
+            <button @click="changePage(currentPage + 1)" :disabled="currentPage === totalPages"
+                class="p-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-500 hover:text-purple-600 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer transition-all hover:shadow-md focus:outline-none focus:ring-2 focus:ring-purple-500/50"
+                aria-label="Next Page">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd"
+                        d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                        clip-rule="evenodd" />
+                </svg>
             </button>
         </div>
     </section>
@@ -114,8 +134,6 @@ const loading = ref(true)
 const error = ref(false)
 
 const excludeNames = ["AfaanBilal", "afaanbilal.github.io", "musings", "amx-infinity.github.io", "SoftSolutions"]
-
-const showAll = ref(false)
 
 const sectionRef = ref(null)
 
@@ -159,12 +177,28 @@ const sortedRepos = computed(() => {
         .sort((a, b) => b.stargazers_count - a.stargazers_count)
 })
 
+const currentPage = ref(1)
+const itemsPerPage = 12
+
+const totalPages = computed(() => Math.ceil(sortedRepos.value.length / itemsPerPage))
+
 const displayedRepos = computed(() => {
-    if (showAll.value) {
-        return sortedRepos.value
-    }
-    return sortedRepos.value.slice(0, 12)
+    const start = (currentPage.value - 1) * itemsPerPage
+    const end = start + itemsPerPage
+    return sortedRepos.value.slice(start, end)
 })
+
+const changePage = (page) => {
+    if (page >= 1 && page <= totalPages.value) {
+        currentPage.value = page
+        // smooth scroll to top of section with a little offset
+        if (sectionRef.value) {
+            const yOffset = -80 // header offset
+            const y = sectionRef.value.getBoundingClientRect().top + window.pageYOffset + yOffset
+            window.scrollTo({ top: y, behavior: 'smooth' })
+        }
+    }
+}
 
 function toTitleCase(str) {
     return str.replace(/\w\S*/g, (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase())
