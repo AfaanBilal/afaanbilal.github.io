@@ -13,7 +13,7 @@
         </div>
 
         <!-- Loading State -->
-        <div v-if="loading || isChangingPage" class="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-10">
+        <div v-if="loading || isChangingPage" class="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mb-10">
             <div v-for="n in itemsPerPage" :key="n"
                 class="border border-gray-100 rounded-xl p-4 shadow-sm animate-pulse bg-white">
 
@@ -47,7 +47,7 @@
 
         <!-- Repository Grid -->
         <div v-else class="mb-12 min-h-[500px]">
-            <div class="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+            <div class="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
                 <div v-for="(r, index) in displayedRepos" :key="r.id"
                     class="group relative bg-white dark:bg-gray-800 rounded-xl p-4 border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
                     <!-- Gradient Border/Glow Effect on Hover -->
@@ -197,7 +197,7 @@ const sortedRepos = computed(() => {
 })
 
 const currentPage = ref(1)
-const itemsPerPage = 12
+const itemsPerPage = 16
 
 const totalPages = computed(() => Math.ceil(sortedRepos.value.length / itemsPerPage))
 
