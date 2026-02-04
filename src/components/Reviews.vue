@@ -27,49 +27,42 @@
             <!-- Row 1 -->
             <div class="flex gap-6 animate-marquee w-max px-4">
                 <div v-for="(review, index) in [...firstRow, ...firstRow]" :key="`r1-${index}`"
-                    class="w-[350px] md:w-[450px] flex-shrink-0 group bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-[0_3px_10px_rgb(0,0,0,0.05)] border border-gray-100 dark:border-gray-700 hover:shadow-[0_20px_40px_rgb(0,0,0,0.1)] transition-all duration-500 relative overflow-hidden">
+                    class="w-auto min-w-[280px] max-w-[500px] flex-shrink-0 group bg-white dark:bg-gray-800 p-4 rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.05)] border border-gray-100 dark:border-gray-700 hover:shadow-[0_20px_40px_rgb(0,0,0,0.1)] transition-all duration-500 relative overflow-hidden">
 
                     <!-- Gradient Top Border -->
                     <div
                         class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500">
                     </div>
 
-                    <!-- Quote Icon -->
-                    <div
-                        class="absolute top-4 right-4 text-gray-100 dark:text-gray-700 group-hover:text-purple-50 dark:group-hover:text-gray-700 transition-colors duration-300">
-                        <svg class="w-16 h-16 transform rotate-180" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z" />
-                        </svg>
-                    </div>
-
-                    <div class="flex items-center gap-4 mb-6 relative">
-                        <div
-                            class="w-12 h-12 rounded-full bg-gradient-to-br from-indigo-100 to-purple-100 dark:from-indigo-900/50 dark:to-purple-900/50 flex items-center justify-center text-indigo-600 dark:text-indigo-300 font-bold text-xl shadow-inner">
-                            {{ getInitials(review.name) }}
+                    <div class="flex items-center justify-between mb-1.5 relative">
+                        <div class="flex items-center gap-2">
+                            <div
+                                class="w-8 h-8 rounded-full bg-gradient-to-br from-indigo-100 to-purple-100 dark:from-indigo-900/50 dark:to-purple-900/50 flex items-center justify-center text-indigo-600 dark:text-indigo-300 font-bold text-sm shadow-inner">
+                                {{ getInitials(review.name) }}
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 dark:text-gray-100 text-xs">{{ review.name }}</h4>
+                            </div>
                         </div>
-                        <div>
-                            <h4 class="font-bold text-gray-900 dark:text-gray-100 text-base">{{ review.name }}</h4>
-                            <p class="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">{{
-                                review.timeAgo }}</p>
+                        <div class="flex text-yellow-400 gap-0.5">
+                            <template v-for="n in 5" :key="n">
+                                <svg v-if="n <= Math.floor(review.rating)" class="w-3 h-3 fill-current"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                                </svg>
+                                <svg v-else class="w-3 h-3 text-gray-300 dark:text-gray-600 fill-current"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                                </svg>
+                            </template>
                         </div>
                     </div>
 
-                    <div class="flex text-yellow-400 mb-4 gap-0.5 relative">
-                        <template v-for="n in 5" :key="n">
-                            <svg v-if="n <= Math.floor(review.rating)" class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                                <path
-                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                            </svg>
-                            <svg v-else class="w-4 h-4 text-gray-300 dark:text-gray-600 fill-current"
-                                viewBox="0 0 24 24">
-                                <path
-                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                            </svg>
-                        </template>
-                    </div>
 
-                    <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed relative line-clamp-4">
+
+                    <p class="text-gray-600 dark:text-gray-300 text-sm leading-snug relative line-clamp-4">
                         "{{ review.content }}"
                     </p>
                 </div>
@@ -78,49 +71,42 @@
             <!-- Row 2 -->
             <div class="flex gap-6 animate-marquee w-max px-4" style="animation-delay: -20s;">
                 <div v-for="(review, index) in [...secondRow, ...secondRow]" :key="`r2-${index}`"
-                    class="w-[350px] md:w-[450px] flex-shrink-0 group bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-[0_3px_10px_rgb(0,0,0,0.05)] border border-gray-100 dark:border-gray-700 hover:shadow-[0_20px_40px_rgb(0,0,0,0.1)] transition-all duration-500 relative overflow-hidden">
+                    class="w-auto min-w-[280px] max-w-[500px] flex-shrink-0 group bg-white dark:bg-gray-800 p-4 rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.05)] border border-gray-100 dark:border-gray-700 hover:shadow-[0_20px_40px_rgb(0,0,0,0.1)] transition-all duration-500 relative overflow-hidden">
 
                     <!-- Gradient Top Border -->
                     <div
                         class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500">
                     </div>
 
-                    <!-- Quote Icon -->
-                    <div
-                        class="absolute top-4 right-4 text-gray-100 dark:text-gray-700 group-hover:text-purple-50 dark:group-hover:text-gray-700 transition-colors duration-300">
-                        <svg class="w-16 h-16 transform rotate-180" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z" />
-                        </svg>
-                    </div>
-
-                    <div class="flex items-center gap-4 mb-6 relative">
-                        <div
-                            class="w-12 h-12 rounded-full bg-gradient-to-br from-indigo-100 to-purple-100 dark:from-indigo-900/50 dark:to-purple-900/50 flex items-center justify-center text-indigo-600 dark:text-indigo-300 font-bold text-xl shadow-inner">
-                            {{ getInitials(review.name) }}
+                    <div class="flex items-center justify-between mb-1.5 relative">
+                        <div class="flex items-center gap-2">
+                            <div
+                                class="w-8 h-8 rounded-full bg-gradient-to-br from-indigo-100 to-purple-100 dark:from-indigo-900/50 dark:to-purple-900/50 flex items-center justify-center text-indigo-600 dark:text-indigo-300 font-bold text-sm shadow-inner">
+                                {{ getInitials(review.name) }}
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 dark:text-gray-100 text-xs">{{ review.name }}</h4>
+                            </div>
                         </div>
-                        <div>
-                            <h4 class="font-bold text-gray-900 dark:text-gray-100 text-base">{{ review.name }}</h4>
-                            <p class="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">{{
-                                review.timeAgo }}</p>
+                        <div class="flex text-yellow-400 gap-0.5">
+                            <template v-for="n in 5" :key="n">
+                                <svg v-if="n <= Math.floor(review.rating)" class="w-3 h-3 fill-current"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                                </svg>
+                                <svg v-else class="w-3 h-3 text-gray-300 dark:text-gray-600 fill-current"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                                </svg>
+                            </template>
                         </div>
                     </div>
 
-                    <div class="flex text-yellow-400 mb-4 gap-0.5 relative">
-                        <template v-for="n in 5" :key="n">
-                            <svg v-if="n <= Math.floor(review.rating)" class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                                <path
-                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                            </svg>
-                            <svg v-else class="w-4 h-4 text-gray-300 dark:text-gray-600 fill-current"
-                                viewBox="0 0 24 24">
-                                <path
-                                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                            </svg>
-                        </template>
-                    </div>
 
-                    <p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed relative line-clamp-4">
+
+                    <p class="text-gray-600 dark:text-gray-300 text-sm leading-snug relative line-clamp-4">
                         "{{ review.content }}"
                     </p>
                 </div>
