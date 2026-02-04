@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 .bg-hardware {
     background: linear-gradient(90deg, #3471cc 0%, #25a48b 100%);
     color: white;
