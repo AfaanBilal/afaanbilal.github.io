@@ -266,7 +266,7 @@ const getInitials = (name) => {
 }
 
 .animate-marquee {
-    animation: marquee 50s linear infinite;
+    animation: marquee 75s linear infinite;
 }
 
 .animate-marquee:hover {
