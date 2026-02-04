@@ -13,7 +13,7 @@
         </div>
 
         <!-- Loading State -->
-        <div v-if="loading || isChangingPage" class="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mb-10">
+        <div v-if="loading" class="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mb-10">
             <div v-for="n in itemsPerPage" :key="n"
                 class="border border-gray-100 rounded-xl p-4 shadow-sm animate-pulse bg-white">
 
@@ -45,9 +45,54 @@
             <p>Failed to load repositories. Please try again later.</p>
         </div>
 
-        <!-- Repository Grid -->
         <div v-else class="mb-12 min-h-[500px]">
-            <div class="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+            <!-- Language Filters -->
+            <div class="flex flex-wrap justify-center gap-2 mb-8 animate-fade-in-up delay-100" v-if="!loading">
+                <button @click="selectedLanguage = 'All'"
+                    class="px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer"
+                    :class="selectedLanguage === 'All'
+                        ? 'bg-purple-600 text-white shadow-lg shadow-purple-500/30'
+                        : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-purple-50 dark:hover:bg-gray-700 border border-gray-100 dark:border-gray-700'">
+                    All <span class="opacity-75 text-xs ml-1">({{ sortedRepos.length }})</span>
+                </button>
+                <button v-for="lang in uniqueLanguages" :key="lang.name" @click="selectedLanguage = lang.name"
+                    class="px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer"
+                    :class="selectedLanguage === lang.name
+                        ? 'bg-purple-600 text-white shadow-lg shadow-purple-500/30'
+                        : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-purple-50 dark:hover:bg-gray-700 border border-gray-100 dark:border-gray-700'">
+                    {{ lang.name }} <span class="opacity-75 text-xs ml-1">({{ lang.count }})</span>
+                </button>
+            </div>
+
+            <!-- Loading State for Grid -->
+            <div v-if="isChangingPage" class="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mb-10">
+                <div v-for="n in itemsPerPage" :key="n"
+                    class="border border-gray-100 rounded-xl p-4 shadow-sm animate-pulse bg-white">
+
+                    <!-- Header Skeleton -->
+                    <div class="flex justify-between items-start mb-2">
+                        <div class="h-6 bg-gray-200 rounded w-2/3"></div>
+                        <div class="h-6 w-8 bg-gray-200 rounded-full"></div>
+                    </div>
+
+                    <!-- Description Skeleton -->
+                    <div class="space-y-2 mb-2 h-[60px]">
+                        <div class="h-4 bg-gray-200 rounded w-full"></div>
+                        <div class="h-4 bg-gray-200 rounded w-5/6"></div>
+                    </div>
+
+                    <!-- Footer Skeleton -->
+                    <div class="flex items-center justify-between mt-auto">
+                        <div class="h-4 w-16 bg-gray-200 rounded-full"></div>
+                        <div class="flex gap-3">
+                            <div class="h-4 w-12 bg-gray-200 rounded"></div>
+                            <div class="h-4 w-12 bg-gray-200 rounded"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div v-else class="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
                 <div v-for="(r, index) in displayedRepos" :key="r.id"
                     class="group relative bg-white dark:bg-gray-800 rounded-xl p-4 border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
                     <!-- Gradient Border/Glow Effect on Hover -->
@@ -162,6 +207,7 @@ const allRepos = ref([])
 const loading = ref(true)
 const isChangingPage = ref(false)
 const error = ref(false)
+const selectedLanguage = ref('All')
 
 const excludeNames = ["AfaanBilal", "afaanbilal.github.io", "musings", "amx-infinity.github.io", "SoftSolutions"]
 
@@ -207,15 +253,41 @@ const sortedRepos = computed(() => {
         .sort((a, b) => b.stargazers_count - a.stargazers_count)
 })
 
+const uniqueLanguages = computed(() => {
+    const counts = {}
+    sortedRepos.value.forEach(r => {
+        if (r.language) {
+            counts[r.language] = (counts[r.language] || 0) + 1
+        }
+    })
+
+    return Object.keys(counts)
+        .map(name => ({ name, count: counts[name] }))
+        .sort((a, b) => b.count - a.count)
+})
+
+const filteredRepos = computed(() => {
+    if (selectedLanguage.value === 'All') {
+        return sortedRepos.value
+    }
+    return sortedRepos.value.filter(r => r.language === selectedLanguage.value)
+})
+
+// Reset page when filter changes
+import { watch } from 'vue'
+watch(selectedLanguage, () => {
+    currentPage.value = 1
+})
+
 const currentPage = ref(1)
 const itemsPerPage = 16
 
-const totalPages = computed(() => Math.ceil(sortedRepos.value.length / itemsPerPage))
+const totalPages = computed(() => Math.ceil(filteredRepos.value.length / itemsPerPage))
 
 const displayedRepos = computed(() => {
     const start = (currentPage.value - 1) * itemsPerPage
     const end = start + itemsPerPage
-    return sortedRepos.value.slice(start, end)
+    return filteredRepos.value.slice(start, end)
 })
 
 const changePage = (page) => {
