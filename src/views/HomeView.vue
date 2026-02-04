@@ -4,6 +4,7 @@
     <main>
       <Hero />
       <Courses />
+      <Reviews />
       <NanoCore />
       <HyperDB />
       <Koshur />
@@ -25,6 +26,7 @@ import Navbar from '../components/Navbar.vue'
 import Hero from '../components/Hero.vue'
 import ResearchProjects from '../components/ResearchProjects.vue'
 import Courses from '../components/Courses.vue'
+import Reviews from '../components/Reviews.vue'
 import MobileApps from '../components/MobileApps.vue'
 import WebApps from '../components/WebApps.vue'
 import HyperDB from '../components/HyperDB.vue'
