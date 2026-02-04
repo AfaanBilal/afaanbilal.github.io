@@ -15,10 +15,10 @@
         </div>
 
         <div class="container mx-auto px-4 mb-16 relative z-10">
-            <h2 class="text-4xl md:text-5xl font-extrabold text-center animate-fade-in-up">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-center animate-fade-in-up">
                 <span
                     class="bg-clip-text text-transparent bg-gradient-to-r from-violet-600 to-indigo-600 dark:from-violet-400 dark:to-indigo-400">
-                    What Students Say
+                    Udemy Reviews
                 </span>
             </h2>
         </div>
