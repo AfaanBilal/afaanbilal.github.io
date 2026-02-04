@@ -26,12 +26,22 @@
                         <span
                             class="px-2 py-1 bg-orange-500 text-gray-900 text-xs font-bold rounded uppercase tracking-wide">Udemy</span>
                     </div>
+                    <div
+                        class="absolute bottom-4 right-4 z-20 flex items-center gap-1 bg-black/60 px-2 py-1 rounded-lg backdrop-blur-sm border border-white/10">
+                        <span class="text-yellow-400 font-bold text-sm">{{ course.rating }}</span>
+                        <svg class="w-4 h-4 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                            <path
+                                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                        </svg>
+                    </div>
                 </div>
 
                 <div class="p-6 flex-1 flex flex-col">
                     <h3
                         class="text-xl font-bold text-gray-800 dark:text-white mb-3 group-hover:text-orange-600 transition-colors line-clamp-2">
-                        {{ course.title }}</h3>
+                        {{ course.title }}
+                    </h3>
+
                     <p class="text-gray-600 dark:text-gray-300 text-sm line-clamp-3 mb-4 flex-1">
                         {{ course.description }}
                     </p>
@@ -57,19 +67,22 @@ const courses = [
         title: 'Creating an API server in Rust with Actix, SQLx and JWT',
         url: 'https://www.udemy.com/course/rust-api-server-actix-sqlx-jwt/?referralCode=0C3C85FE260C2016C334',
         image: '/images/udemy-rust-actix-sqlx-course.png',
-        description: 'Build your own REST API server with the safety and performance of Rust using Actix Web, SQLx and JWT authentication.'
+        description: 'Build your own REST API server with the safety and performance of Rust using Actix Web, SQLx and JWT authentication.',
+        rating: 4.5
     },
     {
         title: 'Creating an API server in Rust with Rocket, SeaORM and JWT',
         url: 'https://www.udemy.com/course/rest-api-server-rust-rocket-seaorm-jwt/?referralCode=0A41F1674B329B330B9F',
         image: '/images/udemy-rust-rest-course.jpg',
-        description: 'Build your own REST API server with the safety and performance of Rust using Rocket, SeaORM and JWT authentication.'
+        description: 'Build your own REST API server with the safety and performance of Rust using Rocket, SeaORM and JWT authentication.',
+        rating: 4.5
     },
     {
         title: 'Creating a REST API server with PHP, Laravel and MySQL',
         url: 'https://www.udemy.com/course/laravel-rest-api-server/?referralCode=AE00F1CF28608CD5F56E',
         image: '/images/udemy-laravel-rest-course.png',
-        description: 'Project-based guide to creating production-ready Laravel REST API servers including authentication, route-model binding, pagination, sorting, searching and more.'
+        description: 'Project-based guide to creating production-ready Laravel REST API servers including authentication, route-model binding, pagination, sorting, searching and more.',
+        rating: 4.6
     }
 ]
 </script>
