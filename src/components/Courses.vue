@@ -1,5 +1,5 @@
 <template>
-    <section id="courses" class="container mx-auto px-4 py-16 scroll-mt-12">
+    <section id="courses" class="container mx-auto px-4 py-16 md:py-24 scroll-mt-12">
         <h2 class="text-4xl font-bold text-center text-gray-800 dark:text-white mb-12">
             <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-600">Courses</span>
         </h2>
