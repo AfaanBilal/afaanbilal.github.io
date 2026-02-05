@@ -6,7 +6,7 @@
         <div class="p-10 bg-gradient-to-br from-purple-600 to-pink-600 text-white flex flex-col justify-between">
           <div>
             <h2 class="text-3xl font-bold mb-6">Let's Chat!</h2>
-            <p class="mb-8 text-purple-100 leading-relaxed">
+            <p class="md:mb-8 text-purple-100 leading-relaxed">
               Have a project idea or just want to say hi? I'd love to hear from you.
             </p>
           </div>
