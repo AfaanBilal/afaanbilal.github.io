@@ -1,8 +1,12 @@
 <template>
     <section id="courses" class="container mx-auto px-4 py-16 md:py-24 scroll-mt-12">
-        <h2 class="text-4xl font-bold text-center text-gray-800 dark:text-white mb-12">
+        <h2 class="text-4xl font-bold text-center text-gray-800 dark:text-white mb-4 animate-fade-in-up">
             <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-600">Courses</span>
         </h2>
+        <p
+            class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-center mb-12 animate-fade-in-up delay-100">
+            Professional training in backend development, security, and system architecture.
+        </p>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div v-for="course in courses" :key="course.title"
@@ -92,3 +96,25 @@ const courses = [
     }
 ]
 </script>
+
+<style scoped>
+.animate-fade-in-up {
+    animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.delay-100 {
+    animation-delay: 0.2s;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+</style>

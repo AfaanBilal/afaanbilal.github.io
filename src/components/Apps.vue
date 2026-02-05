@@ -7,6 +7,9 @@
                         Apps & Projects
                     </span>
                 </h2>
+                <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-4 animate-fade-in-up delay-100">
+                    Showcasing secure, scalable, and high-performance applications.
+                </p>
 
                 <!-- Filter Controls -->
                 <div class="flex flex-wrap justify-center gap-2 mt-8 animate-fade-in-up">
@@ -281,5 +284,11 @@ const visibleApps = computed(() => {
         opacity: 1;
         transform: translateY(0);
     }
+}
+</style>
+
+<style scoped>
+.delay-100 {
+    animation-delay: 0.2s;
 }
 </style>
