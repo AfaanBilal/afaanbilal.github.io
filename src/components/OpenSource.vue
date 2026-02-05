@@ -294,13 +294,6 @@ const changePage = (page) => {
     if (page >= 1 && page <= totalPages.value) {
         isChangingPage.value = true
 
-        // smooth scroll to top of section with a little offset
-        if (sectionRef.value) {
-            const yOffset = -80 // header offset
-            const y = sectionRef.value.getBoundingClientRect().top + window.pageYOffset + yOffset
-            window.scrollTo({ top: y, behavior: 'smooth' })
-        }
-
         setTimeout(() => {
             currentPage.value = page
             isChangingPage.value = false
