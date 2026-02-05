@@ -26,7 +26,7 @@
                         class="group bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col h-full">
 
                         <!-- Image Section -->
-                        <div class="relative overflow-hidden h-48 bg-gray-100 dark:bg-gray-900">
+                        <div class="relative overflow-hidden aspect-[4/3] bg-gray-100 dark:bg-gray-900">
                             <img :src="app.image" :alt="app.name" loading="lazy"
                                 class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" />
 
@@ -107,7 +107,7 @@ const apps = [
         category: 'Web',
         domain: 'koshur.afaan.dev',
         link: 'https://koshur.afaan.dev',
-        image: 'https://koshur.afaan.dev/screenshots/koshur-online-hero.png',
+        image: '/screenshots/koshur.png',
         tech: ['Vue', 'Typescript', 'Tailwind']
     },
     {
@@ -131,7 +131,7 @@ const apps = [
         category: 'Web',
         domain: 'oss.afaan.dev',
         link: 'https://oss.afaan.dev',
-        image: 'https://afaan.dev/screenshots/oss-hero.png',
+        image: '/screenshots/oss.png',
         tech: ['React', 'Typescript', 'Tailwind']
     },
     {
