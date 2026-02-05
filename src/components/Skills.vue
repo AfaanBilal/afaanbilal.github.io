@@ -1,15 +1,15 @@
 <template>
-    <section id="skills" class="w-full py-16 md:py-24 bg-gradient-to-br from-gray-900 to-black text-white scroll-mt-12">
+    <section id="skills" class="w-full py-12 md:py-16 bg-gradient-to-br from-gray-900 to-black text-white scroll-mt-12">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-16 animate-fade-in-up">
+            <h2 class="text-4xl font-bold text-center mb-10 animate-fade-in-up">
                 <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Skills</span>
             </h2>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 <!-- Security & Compliance -->
                 <div
-                    class="bg-gray-800/50 backdrop-blur-md rounded-2xl p-8 shadow-2xl border border-gray-700 hover:border-gray-600 transition-all duration-300">
-                    <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+                    class="bg-gray-800/50 backdrop-blur-md rounded-2xl p-6 shadow-2xl border border-gray-700 hover:border-gray-600 transition-all duration-300">
+                    <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
                         <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -19,7 +19,7 @@
                     </h3>
                     <div class="flex flex-wrap gap-3">
                         <span v-for="skill in skills.security" :key="skill"
-                            class="px-4 py-2 rounded-full bg-gray-900/50 text-gray-300 font-medium hover:bg-green-900/40 hover:text-green-300 border border-gray-700 transition-colors cursor-default">
+                            class="px-3 py-1 text-sm rounded-full bg-gray-900/50 text-gray-300 font-medium hover:bg-green-900/40 hover:text-green-300 border border-gray-700 transition-colors cursor-default">
                             {{ skill }}
                         </span>
                     </div>
@@ -37,7 +37,7 @@
                     </h3>
                     <div class="flex flex-wrap gap-3">
                         <span v-for="skill in skills.languages" :key="skill"
-                            class="px-4 py-2 rounded-full bg-gray-900/50 text-gray-300 font-medium hover:bg-purple-900/40 hover:text-purple-300 border border-gray-700 transition-colors cursor-default">
+                            class="px-3 py-1 text-sm rounded-full bg-gray-900/50 text-gray-300 font-medium hover:bg-purple-900/40 hover:text-purple-300 border border-gray-700 transition-colors cursor-default">
                             {{ skill }}
                         </span>
                     </div>
@@ -56,7 +56,7 @@
                     </h3>
                     <div class="flex flex-wrap gap-3">
                         <span v-for="skill in skills.backend" :key="skill"
-                            class="px-4 py-2 rounded-full bg-gray-900/50 text-gray-300 font-medium hover:bg-pink-900/40 hover:text-pink-300 border border-gray-700 transition-colors cursor-default">
+                            class="px-3 py-1 text-sm rounded-full bg-gray-900/50 text-gray-300 font-medium hover:bg-pink-900/40 hover:text-pink-300 border border-gray-700 transition-colors cursor-default">
                             {{ skill }}
                         </span>
                     </div>
@@ -75,7 +75,7 @@
                     </h3>
                     <div class="flex flex-wrap gap-3">
                         <span v-for="skill in skills.frontend" :key="skill"
-                            class="px-4 py-2 rounded-full bg-gray-900/50 text-gray-300 font-medium hover:bg-cyan-900/40 hover:text-cyan-300 border border-gray-700 transition-colors cursor-default">
+                            class="px-3 py-1 text-sm rounded-full bg-gray-900/50 text-gray-300 font-medium hover:bg-cyan-900/40 hover:text-cyan-300 border border-gray-700 transition-colors cursor-default">
                             {{ skill }}
                         </span>
                     </div>
@@ -93,64 +93,7 @@
                     </h3>
                     <div class="flex flex-wrap gap-3">
                         <span v-for="skill in skills.ai" :key="skill"
-                            class="px-4 py-2 rounded-full bg-gray-900/50 text-gray-300 font-medium hover:bg-teal-900/40 hover:text-teal-300 border border-gray-700 transition-colors cursor-default">
-                            {{ skill }}
-                        </span>
-                    </div>
-                </div>
-
-                <!-- Cloud & DevOps -->
-                <div
-                    class="bg-gray-800/50 backdrop-blur-md rounded-2xl p-8 shadow-2xl border border-gray-700 hover:border-gray-600 transition-all duration-300">
-                    <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-                        <svg class="w-6 h-6 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z">
-                            </path>
-                        </svg> Cloud & DevOps
-                    </h3>
-                    <div class="flex flex-wrap gap-3">
-                        <span v-for="skill in skills.cloud" :key="skill"
-                            class="px-4 py-2 rounded-full bg-gray-900/50 text-gray-300 font-medium hover:bg-orange-900/40 hover:text-orange-300 border border-gray-700 transition-colors cursor-default">
-                            {{ skill }}
-                        </span>
-                    </div>
-                </div>
-
-                <!-- Databases -->
-                <div
-                    class="bg-gray-800/50 backdrop-blur-md rounded-2xl p-8 shadow-2xl border border-gray-700 hover:border-gray-600 transition-all duration-300">
-                    <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-                        <svg class="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4">
-                            </path>
-                        </svg> Databases
-                    </h3>
-                    <div class="flex flex-wrap gap-3">
-                        <span v-for="skill in skills.databases" :key="skill"
-                            class="px-4 py-2 rounded-full bg-gray-900/50 text-gray-300 font-medium hover:bg-yellow-900/40 hover:text-yellow-300 border border-gray-700 transition-colors cursor-default">
-                            {{ skill }}
-                        </span>
-                    </div>
-                </div>
-
-                <!-- Architecture & Leadership -->
-                <div
-                    class="bg-gray-800/50 backdrop-blur-md rounded-2xl p-8 shadow-2xl border border-gray-700 hover:border-gray-600 transition-all duration-300">
-                    <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-                        <svg class="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
-                            </path>
-                        </svg> Architecture & Leadership
-                    </h3>
-                    <div class="flex flex-wrap gap-3">
-                        <span v-for="skill in skills.architecture" :key="skill"
-                            class="px-4 py-2 rounded-full bg-gray-900/50 text-gray-300 font-medium hover:bg-red-900/40 hover:text-red-300 border border-gray-700 transition-colors cursor-default">
+                            class="px-3 py-1 text-sm rounded-full bg-gray-900/50 text-gray-300 font-medium hover:bg-teal-900/40 hover:text-teal-300 border border-gray-700 transition-colors cursor-default">
                             {{ skill }}
                         </span>
                     </div>
@@ -169,7 +112,64 @@
                     </h3>
                     <div class="flex flex-wrap gap-3">
                         <span v-for="skill in skills.integrations" :key="skill"
-                            class="px-4 py-2 rounded-full bg-gray-900/50 text-gray-300 font-medium hover:bg-indigo-900/40 hover:text-indigo-300 border border-gray-700 transition-colors cursor-default">
+                            class="px-3 py-1 text-sm rounded-full bg-gray-900/50 text-gray-300 font-medium hover:bg-indigo-900/40 hover:text-indigo-300 border border-gray-700 transition-colors cursor-default">
+                            {{ skill }}
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Cloud & DevOps -->
+                <div
+                    class="bg-gray-800/50 backdrop-blur-md rounded-2xl p-8 shadow-2xl border border-gray-700 hover:border-gray-600 transition-all duration-300">
+                    <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+                        <svg class="w-6 h-6 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z">
+                            </path>
+                        </svg> Cloud & DevOps
+                    </h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span v-for="skill in skills.cloud" :key="skill"
+                            class="px-3 py-1 text-sm rounded-full bg-gray-900/50 text-gray-300 font-medium hover:bg-orange-900/40 hover:text-orange-300 border border-gray-700 transition-colors cursor-default">
+                            {{ skill }}
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Databases -->
+                <div
+                    class="bg-gray-800/50 backdrop-blur-md rounded-2xl p-8 shadow-2xl border border-gray-700 hover:border-gray-600 transition-all duration-300">
+                    <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+                        <svg class="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4">
+                            </path>
+                        </svg> Databases
+                    </h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span v-for="skill in skills.databases" :key="skill"
+                            class="px-3 py-1 text-sm rounded-full bg-gray-900/50 text-gray-300 font-medium hover:bg-yellow-900/40 hover:text-yellow-300 border border-gray-700 transition-colors cursor-default">
+                            {{ skill }}
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Architecture & Leadership -->
+                <div
+                    class="bg-gray-800/50 backdrop-blur-md rounded-2xl p-8 shadow-2xl border border-gray-700 hover:border-gray-600 transition-all duration-300">
+                    <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+                        <svg class="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
+                            </path>
+                        </svg> Architecture & Leadership
+                    </h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span v-for="skill in skills.architecture" :key="skill"
+                            class="px-3 py-1 text-sm rounded-full bg-gray-900/50 text-gray-300 font-medium hover:bg-red-900/40 hover:text-red-300 border border-gray-700 transition-colors cursor-default">
                             {{ skill }}
                         </span>
                     </div>
@@ -188,7 +188,7 @@
                     </h3>
                     <div class="flex flex-wrap gap-3">
                         <span v-for="skill in skills.internals" :key="skill"
-                            class="px-4 py-2 rounded-full bg-gray-900/50 text-gray-300 font-medium hover:bg-blue-900/40 hover:text-blue-300 border border-gray-700 transition-colors cursor-default">
+                            class="px-3 py-1 text-sm rounded-full bg-gray-900/50 text-gray-300 font-medium hover:bg-blue-900/40 hover:text-blue-300 border border-gray-700 transition-colors cursor-default">
                             {{ skill }}
                         </span>
                     </div>
