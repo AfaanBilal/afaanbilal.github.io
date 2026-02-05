@@ -20,9 +20,9 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-6">
                 <transition-group name="list">
-                    <div v-for="app in filteredApps" :key="app.name"
+                    <div v-for="app in visibleApps" :key="app.name"
                         class="group bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col h-full">
 
                         <!-- Image Section -->
@@ -89,6 +89,20 @@
                         </div>
                     </div>
                 </transition-group>
+            </div>
+
+            <div v-if="filteredApps.length > initialCount" class="text-center mt-12 animate-fade-in-up">
+                <button @click="expanded = !expanded"
+                    class="group relative inline-flex items-center gap-2 px-8 py-3 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 font-bold rounded-full shadow-lg hover:shadow-xl transition-all border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-500 hover:text-blue-600 dark:hover:text-blue-400 cursor-pointer">
+                    <span>{{ expanded ? 'Show Less' : 'Show More Projects' }}</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-transform duration-300"
+                        :class="expanded ? 'rotate-180' : 'group-hover:translate-y-1'" viewBox="0 0 20 20"
+                        fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </button>
             </div>
         </div>
     </section>
@@ -230,6 +244,14 @@ const apps = [
 const filteredApps = computed(() => {
     if (selectedCategory.value === 'All') return apps
     return apps.filter(app => app.category === selectedCategory.value)
+})
+
+const expanded = ref(false)
+const initialCount = 10
+
+const visibleApps = computed(() => {
+    if (expanded.value) return filteredApps.value
+    return filteredApps.value.slice(0, initialCount)
 })
 </script>
 
