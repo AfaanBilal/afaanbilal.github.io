@@ -29,7 +29,7 @@
 
                 <!-- Theme Toggle -->
                 <button @click="toggleTheme"
-                    class="ml-2 p-2 rounded-lg hover:bg-purple-50 dark:hover:bg-gray-800 text-purple-600 dark:text-purple-400 transition-colors"
+                    class="ml-2 p-2 cursor-pointer rounded-lg hover:bg-purple-50 dark:hover:bg-gray-800 text-purple-600 dark:text-purple-400 transition-colors"
                     aria-label="Toggle Theme">
                     <svg v-if="!isDark" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -56,7 +56,7 @@
 
                     <!-- Mobile Theme Toggle -->
                     <button @click="toggleTheme"
-                        class="flex items-center w-full px-4 py-3 rounded-lg text-gray-700 dark:text-gray-200 hover:bg-purple-50 dark:hover:bg-gray-800 hover:text-purple-600 font-medium transition-colors">
+                        class="flex cursor-pointer items-center w-full px-4 py-3 rounded-lg text-gray-700 dark:text-gray-200 hover:bg-purple-50 dark:hover:bg-gray-800 hover:text-purple-600 font-medium transition-colors">
                         <span class="mr-2">{{ isDark ? 'Light Mode' : 'Dark Mode' }}</span>
                         <svg v-if="!isDark" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
