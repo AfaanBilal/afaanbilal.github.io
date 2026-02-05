@@ -122,7 +122,7 @@ const links = [
     { text: 'Open Source', to: '/#open-source' },
     { text: 'Skills', to: '/#skills' },
     { text: 'Research', to: '/#research-projects' },
-    { text: 'Apps', to: '/#mobile-apps' },
+    { text: 'Apps', to: '/#apps' },
     { text: 'Contact', to: '/#contact' }
 ]
 </script>
