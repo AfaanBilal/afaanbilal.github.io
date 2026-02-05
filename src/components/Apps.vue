@@ -83,6 +83,11 @@
                                 {{ app.domain }}
                             </p>
 
+                            <p v-if="app.description"
+                                class="text-sm text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
+                                {{ app.description }}
+                            </p>
+
                             <div class="flex flex-wrap gap-2 mt-auto pt-4">
                                 <span v-for="tech in app.tech" :key="tech"
                                     class="text-xs px-2 py-1 bg-gray-50 dark:bg-gray-700/50 text-gray-600 dark:text-gray-300 border border-gray-100 dark:border-gray-600 rounded-md">
@@ -125,7 +130,8 @@ const apps = [
         domain: 'koshur.afaan.dev',
         link: 'https://koshur.afaan.dev',
         image: '/screenshots/koshur.png',
-        tech: ['Vue', 'Typescript', 'Tailwind']
+        tech: ['Vue', 'Typescript', 'Tailwind'],
+        description: 'Online playground and documentation for the Koshur programming language.'
     },
     {
         name: 'ABACUS',
@@ -133,7 +139,8 @@ const apps = [
         domain: 'abacus.afaan.dev',
         link: 'https://abacus.afaan.dev',
         image: 'https://abacus.afaan.dev/screenshots/abacus-hero.png',
-        tech: ['Vue', 'Typescript', 'Tailwind']
+        tech: ['Vue', 'Typescript', 'Tailwind'],
+        description: 'Abacus emulator for the web.'
     },
     {
         name: 'Lumina',
@@ -141,7 +148,8 @@ const apps = [
         domain: 'lumina.afaan.dev',
         link: 'https://lumina.afaan.dev',
         image: 'https://raw.githubusercontent.com/AfaanBilal/lumina/master/screenshots/lumina-hero.png',
-        tech: ['Vue', 'Typescript', 'Tailwind']
+        tech: ['Vue', 'Typescript', 'Tailwind'],
+        description: 'Privacy-focused spreadsheet app.'
     },
     {
         name: 'Open Source Summary',
@@ -149,7 +157,8 @@ const apps = [
         domain: 'oss.afaan.dev',
         link: 'https://oss.afaan.dev',
         image: '/screenshots/oss.png',
-        tech: ['React', 'Typescript', 'Tailwind']
+        tech: ['React', 'Typescript', 'Tailwind'],
+        description: 'GitHub summary of repositories, languages and organizations.'
     },
     {
         name: 'Parabolic Motion',
@@ -157,7 +166,8 @@ const apps = [
         domain: 'afaan.dev/parabolic-motion',
         link: 'https://afaan.dev/parabolic-motion',
         image: 'https://afaan.dev/screenshots/pbm-hero.png',
-        tech: ['Javascript', 'Canvas', 'Bootstrap']
+        tech: ['Javascript', 'Canvas', 'Bootstrap'],
+        description: 'Interactive simulation of projectile motion physics.'
     },
     {
         name: 'Game of Life',
@@ -165,7 +175,8 @@ const apps = [
         domain: 'afaan.dev/game-of-life',
         link: 'https://afaan.dev/game-of-life',
         image: 'https://afaan.dev/screenshots/gol-hero.png',
-        tech: ['Vue', 'Javascript', 'Bootstrap']
+        tech: ['Vue', 'Javascript', 'Bootstrap'],
+        description: "Implementation of John Conway's cellular automaton."
     },
 
     // Mobile Apps
@@ -175,42 +186,48 @@ const apps = [
         link: 'https://github.com/AfaanBilal/fxrate',
         image: 'https://raw.githubusercontent.com/AfaanBilal/fxrate/master/screenshots/fxrate-hero.png',
         tech: ['React Native', 'Typescript', 'Expo'],
-        playStore: 'https://play.google.com/store/apps/details?id=dev.afaan.fxrate'
+        playStore: 'https://play.google.com/store/apps/details?id=dev.afaan.fxrate',
+        description: 'Free currency exchange rate tracker and converter.'
     },
     {
         name: 'Meeqat',
         category: 'Mobile',
         link: 'https://github.com/AfaanBilal/meeqat',
         image: 'https://raw.githubusercontent.com/AfaanBilal/meeqat/master/screenshots/meeqat-hero.png',
-        tech: ['React Native', 'Typescript', 'Expo']
+        tech: ['React Native', 'Typescript', 'Expo'],
+        description: 'Local prayer times for Muslims.'
     },
     {
         name: 'One Dua',
         category: 'Mobile',
         link: 'https://github.com/AfaanBilal/one-dua',
         image: 'https://raw.githubusercontent.com/AfaanBilal/one-dua/master/screenshots/one-dua.png',
-        tech: ['React Native', 'Typescript', 'Expo']
+        tech: ['React Native', 'Typescript', 'Expo'],
+        description: 'A collection of supplications (Duas).'
     },
     {
         name: 'Whisper',
         category: 'Mobile',
         link: 'https://github.com/AfaanBilal/whisper-app',
         image: 'https://raw.githubusercontent.com/AfaanBilal/whisper-app/master/screenshots/whisper.png',
-        tech: ['React Native', 'Typescript', 'Expo']
+        tech: ['React Native', 'Typescript', 'Expo'],
+        description: 'A simple micro-blogging app and backend.'
     },
     {
         name: 'Word Hunt',
         category: 'Mobile',
         link: 'https://github.com/AfaanBilal/word_hunt',
         image: 'https://afaan.dev/screenshots/word_hunt.png',
-        tech: ['Flutter', 'Dart']
+        tech: ['Flutter', 'Dart'],
+        description: 'Classic word search puzzle game built with Flutter.'
     },
     {
         name: 'Statistical Analysis',
         category: 'Mobile',
         link: 'https://github.com/AfaanBilal/Statistical-Analysis-Android',
         image: 'https://afaan.dev/screenshots/Statistical-Analysis.png',
-        tech: ['Java', 'Android']
+        tech: ['Java', 'Android'],
+        description: 'Android app for performing various statistical calculations.'
     },
 
     // Desktop Apps
@@ -219,28 +236,32 @@ const apps = [
         category: 'Desktop',
         link: 'https://afaan.dev/AMX-TextEdit',
         image: 'https://afaan.dev/screenshots/amx-textedit.png',
-        tech: ['C++', 'wxWidgets']
+        tech: ['C++', 'wxWidgets'],
+        description: 'Fast and lightweight text editor built with C++ and wxWidgets.'
     },
     {
         name: 'Central Limit',
         category: 'Desktop',
         link: 'https://github.com/AfaanBilal/central-limit',
         image: 'https://raw.githubusercontent.com/AfaanBilal/central-limit/master/assets/central-limit-hero.png',
-        tech: ['Rust', 'TUI']
+        tech: ['Rust', 'TUI'],
+        description: 'Visual demonstration of the Central Limit Theorem.'
     },
     {
         name: 'Sorting Visualizer',
         category: 'Desktop',
         link: 'https://github.com/AfaanBilal/sorting-visualizer',
         image: 'https://raw.githubusercontent.com/AfaanBilal/sorting-visualizer/master/screenshots/sorting-visualizer-hero.png',
-        tech: ['Rust', 'TUI']
+        tech: ['Rust', 'TUI'],
+        description: 'Visualizer for common sorting algorithms.'
     },
     {
         name: 'OpenGL Testbench',
         category: 'Desktop',
         link: 'https://github.com/AfaanBilal/OpenGLTestbench',
         image: 'https://raw.githubusercontent.com/AfaanBilal/OpenGLTestbench/master/assets/opengl-testbench.png',
-        tech: ['C++', 'OpenGL']
+        tech: ['C++', 'OpenGL'],
+        description: 'Testing environment for OpenGL rendering experimentation.'
     }
 ]
 
