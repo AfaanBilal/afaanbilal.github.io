@@ -2,8 +2,9 @@
     <section id="quick-links" class="w-full py-16 bg-gradient-to-br from-gray-900 to-black text-white">
         <div class="container mx-auto px-4">
             <h2 class="text-4xl font-bold text-center mb-12">
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-green-400">Quick
-                    Links</span>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-green-400">
+                    Quick Links
+                </span>
             </h2>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
