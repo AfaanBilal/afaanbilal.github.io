@@ -1,8 +1,7 @@
 <template>
-    <section id="reviews" class="py-16 scroll-mt-12 bg-white dark:bg-gray-900 relative overflow-hidden">
+    <section id="reviews" class="py-16 scroll-mt-12 bg-white relative overflow-hidden">
         <!-- Decorative background elements -->
-        <div
-            class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0 opacity-30 dark:opacity-10">
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0 opacity-30">
             <div
                 class="absolute top-20 left-10 w-64 h-64 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl animate-blob">
             </div>
@@ -16,8 +15,7 @@
 
         <div class="container mx-auto px-4 mb-16 relative z-10">
             <h2 class="text-3xl md:text-4xl font-extrabold text-center animate-fade-in-up">
-                <span
-                    class="bg-clip-text text-transparent bg-gradient-to-r from-violet-600 to-indigo-600 dark:from-violet-400 dark:to-indigo-400">
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-violet-600 to-indigo-600">
                     Udemy Reviews
                 </span>
             </h2>
@@ -27,7 +25,7 @@
             <!-- Row 1 -->
             <div class="flex gap-6 animate-marquee w-max px-4">
                 <div v-for="(review, index) in [...firstRow, ...firstRow]" :key="`r1-${index}`"
-                    class="w-auto min-w-[280px] max-w-[500px] flex-shrink-0 group bg-white dark:bg-gray-800 p-4 rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.05)] border border-gray-100 dark:border-gray-700 hover:shadow-[0_20px_40px_rgb(0,0,0,0.1)] transition-all duration-500 relative overflow-hidden">
+                    class="w-auto min-w-[280px] max-w-[500px] flex-shrink-0 group bg-white p-4 rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.05)] border border-gray-100 hover:shadow-[0_20px_40px_rgb(0,0,0,0.1)] transition-all duration-500 relative overflow-hidden">
 
                     <!-- Gradient Top Border -->
                     <div
@@ -37,11 +35,11 @@
                     <div class="flex items-center justify-between mb-1.5 relative">
                         <div class="flex items-center gap-2">
                             <div
-                                class="w-8 h-8 rounded-full bg-gradient-to-br from-indigo-100 to-purple-100 dark:from-indigo-900/50 dark:to-purple-900/50 flex items-center justify-center text-indigo-600 dark:text-indigo-300 font-bold text-sm shadow-inner">
+                                class="w-8 h-8 rounded-full bg-gradient-to-br from-indigo-100 to-purple-100 flex items-center justify-center text-indigo-600 font-bold text-sm shadow-inner">
                                 {{ getInitials(review.name) }}
                             </div>
                             <div>
-                                <h4 class="font-bold text-gray-900 dark:text-gray-100 text-xs">{{ review.name }}</h4>
+                                <h4 class="font-bold text-gray-900 text-xs">{{ review.name }}</h4>
                             </div>
                         </div>
                         <div class="flex text-yellow-400 gap-0.5">
@@ -51,8 +49,7 @@
                                     <path
                                         d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
                                 </svg>
-                                <svg v-else class="w-3 h-3 text-gray-300 dark:text-gray-600 fill-current"
-                                    viewBox="0 0 24 24">
+                                <svg v-else class="w-3 h-3 text-gray-300 fill-current" viewBox="0 0 24 24">
                                     <path
                                         d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
                                 </svg>
@@ -62,7 +59,7 @@
 
 
 
-                    <p class="text-gray-600 dark:text-gray-300 text-sm leading-snug relative line-clamp-4">
+                    <p class="text-gray-600 text-sm leading-snug relative line-clamp-4">
                         "{{ review.content }}"
                     </p>
                 </div>
@@ -71,7 +68,7 @@
             <!-- Row 2 -->
             <div class="flex gap-6 animate-marquee w-max px-4" style="animation-delay: -20s;">
                 <div v-for="(review, index) in [...secondRow, ...secondRow]" :key="`r2-${index}`"
-                    class="w-auto min-w-[280px] max-w-[500px] flex-shrink-0 group bg-white dark:bg-gray-800 p-4 rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.05)] border border-gray-100 dark:border-gray-700 hover:shadow-[0_20px_40px_rgb(0,0,0,0.1)] transition-all duration-500 relative overflow-hidden">
+                    class="w-auto min-w-[280px] max-w-[500px] flex-shrink-0 group bg-white p-4 rounded-xl shadow-[0_3px_10px_rgb(0,0,0,0.05)] border border-gray-100 hover:shadow-[0_20px_40px_rgb(0,0,0,0.1)] transition-all duration-500 relative overflow-hidden">
 
                     <!-- Gradient Top Border -->
                     <div
@@ -81,11 +78,11 @@
                     <div class="flex items-center justify-between mb-1.5 relative">
                         <div class="flex items-center gap-2">
                             <div
-                                class="w-8 h-8 rounded-full bg-gradient-to-br from-indigo-100 to-purple-100 dark:from-indigo-900/50 dark:to-purple-900/50 flex items-center justify-center text-indigo-600 dark:text-indigo-300 font-bold text-sm shadow-inner">
+                                class="w-8 h-8 rounded-full bg-gradient-to-br from-indigo-100 to-purple-100 flex items-center justify-center text-indigo-600 font-bold text-sm shadow-inner">
                                 {{ getInitials(review.name) }}
                             </div>
                             <div>
-                                <h4 class="font-bold text-gray-900 dark:text-gray-100 text-xs">{{ review.name }}</h4>
+                                <h4 class="font-bold text-gray-900 text-xs">{{ review.name }}</h4>
                             </div>
                         </div>
                         <div class="flex text-yellow-400 gap-0.5">
@@ -95,8 +92,7 @@
                                     <path
                                         d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
                                 </svg>
-                                <svg v-else class="w-3 h-3 text-gray-300 dark:text-gray-600 fill-current"
-                                    viewBox="0 0 24 24">
+                                <svg v-else class="w-3 h-3 text-gray-300 fill-current" viewBox="0 0 24 24">
                                     <path
                                         d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
                                 </svg>
@@ -106,7 +102,7 @@
 
 
 
-                    <p class="text-gray-600 dark:text-gray-300 text-sm leading-snug relative line-clamp-4">
+                    <p class="text-gray-600 text-sm leading-snug relative line-clamp-4">
                         "{{ review.content }}"
                     </p>
                 </div>
@@ -163,13 +159,13 @@ const reviews = [
     },
     {
         name: 'Otis',
-        rating: 4, // 4.5 visually but keeping simple integer for loop unless I implement half star svg
+        rating: 4,
         timeAgo: '1 year ago',
         content: 'The materials were well presented and easy to follow. It might have helped to have some more detail about the environment setup ahead of the course.'
     },
     {
         name: 'Pedro Victor',
-        rating: 5, // 4.5 -> 5 for visual impact
+        rating: 5,
         timeAgo: '1 year ago',
         content: 'this course is just awesome. It\'s simple and straight to the point. You can tell it\'s been put together by someone who really knows what they\'re talking about. Highly recommend it!'
     },
