@@ -32,7 +32,7 @@
                         </span>
                         <span
                             class="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-lg backdrop-blur-sm border border-white/20">
-                            <span class="w-3 h-3 rounded-full bg-green-500"></span> Parser Info
+                            <span class="w-3 h-3 rounded-full bg-green-500"></span> Parser
                         </span>
                     </div>
 
