@@ -1,9 +1,12 @@
 <template>
     <section id="skills" class="w-full py-24 md:py-32 bg-gradient-to-br from-gray-900 to-black text-white scroll-mt-12">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-10 animate-fade-in-up">
+            <h2 class="text-4xl font-bold text-center mb-4 animate-fade-in-up">
                 <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Skills</span>
             </h2>
+            <p class="text-lg text-gray-400 max-w-2xl mx-auto text-center mb-12 animate-fade-in-up delay-100">
+                Security-first cloud systems, backend engineering, and distributed architecture.
+            </p>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 <div v-for="category in categories" :key="category.title"
@@ -86,3 +89,9 @@ const categories = [
     }
 ]
 </script>
+
+<style scoped>
+.delay-100 {
+    animation-delay: 0.2s;
+}
+</style>
