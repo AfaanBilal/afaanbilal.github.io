@@ -21,7 +21,7 @@
                         Includes a web-based playground to write and run Koshur code directly in the browser.
                     </p>
 
-                    <div class="flex gap-4 mb-10">
+                    <div class="flex gap-4 mb-10 flex-wrap">
                         <span
                             class="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-lg backdrop-blur-sm border border-white/20">
                             <span class="w-3 h-3 rounded-full bg-yellow-500"></span> JavaScript
@@ -38,11 +38,11 @@
 
                     <div class="flex gap-4">
                         <a href="https://github.com/AfaanBilal/koshur-lang" target="_blank" rel="noopener"
-                            class="px-8 py-4 bg-white text-orange-900 font-bold rounded-xl hover:bg-gray-100 transition-transform hover:-translate-y-1 shadow-lg">
+                            class="px-6 py-3 md:px-8 md:py-4 bg-white text-orange-900 font-bold rounded-xl hover:bg-gray-100 transition-transform hover:-translate-y-1 shadow-lg">
                             View on GitHub
                         </a>
                         <a href="https://koshur.afaan.dev" target="_blank" rel="noopener"
-                            class="px-8 py-4 bg-orange-800/50 text-white border border-orange-500/50 font-bold rounded-xl hover:bg-orange-800 transition-transform hover:-translate-y-1">
+                            class="px-6 py-3 md:px-8 md:py-4 bg-orange-800/50 text-white border border-orange-500/50 font-bold rounded-xl hover:bg-orange-800 transition-transform hover:-translate-y-1">
                             Try Online
                         </a>
                     </div>

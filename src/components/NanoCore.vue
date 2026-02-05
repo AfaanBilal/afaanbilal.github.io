@@ -44,11 +44,11 @@
 
                     <div class="flex gap-4">
                         <a href="https://github.com/AfaanBilal/NanoCore" target="_blank" rel="noopener"
-                            class="px-8 py-4 bg-green-700 text-white font-bold rounded-xl hover:bg-green-600 transition-transform hover:-translate-y-1 shadow-lg shadow-green-500/20">
+                            class="px-6 py-3 md:px-8 md:py-4 bg-green-700 text-white font-bold rounded-xl hover:bg-green-600 transition-transform hover:-translate-y-1 shadow-lg shadow-green-500/20">
                             View on GitHub
                         </a>
                         <a href="https://deepwiki.com/AfaanBilal/NanoCore" target="_blank" rel="noopener"
-                            class="px-8 py-4 bg-green-900/30 text-green-300 border border-green-500/30 font-bold rounded-xl hover:bg-green-900/50 transition-transform hover:-translate-y-1">
+                            class="px-6 py-3 md:px-8 md:py-4 bg-green-900/30 text-green-300 border border-green-500/30 font-bold rounded-xl hover:bg-green-900/50 transition-transform hover:-translate-y-1">
                             Documentation
                         </a>
                     </div>
@@ -71,11 +71,11 @@
                             <div class="grid grid-cols-2 gap-4 mb-6">
                                 <div class="bg-gray-800/50 p-4 rounded-lg border border-gray-700">
                                     <div class="text-gray-400 text-xs mb-1">Architecture</div>
-                                    <div class="text-lg font-bold text-green-400">True 8-bit</div>
+                                    <div class="md:text-lg font-bold text-green-400">True 8-bit</div>
                                 </div>
                                 <div class="bg-gray-800/50 p-4 rounded-lg border border-gray-700">
                                     <div class="text-gray-400 text-xs mb-1">Memory Limit</div>
-                                    <div class="text-lg font-bold text-yellow-400">256 Bytes</div>
+                                    <div class="md:text-lg font-bold text-yellow-400">256 Bytes</div>
                                 </div>
                             </div>
 

@@ -21,7 +21,7 @@
                         HTTP API. Designed for speed, simplicity, and ease of use.
                     </p>
 
-                    <div class="flex gap-4 mb-10">
+                    <div class="flex gap-4 mb-10 flex-wrap">
                         <span
                             class="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-lg backdrop-blur-sm border border-white/20">
                             <span class="w-3 h-3 rounded-full bg-orange-500"></span> Rust
@@ -38,11 +38,11 @@
 
                     <div class="flex gap-4">
                         <a href="https://github.com/AfaanBilal/hyperdb" target="_blank" rel="noopener"
-                            class="px-8 py-4 bg-white text-purple-900 font-bold rounded-xl hover:bg-gray-100 transition-transform hover:-translate-y-1 shadow-lg">
+                            class="px-6 py-3 md:px-8 md:py-4 bg-white text-purple-900 font-bold rounded-xl hover:bg-gray-100 transition-transform hover:-translate-y-1 shadow-lg">
                             View on GitHub
                         </a>
                         <a href="https://afaan.dev/hyperdb-docs" target="_blank" rel="noopener"
-                            class="px-8 py-4 bg-purple-800/50 text-white border border-purple-500/50 font-bold rounded-xl hover:bg-purple-800 transition-transform hover:-translate-y-1">
+                            class="px-6 py-3 md:px-8 md:py-4 bg-purple-800/50 text-white border border-purple-500/50 font-bold rounded-xl hover:bg-purple-800 transition-transform hover:-translate-y-1">
                             Documentation
                         </a>
                     </div>
@@ -64,12 +64,12 @@
                             <div class="grid grid-cols-2 gap-4 mb-6">
                                 <div class="bg-gray-800 p-4 rounded-lg border border-gray-700">
                                     <div class="text-gray-400 text-xs mb-1">Read Operations</div>
-                                    <div class="text-2xl font-bold text-green-400">50,675 <span
+                                    <div class="text-xl md:text-2xl font-bold text-green-400">50,675 <span
                                             class="text-sm text-gray-400">RPS</span></div>
                                 </div>
                                 <div class="bg-gray-800 p-4 rounded-lg border border-gray-700">
                                     <div class="text-gray-400 text-xs mb-1">Write Operations</div>
-                                    <div class="text-2xl font-bold text-yellow-400">49,797 <span
+                                    <div class="text-xl md:text-2xl font-bold text-yellow-400">49,797 <span
                                             class="text-sm text-gray-400">RPS</span></div>
                                 </div>
                             </div>
