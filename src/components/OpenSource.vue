@@ -103,8 +103,8 @@
                     <div class="flex justify-between items-start mb-2">
                         <router-link :to="{ name: 'project', params: { name: r.full_name } }"
                             class="group-hover:text-purple-400 transition-colors text-gray-800 dark:text-gray-100">
-                            <h3 class="text-xl font-bold truncate" :title="toTitleCase(r.name.split('-').join(' '))">
-                                {{ toTitleCase(r.name.split('-').join(' ')) }}
+                            <h3 class="text-xl font-bold truncate capitalize" :title="r.name.split('-').join(' ')">
+                                {{ r.name.split('-').join(' ') }}
                             </h3>
                         </router-link>
 
@@ -308,9 +308,7 @@ const changePage = (page) => {
     }
 }
 
-function toTitleCase(str) {
-    return str.replace(/\w\S*/g, (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase())
-}
+
 </script>
 
 <style scoped>
