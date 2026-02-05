@@ -67,7 +67,7 @@
                         <div class="p-6 flex-1 flex flex-col">
                             <div class="flex justify-between items-start mb-2">
                                 <h3
-                                    class="text-xl font-bold text-gray-800 dark:text-white group-hover:text-blue-500 transition-colors">
+                                    class="text-lg font-bold text-gray-800 dark:text-white group-hover:text-blue-500 transition-colors">
                                     {{ app.name }}
                                 </h3>
                                 <span class="text-xs px-2 py-1 rounded font-medium" :class="{
