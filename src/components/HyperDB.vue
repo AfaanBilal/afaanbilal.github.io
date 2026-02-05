@@ -86,8 +86,21 @@
                                         8765:8765</span> afaanbilal/hyperdb</div>
                             </div>
                             <div>
-                                <div class="text-gray-400 mb-2"># Install JS Client</div>
-                                <div class="text-purple-300">npm <span class="text-white">install</span> hyperdb-js
+                                <div class="flex items-center gap-2 mb-4 border-b border-gray-700 pb-2">
+                                    <button v-for="client in clients" :key="client.name" @click="activeClient = client"
+                                        class="px-3 py-1 rounded text-xs font-bold transition-all duration-300 cursor-pointer"
+                                        :class="activeClient.name === client.name ? 'bg-gray-700 text-white shadow-lg scale-105' : 'text-gray-500 hover:text-gray-300'">
+                                        {{ client.name }}
+                                    </button>
+                                </div>
+                                <div class="transition-all duration-300 min-h-[50px]">
+                                    <div class="text-gray-400 mb-2 text-xs"># Install {{ activeClient.name }} Client
+                                    </div>
+                                    <div class="text-purple-300 font-mono text-sm">
+                                        {{ activeClient.cmd }} <span class="text-white">{{ activeClient.action }}</span>
+                                        {{
+                                            activeClient.pkg }}
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -97,3 +110,17 @@
         </div>
     </section>
 </template>
+
+<script setup>
+import { ref } from 'vue'
+
+const clients = [
+    { name: 'JS', cmd: 'npm', action: 'i', pkg: 'hyperdb-js' },
+    { name: 'Python', cmd: 'pip', action: 'install', pkg: 'hyperdb-py' },
+    { name: 'Go', cmd: 'go', action: 'get', pkg: 'github.com/AfaanBilal/hyperdb-go' },
+    { name: 'PHP', cmd: 'composer', action: 'require', pkg: 'afaanbilal/hyperdb-php' },
+    { name: 'Rust', cmd: 'cargo', action: 'add', pkg: 'hyperdb-rs' },
+]
+
+const activeClient = ref(clients[0])
+</script>
