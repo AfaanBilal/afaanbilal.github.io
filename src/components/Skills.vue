@@ -203,7 +203,7 @@ const skills = {
         "SOC 2 Type II", "HIPAA", "GDPR", "OWASP", "OAuth2 / OIDC", "SAML / SSO", "AWS IAM", "WAF", "GuardDuty", "Inspector", "Dependabot", "Vanta"
     ],
     architecture: [
-        "Microservices", "Event-Driven Architecture", "System Design", "Serverless", "Technical Leadership", "Concurrency", "Memory Management", "Multithreading", "SIMD", "Low-level Optimization"
+        "Microservices", "Event-Driven Architecture", "System Design", "Serverless", "Technical Leadership", "Concurrency", "Memory Management", "Multithreading", "Low-level Optimization"
     ],
     integrations: [
         "Stripe", "Plaid", "PayPal", "SendGrid", "Resend"
