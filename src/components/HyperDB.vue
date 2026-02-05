@@ -117,9 +117,10 @@ import { ref } from 'vue'
 const clients = [
     { name: 'JS', cmd: 'npm', action: 'i', pkg: 'hyperdb-js' },
     { name: 'Python', cmd: 'pip', action: 'install', pkg: 'hyperdb-py' },
-    { name: 'Go', cmd: 'go', action: 'get', pkg: 'github.com/AfaanBilal/hyperdb-go' },
+    { name: 'Go', cmd: 'go', action: 'get -u', pkg: 'github.com/AfaanBilal/hyperdb-go' },
     { name: 'PHP', cmd: 'composer', action: 'require', pkg: 'afaanbilal/hyperdb-php' },
     { name: 'Rust', cmd: 'cargo', action: 'add', pkg: 'hyperdb-rs' },
+    { name: 'CLI', cmd: 'docker', action: 'run', pkg: 'afaanbilal/hyperdb-cli' },
 ]
 
 const activeClient = ref(clients[0])
