@@ -1,5 +1,5 @@
 <template>
-    <section id="reviews" class="py-16 scroll-mt-12 bg-white relative overflow-hidden">
+    <section id="reviews" class="py-8 scroll-mt-12 bg-white relative overflow-hidden">
         <!-- Decorative background elements -->
         <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0 opacity-30">
             <div
@@ -13,7 +13,7 @@
             </div>
         </div>
 
-        <div class="container mx-auto px-4 mb-16 relative z-10">
+        <div class="container mx-auto px-4 mb-8 relative z-10">
             <h2 class="text-3xl md:text-4xl font-extrabold text-center animate-fade-in-up">
                 <span class="bg-clip-text text-transparent bg-gradient-to-r from-violet-600 to-indigo-600">
                     Udemy Reviews
@@ -21,7 +21,7 @@
             </h2>
         </div>
 
-        <div class="relative w-full overflow-hidden space-y-8 z-10">
+        <div class="relative w-full overflow-hidden space-y-8 z-10 pb-12">
             <!-- Row 1 -->
             <div class="flex gap-6 animate-marquee w-max px-4">
                 <div v-for="(review, index) in [...firstRow, ...firstRow]" :key="`r1-${index}`"
