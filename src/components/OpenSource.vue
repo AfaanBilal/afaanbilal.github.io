@@ -301,11 +301,10 @@ const changePage = (page) => {
             window.scrollTo({ top: y, behavior: 'smooth' })
         }
 
-        // 300ms delay for skeleton state
         setTimeout(() => {
             currentPage.value = page
             isChangingPage.value = false
-        }, 300)
+        }, 200)
     }
 }
 
