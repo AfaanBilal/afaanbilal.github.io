@@ -18,7 +18,7 @@
                     <div class="md:flex">
                         <!-- Creative Image Section -->
                         <div
-                            class="md:w-1/2 relative min-h-[400px] flex items-center justify-center bg-black/20 overflow-hidden group/images">
+                            class="md:w-1/2 relative min-h-[500px] flex items-center justify-center bg-black/20 overflow-hidden group/images">
                             <!-- Background Glow -->
                             <div
                                 class="absolute w-64 h-64 bg-purple-600/20 rounded-full blur-3xl opacity-50 group-hover/images:animate-pulse">
@@ -85,7 +85,7 @@
                     <div class="md:flex flex-row-reverse">
                         <!-- Creative Image Section -->
                         <div
-                            class="md:w-1/2 relative min-h-[350px] flex items-center justify-center bg-black/20 group/images">
+                            class="md:w-1/2 relative min-h-[450px] flex items-center justify-center bg-black/20 group/images">
                             <div
                                 class="absolute w-64 h-64 bg-pink-600/20 rounded-full blur-3xl opacity-50 group-hover/images:animate-pulse">
                             </div>
