@@ -156,7 +156,7 @@
                     </div>
                 </div>
 
-                <!-- Architecture & Leadership -->
+                <!-- Architecture & Systems -->
                 <div
                     class="bg-gray-800/50 backdrop-blur-md rounded-2xl p-8 shadow-2xl border border-gray-700 hover:border-gray-600 transition-all duration-300">
                     <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
@@ -165,30 +165,11 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
                             </path>
-                        </svg> Architecture & Leadership
+                        </svg> Architecture & Systems
                     </h3>
                     <div class="flex flex-wrap gap-3">
                         <span v-for="skill in skills.architecture" :key="skill"
                             class="px-3 py-1 text-sm rounded-full bg-gray-900/50 text-gray-300 font-medium hover:bg-red-900/40 hover:text-red-300 border border-gray-700 transition-colors cursor-default">
-                            {{ skill }}
-                        </span>
-                    </div>
-                </div>
-
-                <!-- System Internals -->
-                <div
-                    class="bg-gray-800/50 backdrop-blur-md rounded-2xl p-8 shadow-2xl border border-gray-700 hover:border-gray-600 transition-all duration-300">
-                    <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-                        <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z">
-                            </path>
-                        </svg> System Internals
-                    </h3>
-                    <div class="flex flex-wrap gap-3">
-                        <span v-for="skill in skills.internals" :key="skill"
-                            class="px-3 py-1 text-sm rounded-full bg-gray-900/50 text-gray-300 font-medium hover:bg-blue-900/40 hover:text-blue-300 border border-gray-700 transition-colors cursor-default">
                             {{ skill }}
                         </span>
                     </div>
@@ -222,13 +203,10 @@ const skills = {
         "SOC 2 Type II", "HIPAA", "GDPR", "OWASP", "OAuth2 / OIDC", "SAML / SSO", "AWS IAM", "WAF", "GuardDuty", "Inspector", "Dependabot", "Vanta"
     ],
     architecture: [
-        "Microservices", "Event-Driven Architecture", "System Design", "Serverless", "Technical Leadership"
+        "Microservices", "Event-Driven Architecture", "System Design", "Serverless", "Technical Leadership", "Concurrency", "Memory Management", "Multithreading", "SIMD", "Low-level Optimization"
     ],
     integrations: [
         "Stripe", "Plaid", "PayPal", "SendGrid", "Resend"
-    ],
-    internals: [
-        "Concurrency", "Memory Management", "Multithreading", "SIMD", "Low-level Optimization"
     ]
 }
 </script>
