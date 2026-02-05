@@ -3,8 +3,7 @@
         <h2 class="text-4xl font-bold text-center text-gray-800 dark:text-white mb-4 animate-fade-in-up">
             <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-600">Courses</span>
         </h2>
-        <p
-            class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-center mb-12 animate-fade-in-up delay-100">
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto text-center mb-12 animate-fade-in-up delay-100">
             Professional training in backend development, security, and system architecture.
         </p>
 
