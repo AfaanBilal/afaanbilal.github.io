@@ -146,11 +146,26 @@
 
                     <!-- Online Playground Screenshot -->
                     <div class="mt-8">
-                        <div class="text-orange-400 font-bold mb-3 uppercase tracking-wider text-sm">Online web-based
-                            playground
+                        <div class="text-orange-400 font-bold mb-3 uppercase tracking-wider text-sm">Online
+                            web-based playground
                         </div>
-                        <img src="/screenshots/koshur.png" alt="Koshur Online Playground"
-                            class="rounded-xl border border-gray-700 shadow-2xl w-full hover:scale-[1.02] transition-transform duration-500" />
+                        <div class="relative group rounded-xl border border-gray-700 shadow-2xl overflow-hidden">
+                            <img src="/screenshots/koshur.png" alt="Koshur Online Playground"
+                                class="w-full transform group-hover:scale-105 transition-transform duration-500" />
+                            <div
+                                class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <a href="https://koshur.afaan.dev" target="_blank" rel="noopener"
+                                    aria-label="Try Online"
+                                    class="p-4 bg-white rounded-full text-orange-900 hover:bg-orange-500 hover:text-white transition-colors transform hover:scale-110 shadow-lg"
+                                    title="Try Online">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
