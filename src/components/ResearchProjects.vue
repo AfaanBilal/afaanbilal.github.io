@@ -119,6 +119,12 @@
                                         d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                                 </svg>
                             </a>
+
+                            <div class="mt-6 pt-6 border-t border-gray-700/50 text-sm text-gray-400 space-y-1">
+                                <div><span class="text-purple-400 font-bold">Conference:</span> 5th Conference of
+                                    Transportation Research Group of India (CTRG-2019)</div>
+                                <div><span class="text-purple-400 font-bold">Location:</span> Bhopal, India</div>
+                            </div>
                         </div>
                     </div>
                 </div>
