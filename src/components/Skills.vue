@@ -40,16 +40,34 @@ const categories = [
         skills: ["SOC 2 Type II", "HIPAA", "GDPR", "OWASP", "OAuth2", "SAML / SSO", "AWS IAM", "WAF", "GuardDuty", "Inspector", "Security Hub", "Dependabot", "Vanta"]
     },
     {
+        title: "Architecture & Systems",
+        color: "red",
+        icon: "M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10",
+        skills: ["Microservices", "Event-Driven Architecture", "System Design", "Serverless", "Technical Leadership", "Concurrency", "Memory Management", "Multithreading", "Low-level Optimization"]
+    },
+    {
         title: "Languages",
         color: "purple",
         icon: "M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4",
         skills: ["Rust", "Go", "PHP", "TypeScript", "JavaScript", "C", "C++", "Python", "SQL", "Terraform"]
     },
     {
+        title: "Cloud & DevOps",
+        color: "orange",
+        icon: "M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z",
+        skills: ["AWS", "EC2", "VPC", "ECS", "Fargate", "ECR", "Systems Manager", "Sentry", "Terraform", "Docker", "GitHub Actions", "Nginx", "Cloudflare"]
+    },
+    {
         title: "Backend",
         color: "pink",
         icon: "M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01",
         skills: ["Actix-Web", "Rocket", "Laravel", "Node.js", "Bun", "Express.js", "SeaORM", "SQLx", "WebSockets", "Cloudflare Workers"]
+    },
+    {
+        title: "Databases",
+        color: "yellow",
+        icon: "M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4",
+        skills: ["Aurora", "MySQL", "Redis", "Elasticsearch", "SQLite", "HyperDB", "Valkey"]
     },
     {
         title: "Frontend",
@@ -68,24 +86,6 @@ const categories = [
         color: "indigo",
         icon: "M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z",
         skills: ["Stripe", "Zapier", "HubSpot", "Slack", "Plaid", "PayPal", "SendGrid", "Resend"]
-    },
-    {
-        title: "Cloud & DevOps",
-        color: "orange",
-        icon: "M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z",
-        skills: ["AWS", "EC2", "VPC", "ECS", "Fargate", "ECR", "Systems Manager", "Sentry", "Terraform", "Docker", "GitHub Actions", "Nginx", "Cloudflare"]
-    },
-    {
-        title: "Databases",
-        color: "yellow",
-        icon: "M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4",
-        skills: ["Aurora", "MySQL", "Redis", "Elasticsearch", "SQLite", "HyperDB", "Valkey"]
-    },
-    {
-        title: "Architecture & Systems",
-        color: "red",
-        icon: "M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10",
-        skills: ["Microservices", "Event-Driven Architecture", "System Design", "Serverless", "Technical Leadership", "Concurrency", "Memory Management", "Multithreading", "Low-level Optimization"]
     }
 ]
 </script>
