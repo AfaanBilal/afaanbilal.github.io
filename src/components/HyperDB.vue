@@ -26,15 +26,68 @@
                             class="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-lg backdrop-blur-sm border border-white/20">
                             <span class="w-3 h-3 rounded-full bg-orange-500"></span> Rust
                         </span>
-                        <span
-                            class="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-lg backdrop-blur-sm border border-white/20">
-                            <span class="w-3 h-3 rounded-full bg-green-500"></span> Actix-Web
-                        </span>
-                        <span
-                            class="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-lg backdrop-blur-sm border border-white/20">
-                            <span class="w-3 h-3 rounded-full bg-blue-500"></span> JWT
-                        </span>
                     </div>
+
+                    <ul class="space-y-2 mb-10 text-gray-300">
+                        <li class="flex items-center gap-3">
+                            <span
+                                class="flex items-center justify-center w-6 h-6 rounded-full bg-green-500/20 text-green-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                </svg>
+                            </span>
+                            <span><span class="font-bold text-white">50k+</span> requests/sec</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span
+                                class="flex items-center justify-center w-6 h-6 rounded-full bg-blue-500/20 text-blue-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                                </svg>
+                            </span>
+                            <span><span class="font-bold text-white">In-memory</span> storage</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span
+                                class="flex items-center justify-center w-6 h-6 rounded-full bg-purple-500/20 text-purple-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.2-2.858.571-4.183m4.843-1.602a14.969 14.969 0 00-5.744 3.195M20 7l-3.238 2.025m-2.222 6.95c-.326-1.074.072-2.243 1.018-2.652.887-.384 1.896-.135 2.454.717M9 13.84c-1.39-1.29-2.266-2.583-2.664-3.763" />
+                                </svg>
+                            </span>
+                            <span>
+                                <span class="font-bold text-white">HTTP</span> API
+                                <span class="text-gray-400 text-sm font-normal">(optional JWT auth)</span>
+                            </span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span
+                                class="flex items-center justify-center w-6 h-6 rounded-full bg-yellow-500/20 text-yellow-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                                </svg>
+                            </span>
+                            <span><span class="font-bold text-white">Docker</span> ready</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span
+                                class="flex items-center justify-center w-6 h-6 rounded-full bg-orange-500/20 text-orange-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                                </svg>
+                            </span>
+                            <span><span class="font-bold text-white">Multi-language</span> clients</span>
+                        </li>
+                    </ul>
 
                     <div class="flex gap-4">
                         <a href="https://github.com/AfaanBilal/hyperdb" target="_blank" rel="noopener"
