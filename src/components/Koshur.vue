@@ -28,13 +28,58 @@
                         </span>
                         <span
                             class="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-lg backdrop-blur-sm border border-white/20">
-                            <span class="w-3 h-3 rounded-full bg-blue-500"></span> TypeScript
-                        </span>
-                        <span
-                            class="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-lg backdrop-blur-sm border border-white/20">
-                            <span class="w-3 h-3 rounded-full bg-green-500"></span> Parser
+                            <span class="w-3 h-3 rounded-full bg-blue-500"></span> AST
                         </span>
                     </div>
+
+                    <ul class="space-y-2 mb-10 text-gray-300">
+                        <li class="flex items-center gap-3">
+                            <span
+                                class="flex items-center justify-center w-6 h-6 rounded-full bg-orange-500/20 text-orange-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+                                </svg>
+                            </span>
+                            <span><span class="font-bold text-white">Cultural</span> Syntax (Kashmiri)</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span
+                                class="flex items-center justify-center w-6 h-6 rounded-full bg-blue-500/20 text-blue-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                </svg>
+                            </span>
+                            <span><span class="font-bold text-white">Interpreted</span> Language</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span
+                                class="flex items-center justify-center w-6 h-6 rounded-full bg-green-500/20 text-green-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </span>
+                            <span><span class="font-bold text-white">Web-based</span> Playground</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span
+                                class="flex items-center justify-center w-6 h-6 rounded-full bg-yellow-500/20 text-yellow-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                </svg>
+                            </span>
+                            <span><span class="font-bold text-white">JavaScript</span> Backend</span>
+                        </li>
+                    </ul>
 
                     <div class="flex gap-4">
                         <a href="https://github.com/AfaanBilal/koshur-lang" target="_blank" rel="noopener"
@@ -97,6 +142,15 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+
+                    <!-- Online Playground Screenshot -->
+                    <div class="mt-8">
+                        <div class="text-orange-400 font-bold mb-3 uppercase tracking-wider text-sm">Online web-based
+                            playground
+                        </div>
+                        <img src="/screenshots/koshur.png" alt="Koshur Online Playground"
+                            class="rounded-xl border border-gray-700 shadow-2xl w-full hover:scale-[1.02] transition-transform duration-500" />
                     </div>
                 </div>
             </div>
