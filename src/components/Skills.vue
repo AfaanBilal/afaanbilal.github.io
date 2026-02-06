@@ -1,6 +1,6 @@
 <template>
     <section id="skills" class="w-full py-24 md:py-32 bg-gradient-to-br from-gray-900 to-black text-white scroll-mt-12">
-        <div class="container mx-auto px-4">
+        <div class="container mx-auto px-4 pb-324">
             <h2 class="text-4xl font-bold text-center mb-4 animate-fade-in-up">
                 <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Skills</span>
             </h2>
@@ -8,11 +8,11 @@
                 Security-first cloud systems, backend engineering, and distributed architecture.
             </p>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div v-for="category in categories" :key="category.title"
                     class="bg-gray-800/50 backdrop-blur-md rounded-2xl p-6 shadow-2xl border border-gray-700 hover:border-gray-600 transition-all duration-300">
                     <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                        <svg class="w-6 h-6" :class="`text-${category.color}-400`" fill="none" stroke="currentColor"
+                        <svg class="w-6 h-6" :class="colorConfig[category.color].icon" fill="none" stroke="currentColor"
                             viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" :d="category.icon">
                             </path>
@@ -21,7 +21,7 @@
                     <div class="flex flex-wrap gap-3">
                         <span v-for="skill in category.skills" :key="skill"
                             class="px-4 py-2 rounded-full bg-gray-900/50 text-gray-300 font-medium border border-gray-700 transition-colors cursor-default"
-                            :class="`hover:bg-${category.color}-900/40 hover:text-${category.color}-300`">
+                            :class="colorConfig[category.color].hover">
                             {{ skill }}
                         </span>
                     </div>
@@ -32,6 +32,18 @@
 </template>
 
 <script setup>
+const colorConfig = {
+    green: { icon: "text-green-400", hover: "hover:bg-green-900/40 hover:text-green-300" },
+    red: { icon: "text-red-400", hover: "hover:bg-red-900/40 hover:text-red-300" },
+    purple: { icon: "text-purple-400", hover: "hover:bg-purple-900/40 hover:text-purple-300" },
+    orange: { icon: "text-orange-400", hover: "hover:bg-orange-900/40 hover:text-orange-300" },
+    pink: { icon: "text-pink-400", hover: "hover:bg-pink-900/40 hover:text-pink-300" },
+    yellow: { icon: "text-yellow-400", hover: "hover:bg-yellow-900/40 hover:text-yellow-300" },
+    cyan: { icon: "text-cyan-400", hover: "hover:bg-cyan-900/40 hover:text-cyan-300" },
+    teal: { icon: "text-teal-400", hover: "hover:bg-teal-900/40 hover:text-teal-300" },
+    indigo: { icon: "text-indigo-400", hover: "hover:bg-indigo-900/40 hover:text-indigo-300" }
+}
+
 const categories = [
     {
         title: "Security & Compliance",
