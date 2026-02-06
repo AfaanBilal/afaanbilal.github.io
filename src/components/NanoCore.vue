@@ -42,6 +42,31 @@
                         </span>
                     </div>
 
+                    <ul class="space-y-2 mb-10 text-gray-300">
+                        <li class="flex items-center gap-3">
+                            <span
+                                class="flex items-center justify-center w-6 h-6 rounded-full bg-blue-500/20 text-blue-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14" />
+                                </svg>
+                            </span>
+                            <span><span class="font-bold text-white">40+</span> Instructions</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span
+                                class="flex items-center justify-center w-6 h-6 rounded-full bg-yellow-500/20 text-yellow-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                </svg>
+                            </span>
+                            <span><span class="font-bold text-white">250+</span> GitHub Stars</span>
+                        </li>
+                    </ul>
+
                     <div class="flex gap-4">
                         <a href="https://github.com/AfaanBilal/NanoCore" target="_blank" rel="noopener"
                             class="px-6 py-3 md:px-8 md:py-4 bg-green-700 text-white font-bold rounded-xl hover:bg-green-600 transition-transform hover:-translate-y-1 shadow-lg shadow-green-500/20">
