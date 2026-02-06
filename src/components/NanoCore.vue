@@ -32,14 +32,6 @@
                             class="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-lg backdrop-blur-sm border border-white/20">
                             <span class="w-2 h-2 rounded-full bg-blue-500"></span> 8-bit ISA
                         </span>
-                        <span
-                            class="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-lg backdrop-blur-sm border border-white/20">
-                            <span class="w-2 h-2 rounded-full bg-purple-500"></span> TUI
-                        </span>
-                        <span
-                            class="flex items-center gap-2 px-4 py-2 bg-white/10 rounded-lg backdrop-blur-sm border border-white/20">
-                            <span class="w-2 h-2 rounded-full bg-red-500"></span> Assembler
-                        </span>
                     </div>
 
                     <ul class="space-y-2 mb-10 text-gray-300">
@@ -64,6 +56,30 @@
                                 </svg>
                             </span>
                             <span><span class="font-bold text-white">250+</span> GitHub Stars</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span
+                                class="flex items-center justify-center w-6 h-6 rounded-full bg-red-500/20 text-red-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                            </span>
+                            <span><span class="font-bold text-white">2-pass</span> Assembler</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span
+                                class="flex items-center justify-center w-6 h-6 rounded-full bg-purple-500/20 text-purple-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                </svg>
+                            </span>
+                            <span><span class="font-bold text-white">Interactive</span> TUI</span>
                         </li>
                     </ul>
 
@@ -129,6 +145,15 @@
                                     <div class="text-gray-300">
                                         cargo <span class="text-green-400">run</span> --release
                                     </div>
+                                </div>
+                            </div>
+
+                            <!-- TUI Demo -->
+                            <div class="mt-6 border-t border-gray-700/50 pt-4">
+                                <div class="text-gray-400 mb-2"># Interactive TUI Demo</div>
+                                <div class="rounded-lg overflow-hidden border border-gray-800 shadow-lg">
+                                    <img src="https://github.com/AfaanBilal/NanoCore/raw/ad199c01bb8f58552d47c95210d85c8b4d91fcb2/assets/NanoCoreTUI.gif"
+                                        alt="NanoCore TUI Demo" class="w-full h-auto opacity-90" loading="lazy">
                                 </div>
                             </div>
                         </div>
