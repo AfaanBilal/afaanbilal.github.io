@@ -1,6 +1,6 @@
 <template>
     <section id="skills" class="w-full py-24 md:py-32 bg-gradient-to-br from-gray-900 to-black text-white scroll-mt-12">
-        <div class="container mx-auto px-4 pb-324">
+        <div class="container mx-auto px-4 pb-32">
             <h2 class="text-4xl font-bold text-center mb-4 animate-fade-in-up">
                 <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Skills</span>
             </h2>
