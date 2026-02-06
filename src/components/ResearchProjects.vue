@@ -59,9 +59,47 @@
                                     </span>
                                 </div>
                                 <h3 class="text-3xl font-bold text-white mt-1 mb-2">ATVACS</h3>
-                                <p class="text-lg text-gray-300">
+                                <p class="text-lg text-gray-300 mb-4">
                                     Automated Traffic Volume Classification & Analysis System
                                 </p>
+
+                                <div class="space-y-3 mb-6 text-sm">
+                                    <div class="flex items-center gap-3 text-gray-400">
+                                        <div
+                                            class="w-6 h-6 rounded-full bg-gray-800 flex items-center justify-center border border-gray-700">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none"
+                                                viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0" />
+                                            </svg>
+                                        </div>
+                                        <span>Evaluated <span class="text-gray-300">Ultrasonic Sensors</span></span>
+                                    </div>
+                                    <div class="flex items-center gap-3 text-gray-400">
+                                        <div
+                                            class="w-6 h-6 rounded-full bg-gray-800 flex items-center justify-center border border-gray-700">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none"
+                                                viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 0 00-2-2H5a2 2 0 00-2 2v8zm2 3h6M9 9h6" />
+                                            </svg>
+                                        </div>
+                                        <span>Tested <span class="text-gray-300">Background Subtraction</span></span>
+                                    </div>
+                                    <div class="flex items-center gap-3 text-purple-300">
+                                        <div
+                                            class="w-6 h-6 rounded-full bg-purple-900/50 flex items-center justify-center border border-purple-500/50 shadow-[0_0_8px_rgba(168,85,247,0.3)]">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 text-purple-200"
+                                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M10 3H6a2 2 0 00-2 2v4m14-4h4a2 2 0 012 2v4M4 14v4a2 2 0 002 2h4m10-6v4a2 2 0 01-2 2h-4m-7 1h.01M12 12h.01M16 12h.01M12 16h.01M8 12h.01M12 8h.01" />
+                                            </svg>
+                                        </div>
+                                        <span>
+                                            Settled on <span class="font-bold text-white">Object Detection</span>
+                                        </span>
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="flex flex-wrap gap-2 mb-8">
