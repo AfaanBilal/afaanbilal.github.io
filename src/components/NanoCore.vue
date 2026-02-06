@@ -139,11 +139,12 @@
 
                             <!-- Run Command -->
                             <div class="mt-4">
-                                <div class="text-gray-400 mb-2"># Run Emulator</div>
+                                <div class="text-gray-400 mb-2"># Run TUI</div>
                                 <div
                                     class="bg-gray-900 p-4 rounded-lg border border-gray-800 text-gray-300 font-mono text-sm leading-relaxed">
                                     <div class="text-gray-300">
-                                        cargo <span class="text-green-400">run</span> --release
+                                        cargo <span class="text-green-400">r</span> --bin tui -- <span
+                                            class="text-yellow-400">{{ examples[activeTab].file }}</span>
                                     </div>
                                 </div>
                             </div>
@@ -182,6 +183,7 @@ const switchTab = (key) => {
 const examples = {
     abcde: {
         label: 'ABCDE',
+        file: 'programs/abcde.nca',
         code: `<span class="text-gray-400">; Prints ABCDE</span><br>
 <span class="text-yellow-400">start:</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R0 <span class="text-orange-400">65</span>&nbsp;&nbsp;&nbsp;<span class="text-gray-400">; Init R0 with 'A'</span><br>
@@ -196,6 +198,7 @@ const examples = {
     },
     counter: {
         label: 'Counter',
+        file: 'programs/counter.nca',
         code: `<span class="text-gray-400">; Count down from 5</span><br>
 <span class="text-yellow-400">start:</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R0 <span class="text-orange-400">5</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-400">; Start count at 5</span><br>
@@ -210,6 +213,7 @@ const examples = {
     },
     fib: {
         label: 'Fibonacci',
+        file: 'programs/fib.nca',
         code: `<span class="text-gray-400">; Print Fibonacci seq (first 7)</span><br>
 <span class="text-yellow-400">start:</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R0 <span class="text-orange-400">0</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-400">; Fib(0)</span><br>
@@ -230,6 +234,7 @@ const examples = {
     },
     rect: {
         label: 'Rectangle',
+        file: 'programs/rect.nca',
         code: `<span class="text-gray-400">; Draw a rectangle</span><br>
 <span class="text-yellow-400">start:</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R10 <span class="text-orange-400">10</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-400">; Newline char</span><br>
@@ -269,6 +274,7 @@ const examples = {
     },
     funcs: {
         label: 'Functions',
+        file: 'programs/func.nca',
         code: `<span class="text-yellow-400">start:</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R0 <span class="text-orange-400">2</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-400">; Base = 2</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">LDI</span> R1 <span class="text-orange-400">4</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-400">; Exponent = 4</span><br>
@@ -319,4 +325,5 @@ const examples = {
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="text-purple-400">RET</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-gray-400">; Return</span>`
     }
 };
+
 </script>
