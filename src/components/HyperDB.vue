@@ -12,8 +12,9 @@
                     <div class="mb-6 pl-4 border-l-4 border-purple-500">
                         <div class="text-purple-400 font-bold uppercase tracking-wider text-sm mb-1">Featured Project
                         </div>
-                        <p class="text-purple-200 italic text-lg">A performance-focused in-memory datastore built for
-                            simplicity and speed.</p>
+                        <p class="text-purple-200 italic text-lg">
+                            A performance-focused in-memory datastore built for simplicity and speed.
+                        </p>
                     </div>
                     <h2 class="text-5xl font-black mb-6 tracking-tight">HyperDB</h2>
                     <p class="text-xl text-purple-100 mb-8 leading-relaxed">
@@ -135,7 +136,9 @@
                             <!-- Commands -->
                             <div>
                                 <div class="text-gray-400 mb-2"># Run Server</div>
-                                <div class="text-purple-300">docker run <span class="text-white">--rm -it -p
+                                <div
+                                    class="text-purple-300 font-mono bg-black/30 p-3 rounded border border-gray-700/50">
+                                    docker run <span class="text-white">--rm -it -p
                                         8765:8765</span> afaanbilal/hyperdb</div>
                             </div>
                             <div>
@@ -160,6 +163,32 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <!-- Interactive Terminal -->
+                            <div class="mt-6 border-t border-gray-700/50 pt-6">
+                                <div class="text-gray-400 mb-2 flex justify-between items-center">
+                                    <span># Interactive Terminal</span>
+                                    <span class="text-xs text-gray-500">Live Simulation</span>
+                                </div>
+                                <div class="bg-black/80 rounded-lg border border-gray-800 p-4 h-64 overflow-y-auto font-mono text-sm terminal-scroll"
+                                    @click="$refs.cmdInput.focus()">
+                                    <div v-for="(line, i) in terminalHistory" :key="i" class="mb-1">
+                                        <div v-if="line.type === 'input'" class="flex gap-2">
+                                            <span class="text-green-500 font-bold">&gt;</span>
+                                            <span class="text-white">{{ line.content }}</span>
+                                        </div>
+                                        <div v-else class="text-gray-300 whitespace-pre-wrap font-mono">{{ line.content
+                                            }}</div>
+                                    </div>
+                                    <div class="flex gap-2 items-center mt-2">
+                                        <span class="text-green-500 font-bold">&gt;</span>
+                                        <input ref="cmdInput" v-model="terminalInput" @keydown.enter="executeCommand"
+                                            type="text"
+                                            class="bg-transparent border-none outline-none text-white w-full focus:ring-0 p-0"
+                                            placeholder="" autocomplete="off" spellcheck="false">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -181,6 +210,124 @@ const switchTab = (key) => {
     document.startViewTransition(() => {
         activeTab.value = key;
     });
+};
+
+// Terminal Logic
+const terminalInput = ref('');
+const terminalHistory = ref([
+    { type: 'output', content: 'Connected to http://localhost:8765' },
+    { type: 'input', content: 'SET user afaan' },
+    { type: 'output', content: 'OK' },
+    { type: 'input', content: 'GET user' },
+    { type: 'output', content: '"afaan"' }
+]);
+const dbStore = ref({
+    user: 'afaan'
+});
+
+const executeCommand = () => {
+    const cmd = terminalInput.value.trim();
+    if (!cmd) return;
+
+    terminalHistory.value.push({ type: 'input', content: cmd });
+
+    const parts = cmd.split(' ');
+    const op = parts[0].toUpperCase();
+    const args = parts.slice(1);
+
+    let output = '';
+
+    switch (op) {
+        case 'PING':
+            output = 'PONG';
+            break;
+        case 'SET':
+            if (args.length < 2) {
+                output = '(error) ERR wrong number of arguments for \'set\' command';
+            } else {
+                const key = args[0];
+                const val = args.slice(1).join(' ');
+                dbStore.value[key] = val;
+                output = 'OK';
+            }
+            break;
+        case 'GET':
+            if (args.length !== 1) {
+                output = '(error) ERR wrong number of arguments for \'get\' command';
+            } else {
+                const val = dbStore.value[args[0]];
+                output = val ? `"${val}"` : '(nil)';
+            }
+            break;
+        case 'HAS':
+            if (args.length !== 1) {
+                output = '(error) ERR wrong number of arguments for \'has\' command';
+            } else {
+                output = (args[0] in dbStore.value) ? '(integer) 1' : '(integer) 0';
+            }
+            break;
+        case 'DEL':
+            if (args.length !== 1) {
+                output = '(error) ERR wrong number of arguments for \'del\' command';
+            } else {
+                const exists = args[0] in dbStore.value;
+                if (exists) delete dbStore.value[args[0]];
+                output = exists ? '(integer) 1' : '(integer) 0';
+            }
+            break;
+        case 'EMPTY':
+            output = Object.keys(dbStore.value).length === 0 ? '(integer) 1' : '(integer) 0';
+            break;
+        case 'ALL':
+            output = JSON.stringify(dbStore.value, null, 2);
+            break;
+        case 'CLEAR':
+        case 'RESET':
+            dbStore.value = {};
+            output = 'OK';
+            break;
+        case 'VERSION':
+        case 'VER':
+            output = '1.0.0';
+            break;
+        case 'HELP':
+        case '?':
+            output = `[HyperDB Client]
+COMMANDS:
+HELP    | ?      Print this help message
+PING             Ping server
+VERSION | VER    Get server version
+HAS     [key]    Check if there is a value for [key]
+GET     [key]    Get the value for [key]
+SET     [key] [value]    Set the [value] for [key]
+DEL     [key]    Delete the value for [key]
+EMPTY            Check if the store is empty
+ALL              Get all stored data
+CLEAR            Delete all stored data from memory
+SAVE             Save stored data to disk
+RELOAD           Reload store from disk
+RESET            Delete all stored data from memory and disk
+QUIT    | EXIT   Quit`;
+            break;
+        case 'CLS': // Hidden command to clear screen
+            terminalHistory.value = [];
+            terminalInput.value = '';
+            return;
+        default:
+            output = `(error) ERR unknown command '${op}'`;
+    }
+
+    if (output) {
+        terminalHistory.value.push({ type: 'output', content: output });
+    }
+
+    terminalInput.value = '';
+
+    // Auto-scroll
+    setTimeout(() => {
+        const terminal = document.querySelector('.terminal-scroll');
+        if (terminal) terminal.scrollTop = terminal.scrollHeight;
+    }, 10);
 };
 
 const clients = {
@@ -208,11 +355,6 @@ const clients = {
         label: 'Rust',
         install: 'cargo add hyperdb-rs',
         code: `<span class="text-purple-400">use</span> hyperdb_rs::HyperClient;<br><br><span class="text-gray-500">// Connect</span><br><span class="text-purple-400">let</span> <span class="text-purple-400">mut</span> hyper = HyperClient::<span class="text-blue-400">new</span>(<span class="text-green-400">"http://localhost:8765"</span>.<span class="text-blue-400">into</span>());<br><br><span class="text-gray-500">// Store</span><br>hyper.<span class="text-blue-400">set</span>(<span class="text-green-400">"key"</span>, <span class="text-green-400">"val"</span>).<span class="text-blue-400">expect</span>(<span class="text-green-400">"err"</span>);<br><br><span class="text-gray-500">// Retrieve</span><br><span class="text-purple-400">let</span> val = hyper.<span class="text-blue-400">get</span>(<span class="text-green-400">"key"</span>).<span class="text-blue-400">expect</span>(<span class="text-green-400">"err"</span>);`
-    },
-    cli: {
-        label: 'CLI',
-        install: 'docker run --rm -it afaanbilal/hyperdb-cli',
-        code: `<span class="text-gray-500"># Start Interactive Shell</span><br>$ <span class="text-yellow-400">hyperdb-cli</span><br><br><span class="text-gray-500"># Store data</span><br>> <span class="text-blue-400">SET</span> user afaan<br><span class="text-green-400">"afaan"</span><br><br><span class="text-gray-500"># Retrieve data</span><br>> <span class="text-blue-400">GET</span> user<br><span class="text-green-400">"afaan"</span>`
     }
 }
 </script>
