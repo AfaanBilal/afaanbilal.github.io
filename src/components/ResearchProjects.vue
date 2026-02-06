@@ -49,9 +49,15 @@
 
                         <div class="md:w-1/2 p-8 md:p-10 flex flex-col justify-center">
                             <div class="mb-4">
-                                <span class="text-xs font-bold tracking-wider uppercase text-purple-400">
-                                    Research Study
-                                </span>
+                                <div class="flex items-center gap-2 mb-1">
+                                    <span class="text-xs font-bold tracking-wider uppercase text-purple-400">
+                                        Research Study
+                                    </span>
+                                    <span class="text-gray-600 text-xs">•</span>
+                                    <span class="text-xs font-bold tracking-wider uppercase text-gray-400">
+                                        December 2019
+                                    </span>
+                                </div>
                                 <h3 class="text-3xl font-bold text-white mt-1 mb-2">ATVACS</h3>
                                 <p class="text-lg text-gray-300">
                                     Automated Traffic Volume Classification & Analysis System
@@ -104,9 +110,15 @@
 
                         <div class="md:w-1/2 p-8 md:p-10 flex flex-col justify-center">
                             <div class="mb-4">
-                                <span class="text-xs font-bold tracking-wider uppercase text-pink-400">
-                                    B.Tech Thesis
-                                </span>
+                                <div class="flex items-center gap-2 mb-1">
+                                    <span class="text-xs font-bold tracking-wider uppercase text-pink-400">
+                                        B.Tech Thesis
+                                    </span>
+                                    <span class="text-gray-600 text-xs">•</span>
+                                    <span class="text-xs font-bold tracking-wider uppercase text-gray-400">
+                                        July 2019
+                                    </span>
+                                </div>
                                 <h3 class="text-3xl font-bold text-white mt-1 mb-2">Impact on PCU</h3>
                                 <p class="text-lg text-gray-300">Effect of Road Surface Conditions on PCU Values</p>
                             </div>
