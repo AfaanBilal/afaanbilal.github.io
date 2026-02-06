@@ -81,14 +81,18 @@
                         </li>
                     </ul>
 
-                    <div class="flex gap-4">
-                        <a href="https://github.com/AfaanBilal/koshur-lang" target="_blank" rel="noopener"
+                    <div class="flex gap-4 flex-wrap">
+                        <a href="https://koshur.afaan.dev" target="_blank" rel="noopener"
                             class="px-6 py-3 md:px-8 md:py-4 bg-white text-orange-900 font-bold rounded-xl hover:bg-gray-100 transition-transform hover:-translate-y-1 shadow-lg">
+                            Try Online
+                        </a>
+                        <a href="https://github.com/AfaanBilal/koshur-lang" target="_blank" rel="noopener"
+                            class="px-6 py-3 md:px-8 md:py-4 bg-orange-800/50 text-white border border-orange-500/50 font-bold rounded-xl hover:bg-orange-800 transition-transform hover:-translate-y-1">
                             View on GitHub
                         </a>
-                        <a href="https://koshur.afaan.dev" target="_blank" rel="noopener"
+                        <a href="https://deepwiki.com/AfaanBilal/koshur-lang" target="_blank" rel="noopener"
                             class="px-6 py-3 md:px-8 md:py-4 bg-orange-800/50 text-white border border-orange-500/50 font-bold rounded-xl hover:bg-orange-800 transition-transform hover:-translate-y-1">
-                            Try Online
+                            Documentation
                         </a>
                     </div>
                 </div>
