@@ -27,6 +27,15 @@
                     {{ link.text }}
                 </a>
 
+                <!-- Command Palette Trigger -->
+                <button @click="openCommandPalette"
+                    class="ml-2 px-3 py-1.5 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-xs text-gray-500 hover:border-purple-300 dark:hover:border-purple-700 transition-colors flex items-center gap-2 group">
+                    <span>Search</span>
+                    <kbd
+                        class="hidden lg:inline-block font-mono bg-white dark:bg-gray-700 rounded px-1.5 py-0.5 text-xs group-hover:text-purple-500 transition-colors">Ctrl
+                        K</kbd>
+                </button>
+
                 <!-- Theme Toggle -->
                 <button @click="toggleTheme"
                     class="ml-2 p-2 cursor-pointer rounded-lg hover:bg-purple-50 dark:hover:bg-gray-800 text-purple-600 dark:text-purple-400 transition-colors"
@@ -125,4 +134,8 @@ const links = [
     { text: 'Apps', to: '/#apps' },
     { text: 'Contact', to: '/#contact' }
 ]
+
+const openCommandPalette = () => {
+    window.dispatchEvent(new KeyboardEvent('keydown', { key: 'k', ctrlKey: true }))
+}
 </script>
