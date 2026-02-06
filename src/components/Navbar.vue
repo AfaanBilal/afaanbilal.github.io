@@ -115,13 +115,13 @@ onUnmounted(() => {
 })
 
 const links = [
-    { text: 'Courses', to: '/#courses' },
     { text: 'NanoCore', to: '/#nanocore' },
     { text: 'HyperDB', to: '/#hyperdb' },
     { text: 'Koshur', to: '/#koshur' },
-    { text: 'Open Source', to: '/#open-source' },
     { text: 'Skills', to: '/#skills' },
+    { text: 'Open Source', to: '/#open-source' },
     { text: 'Research', to: '/#research-projects' },
+    { text: 'Courses', to: '/#courses' },
     { text: 'Apps', to: '/#apps' },
     { text: 'Contact', to: '/#contact' }
 ]

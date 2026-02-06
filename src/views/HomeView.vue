@@ -3,14 +3,14 @@
     <Navbar />
     <main>
       <Hero />
-      <Courses />
-      <Reviews />
       <NanoCore />
       <HyperDB />
       <Koshur />
-      <OpenSource />
       <Skills />
+      <OpenSource />
       <ResearchProjects />
+      <Courses />
+      <Reviews />
       <Apps />
       <QuickLinks />
       <Contact />
