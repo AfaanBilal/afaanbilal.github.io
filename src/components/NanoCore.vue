@@ -1,5 +1,5 @@
 <template>
-    <section id="nanocore" class="py-24 md:py-32 bg-black text-white relative overflow-hidden scroll-mt-12">
+    <section id="nanocore" class="py-24 bg-black text-white relative overflow-hidden scroll-mt-12">
         <!-- Background Patterns -->
         <div
             class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/circuit-board.png')]">

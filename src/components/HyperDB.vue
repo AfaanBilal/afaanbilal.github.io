@@ -1,6 +1,6 @@
 <template>
     <section id="hyperdb"
-        class="py-24 md:py-32 bg-gradient-to-br from-purple-900 to-indigo-900 text-white relative overflow-hidden scroll-mt-12">
+        class="py-24 bg-gradient-to-br from-purple-900 to-indigo-900 text-white relative overflow-hidden scroll-mt-12">
         <!-- Background Patterns -->
         <div
             class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]">
