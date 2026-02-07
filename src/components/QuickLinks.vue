@@ -1,6 +1,6 @@
 <template>
     <section id="quick-links"
-        class="w-full py-24 md:py-32 bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white scroll-mt-12">
+        class="w-full py-24 bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white scroll-mt-12">
         <div class="container mx-auto px-4">
             <h2 class="text-5xl font-bold text-center mb-4 animate-fade-in-up">
                 <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-cyan-400">
