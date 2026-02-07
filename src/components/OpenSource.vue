@@ -13,28 +13,44 @@
         </div>
 
         <!-- Loading State -->
-        <div v-if="loading" class="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mb-10">
-            <div v-for="n in itemsPerPage" :key="n"
-                class="border border-gray-100 rounded-xl p-4 shadow-sm animate-pulse bg-white">
+        <div v-if="loading" class="mb-10">
+            <!-- Filters Skeleton -->
+            <div class="flex flex-wrap justify-center gap-2 mb-8 animate-pulse">
+                <div class="h-9 w-20 bg-gray-200 rounded-full"></div>
+                <div class="h-9 w-24 bg-gray-200 rounded-full"></div>
+                <div class="h-9 w-28 bg-gray-200 rounded-full"></div>
+                <div class="h-9 w-20 bg-gray-200 rounded-full"></div>
+                <div class="h-9 w-24 bg-gray-200 rounded-full"></div>
+                <div class="h-9 w-20 bg-gray-200 rounded-full"></div>
+                <div class="h-9 w-24 bg-gray-200 rounded-full"></div>
+                <div class="h-9 w-28 bg-gray-200 rounded-full"></div>
+                <div class="h-9 w-20 bg-gray-200 rounded-full"></div>
+                <div class="h-9 w-24 bg-gray-200 rounded-full"></div>
+            </div>
 
-                <!-- Header Skeleton -->
-                <div class="flex justify-between items-start mb-2">
-                    <div class="h-6 bg-gray-200 rounded w-2/3"></div>
-                    <div class="h-6 w-8 bg-gray-200 rounded-full"></div>
-                </div>
+            <div class="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+                <div v-for="n in itemsPerPage" :key="n"
+                    class="border border-gray-100 rounded-xl p-4 shadow-sm animate-pulse bg-white">
 
-                <!-- Description Skeleton -->
-                <div class="space-y-2 mb-2 h-[60px]">
-                    <div class="h-4 bg-gray-200 rounded w-full"></div>
-                    <div class="h-4 bg-gray-200 rounded w-5/6"></div>
-                </div>
+                    <!-- Header Skeleton -->
+                    <div class="flex justify-between items-start mb-2">
+                        <div class="h-6 bg-gray-200 rounded w-2/3"></div>
+                        <div class="h-6 w-8 bg-gray-200 rounded-full"></div>
+                    </div>
 
-                <!-- Footer Skeleton -->
-                <div class="flex items-center justify-between mt-auto">
-                    <div class="h-4 w-16 bg-gray-200 rounded-full"></div>
-                    <div class="flex gap-3">
-                        <div class="h-4 w-12 bg-gray-200 rounded"></div>
-                        <div class="h-4 w-12 bg-gray-200 rounded"></div>
+                    <!-- Description Skeleton -->
+                    <div class="space-y-2 mb-2 h-[60px]">
+                        <div class="h-4 bg-gray-200 rounded w-full"></div>
+                        <div class="h-4 bg-gray-200 rounded w-5/6"></div>
+                    </div>
+
+                    <!-- Footer Skeleton -->
+                    <div class="flex items-center justify-between mt-auto">
+                        <div class="h-4 w-16 bg-gray-200 rounded-full"></div>
+                        <div class="flex gap-3">
+                            <div class="h-4 w-12 bg-gray-200 rounded"></div>
+                            <div class="h-4 w-12 bg-gray-200 rounded"></div>
+                        </div>
                     </div>
                 </div>
             </div>
