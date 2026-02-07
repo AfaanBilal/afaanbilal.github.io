@@ -49,10 +49,10 @@
                 <div class="flex flex-wrap justify-center gap-2 mt-6 animate-fade-in-up delay-100"
                     v-if="allTechs.length > 0">
                     <button v-for="tech in allTechs" :key="tech" @click="toggleTech(tech)"
-                        class="px-3 py-1 text-xs rounded-md transition-all duration-300 border cursor-pointer"
+                        class="px-3 py-1 text-xs rounded-md transition-all duration-300 border cursor-pointer border-gray-200 dark:border-gray-700/50"
                         :class="selectedTech === tech
                             ? 'bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-700/50'
-                            : 'bg-transparent text-gray-500 dark:text-gray-400 border-transparent hover:bg-gray-100 dark:hover:bg-gray-800'">
+                            : 'bg-transparent text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800'">
                         {{ tech }}
                     </button>
                     <button v-if="selectedTech" @click="selectedTech = null"
