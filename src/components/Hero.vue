@@ -1,3 +1,14 @@
+<script setup>
+const trackDownload = () => {
+    if (typeof window !== 'undefined' && window.gtag) {
+        window.gtag('event', 'download_soc2', {
+            event_category: 'engagement',
+            event_label: 'hero_section'
+        });
+    }
+}
+</script>
+
 <template>
     <section class="relative bg-gray-900 overflow-hidden min-h-screen flex items-center pt-20">
         <!-- Background Blob Effect -->
@@ -49,6 +60,24 @@
                         <a href="#open-source"
                             class="px-8 py-4 bg-gray-800 text-white border border-gray-700 font-bold rounded-xl hover:bg-gray-700 transition-all transform hover:-translate-y-1 shadow-sm hover:shadow-md">
                             View Work
+                        </a>
+                    </div>
+                    <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4 pt-2">
+                        <a href="/assets/SOC-2-Type-II-Compliance.pdf" target="_blank"
+                            download="SOC-2-Type-II-Compliance.pdf" @click="trackDownload"
+                            class="group relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium rounded-xl group bg-gradient-to-br from-teal-300 to-lime-300 group-hover:from-teal-300 group-hover:to-lime-300 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-lime-800 transform hover:-translate-y-1 transition-all duration-200 shadow-[0_0_20px_rgba(45,212,191,0.3)] hover:shadow-[0_0_30px_rgba(45,212,191,0.5)]">
+                            <span
+                                class="relative px-8 py-3.5 transition-all ease-in duration-75 bg-gray-900 rounded-[10px] flex items-center gap-2">
+                                <span class="font-bold text-teal-200 group-hover:text-white transition-colors">
+                                    Download My SOC2 Type II Guide
+                                </span>
+                                <svg class="w-5 h-5 text-teal-200 group-hover:text-white transition-colors" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+                                    </path>
+                                </svg>
+                            </span>
                         </a>
                     </div>
 
