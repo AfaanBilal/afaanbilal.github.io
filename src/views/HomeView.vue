@@ -10,6 +10,7 @@
       <OpenSource />
       <ResearchProjects />
       <Courses />
+      <Books />
       <Reviews />
       <Apps />
       <QuickLinks />
@@ -24,6 +25,7 @@ import Navbar from '../components/Navbar.vue'
 import Hero from '../components/Hero.vue'
 import ResearchProjects from '../components/ResearchProjects.vue'
 import Courses from '../components/Courses.vue'
+import Books from '../components/Books.vue'
 import Reviews from '../components/Reviews.vue'
 import Apps from '../components/Apps.vue'
 import HyperDB from '../components/HyperDB.vue'

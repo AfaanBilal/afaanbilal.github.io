@@ -131,6 +131,7 @@ const links = [
     { text: 'Open Source', to: '/#open-source' },
     { text: 'Research', to: '/#research-projects' },
     { text: 'Courses', to: '/#courses' },
+    { text: 'Books', to: '/#books' },
     { text: 'Apps', to: '/#apps' },
     { text: 'Contact', to: '/#contact' }
 ]
