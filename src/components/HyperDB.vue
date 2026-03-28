@@ -282,9 +282,18 @@ const executeCommand = () => {
             output = JSON.stringify(dbStore.value, null, 2);
             break;
         case 'CLEAR':
+            dbStore.value = {};
+            output = 'OK';
+            break;
         case 'RESET':
             dbStore.value = {};
             output = 'OK';
+            break;
+        case 'SAVE':
+            output = 'OK (persisted to disk)';
+            break;
+        case 'RELOAD':
+            output = 'OK (reloaded from disk)';
             break;
         case 'VERSION':
         case 'VER':

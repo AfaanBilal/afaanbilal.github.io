@@ -195,9 +195,10 @@ const secondRow = computed(() => reviews.slice(Math.ceil(reviews.length / 2)))
 const getInitials = (name) => {
     return name
         .split(' ')
+        .filter(Boolean)
+        .slice(0, 2)
         .map(word => word[0])
         .join('')
-        .substring(0, 2)
         .toUpperCase()
 }
 </script>

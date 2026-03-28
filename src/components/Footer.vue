@@ -39,8 +39,12 @@
             </div>
 
             <div class="text-gray-600 dark:text-gray-400 text-sm">
-                &copy; {{ new Date().getFullYear() }} Afaan Bilal. All rights reserved.
+                &copy; {{ year }} Afaan Bilal. All rights reserved.
             </div>
         </div>
     </footer>
 </template>
+
+<script setup>
+const year = new Date().getFullYear()
+</script>

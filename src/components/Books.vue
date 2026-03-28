@@ -45,9 +45,9 @@
 
                     <div
                         class="mt-auto pt-4 border-t border-gray-100 dark:border-gray-700 flex items-center justify-between gap-4">
-                        <a :href="book.url" target="_blank" rel="noopener"
+                        <a :href="book.url" target="_blank" rel="noopener" :download="book.download || undefined"
                             class="text-blue-700 dark:text-blue-400 font-bold group-hover:text-blue-800 dark:group-hover:text-blue-300 flex items-center gap-1">
-                            Get the Book
+                            {{ book.download ? 'Download' : 'Get the Book' }}
                             <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none"
                                 viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

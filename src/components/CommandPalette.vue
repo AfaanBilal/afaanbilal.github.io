@@ -5,8 +5,10 @@
             :class="animate ? 'opacity-100' : 'opacity-0'"></div>
 
         <!-- Palette -->
-        <div class="relative w-full max-w-2xl bg-gray-900 border border-gray-700 rounded-xl shadow-2xl overflow-hidden transform transition-all duration-200"
-            :class="animate ? 'scale-100 opacity-100 translate-y-0' : 'scale-95 opacity-0 -translate-y-4'">
+        <div ref="paletteRef" role="dialog" aria-modal="true" aria-label="Command palette"
+            class="relative w-full max-w-2xl bg-gray-900 border border-gray-700 rounded-xl shadow-2xl overflow-hidden transform transition-all duration-200"
+            :class="animate ? 'scale-100 opacity-100 translate-y-0' : 'scale-95 opacity-0 -translate-y-4'"
+            @keydown="onPaletteKeydown">
 
             <!-- Search Input -->
             <div class="flex items-center border-b border-gray-700 p-4">
@@ -59,9 +61,15 @@
                     <span class="flex items-center gap-1"><kbd class="bg-gray-800 px-1 rounded">↑↓</kbd>
                         to navigate</span>
                 </div>
-                <div class="text-gray-600">
-                    &copy; Afaan Bilal
-                </div>
+                <transition enter-active-class="transition duration-150" enter-from-class="opacity-0 translate-y-1"
+                    enter-to-class="opacity-100 translate-y-0" leave-active-class="transition duration-150"
+                    leave-from-class="opacity-100" leave-to-class="opacity-0">
+                    <span v-if="toast" class="text-green-400 font-medium flex items-center gap-1">
+                        <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                        {{ toast }}
+                    </span>
+                    <span v-else class="text-gray-600">&copy; Afaan Bilal</span>
+                </transition>
             </div>
         </div>
     </div>
@@ -77,6 +85,28 @@ const animate = ref(false)
 const search = ref('')
 const selectedId = ref('')
 const inputRef = ref(null)
+const paletteRef = ref(null)
+const toast = ref('')
+let toastTimer = null
+
+const showToast = (msg) => {
+    toast.value = msg
+    clearTimeout(toastTimer)
+    toastTimer = setTimeout(() => { toast.value = '' }, 2000)
+}
+
+const onPaletteKeydown = (e) => {
+    if (e.key !== 'Tab') return
+    const focusable = paletteRef.value?.querySelectorAll('button, input, [tabindex]:not([tabindex="-1"])')
+    if (!focusable?.length) return
+    const first = focusable[0]
+    const last = focusable[focusable.length - 1]
+    if (e.shiftKey) {
+        if (document.activeElement === first) { e.preventDefault(); last.focus() }
+    } else {
+        if (document.activeElement === last) { e.preventDefault(); first.focus() }
+    }
+}
 
 // Icons
 const IconHome = () => h('svg', { xmlns: 'http://www.w3.org/2000/svg', fill: 'none', viewBox: '0 0 24 24', stroke: 'currentColor', 'stroke-width': 2 }, [h('path', { 'stroke-linecap': 'round', 'stroke-linejoin': 'round', d: 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6' })])
@@ -192,7 +222,7 @@ const commands = [
         icon: IconLink,
         action: () => {
             navigator.clipboard.writeText('hello@afaan.dev')
-            alert('Email copied to clipboard!')
+            showToast('Email copied!')
         }
     }
 ]
