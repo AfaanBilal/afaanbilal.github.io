@@ -127,6 +127,7 @@ const links = [
     { text: 'NanoCore', to: '/#nanocore' },
     { text: 'HyperDB', to: '/#hyperdb' },
     { text: 'Koshur', to: '/#koshur' },
+    { text: 'lsec', to: '/#lsec' },
     { text: 'Skills', to: '/#skills' },
     { text: 'Open Source', to: '/#open-source' },
     { text: 'Research', to: '/#research-projects' },

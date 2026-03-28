@@ -82,9 +82,13 @@
                         </li>
                     </ul>
 
-                    <div class="flex gap-4">
-                        <a href="https://github.com/AfaanBilal/NanoCore" target="_blank" rel="noopener"
+                    <div class="flex flex-wrap gap-4">
+                        <a href="https://nanocore.afaan.dev" target="_blank" rel="noopener"
                             class="px-6 py-3 md:px-8 md:py-4 bg-green-700 text-white font-bold rounded-xl hover:bg-green-600 transition-transform hover:-translate-y-1 shadow-lg shadow-green-500/20">
+                            Visit Website
+                        </a>
+                        <a href="https://github.com/AfaanBilal/NanoCore" target="_blank" rel="noopener"
+                            class="px-6 py-3 md:px-8 md:py-4 bg-green-900/30 text-green-300 border border-green-500/30 font-bold rounded-xl hover:bg-green-900/50 transition-transform hover:-translate-y-1">
                             View on GitHub
                         </a>
                         <a href="https://deepwiki.com/AfaanBilal/NanoCore" target="_blank" rel="noopener"

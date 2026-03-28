@@ -6,6 +6,7 @@
       <NanoCore />
       <HyperDB />
       <Koshur />
+      <LSec />
       <Skills />
       <OpenSource />
       <ResearchProjects />
@@ -31,6 +32,7 @@ import Reviews from '../components/Reviews.vue'
 import Apps from '../components/Apps.vue'
 import HyperDB from '../components/HyperDB.vue'
 import Koshur from '../components/Koshur.vue'
+import LSec from '../components/LSec.vue'
 import QuickLinks from '../components/QuickLinks.vue'
 import NanoCore from '../components/NanoCore.vue'
 import Skills from '../components/Skills.vue'
