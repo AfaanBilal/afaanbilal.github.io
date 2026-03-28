@@ -220,6 +220,7 @@ const commands = [
         label: 'Copy Email Address',
         group: 'Actions',
         icon: IconLink,
+        keepOpen: true,
         action: () => {
             navigator.clipboard.writeText('hello@afaan.dev')
             showToast('Email copied!')
@@ -265,7 +266,7 @@ const execute = () => {
 
 const trigger = (cmd) => {
     cmd.action()
-    close()
+    if (!cmd.keepOpen) close()
 }
 
 const scrollTo = (id) => {
