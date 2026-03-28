@@ -57,8 +57,12 @@
         </div>
 
         <!-- Error State -->
-        <div v-else-if="error" class="text-center text-red-500 py-10">
-            <p>Failed to load repositories. Please try again later.</p>
+        <div v-else-if="error" class="text-center py-10 space-y-3">
+            <p class="text-red-500">Failed to load repositories. This may be due to GitHub API rate limiting.</p>
+            <p class="text-gray-500 text-sm">Unauthenticated requests are limited to 60/hour. Please try again later or
+                <a href="https://github.com/AfaanBilal" target="_blank" rel="noopener"
+                    class="text-purple-600 hover:underline">view all repos on GitHub</a>.
+            </p>
         </div>
 
         <div v-else class="mb-12 min-h-[500px]">
@@ -177,7 +181,7 @@
 
 
         <!-- Pagination Controls -->
-        <div v-if="totalPages > 1" class="flex justify-center items-center gap-2 mt-12 animate-fade-in-up">
+        <div v-if="totalPages > 1" class="flex justify-center items-center gap-2 mt-12 animate-fade-in-up flex-wrap">
             <button @click="changePage(currentPage - 1)" :disabled="currentPage === 1"
                 class="p-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-500 hover:text-purple-600 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer transition-all hover:shadow-md focus:outline-none focus:ring-2 focus:ring-purple-500/50"
                 aria-label="Previous Page">
@@ -188,9 +192,16 @@
                 </svg>
             </button>
 
-            <div class="flex gap-2 items-center px-4 font-medium text-gray-600">
-                Page {{ currentPage }} of {{ totalPages }}
-            </div>
+            <template v-for="page in visiblePages" :key="page">
+                <span v-if="page === '...'" class="px-2 text-gray-400 select-none">...</span>
+                <button v-else @click="changePage(page)" :aria-label="`Page ${page}`" :aria-current="page === currentPage ? 'page' : undefined"
+                    class="w-9 h-9 rounded-lg border text-sm font-medium cursor-pointer transition-all hover:shadow-md focus:outline-none focus:ring-2 focus:ring-purple-500/50"
+                    :class="page === currentPage
+                        ? 'bg-purple-600 border-purple-600 text-white shadow-lg shadow-purple-500/30'
+                        : 'border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:text-purple-600 hover:border-purple-300'">
+                    {{ page }}
+                </button>
+            </template>
 
             <button @click="changePage(currentPage + 1)" :disabled="currentPage === totalPages"
                 class="p-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-500 hover:text-purple-600 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer transition-all hover:shadow-md focus:outline-none focus:ring-2 focus:ring-purple-500/50"
@@ -217,7 +228,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, computed } from 'vue'
+import { ref, onMounted, computed, watch } from 'vue'
 
 const allRepos = ref([])
 const loading = ref(true)
@@ -290,7 +301,6 @@ const filteredRepos = computed(() => {
 })
 
 // Reset page when filter changes
-import { watch } from 'vue'
 watch(selectedLanguage, () => {
     currentPage.value = 1
 })
@@ -299,6 +309,22 @@ const currentPage = ref(1)
 const itemsPerPage = 16
 
 const totalPages = computed(() => Math.ceil(filteredRepos.value.length / itemsPerPage))
+
+const visiblePages = computed(() => {
+    const total = totalPages.value
+    const current = currentPage.value
+    if (total <= 7) return Array.from({ length: total }, (_, i) => i + 1)
+
+    const pages = []
+    pages.push(1)
+    if (current > 3) pages.push('...')
+    for (let i = Math.max(2, current - 1); i <= Math.min(total - 1, current + 1); i++) {
+        pages.push(i)
+    }
+    if (current < total - 2) pages.push('...')
+    pages.push(total)
+    return pages
+})
 
 const displayedRepos = computed(() => {
     const start = (currentPage.value - 1) * itemsPerPage

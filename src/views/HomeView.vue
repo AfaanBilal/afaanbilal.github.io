@@ -21,6 +21,7 @@
 </template>
 
 <script setup>
+import { defineAsyncComponent } from 'vue'
 import Navbar from '../components/Navbar.vue'
 import Hero from '../components/Hero.vue'
 import ResearchProjects from '../components/ResearchProjects.vue'
@@ -35,7 +36,6 @@ import NanoCore from '../components/NanoCore.vue'
 import Skills from '../components/Skills.vue'
 import Contact from '../components/Contact.vue'
 import Footer from '../components/Footer.vue'
-import { defineAsyncComponent } from 'vue'
 
 const OpenSource = defineAsyncComponent(() => import('../components/OpenSource.vue'))
 </script>

@@ -171,7 +171,7 @@ const trackCloudSecurity = () => {
                             </svg>
                         </a>
                         <!-- Float Element 2 -->
-                        <div
+                        <div aria-hidden="true"
                             class="absolute bottom-10 left-0 bg-gray-800 p-3 rounded-2xl shadow-xl animate-float animation-delay-2000">
                             <span class="text-2xl">🚀</span>
                         </div>
