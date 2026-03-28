@@ -23,7 +23,9 @@
             <!-- Desktop Links -->
             <div class="hidden md:flex space-x-1 items-center">
                 <a v-for="(link, index) in links" :key="index" :href="link.to"
-                    class="px-3 py-2 rounded-lg text-sm font-medium hover:text-purple-600 hover:bg-purple-50 dark:hover:bg-gray-800 transition-all">
+                    :aria-current="activeSection && link.to === '/#' + activeSection ? 'page' : undefined"
+                    class="px-3 py-2 rounded-lg text-sm font-medium hover:text-purple-600 hover:bg-purple-50 dark:hover:bg-gray-800 transition-all"
+                    :class="activeSection && link.to === '/#' + activeSection ? 'text-purple-600 dark:text-purple-400' : ''">
                     {{ link.text }}
                 </a>
 
@@ -88,6 +90,7 @@ import { ref, onMounted, onUnmounted } from 'vue'
 const isOpen = ref(false)
 const scrolled = ref(false)
 const isDark = ref(false)
+const activeSection = ref('')
 
 const handleScroll = () => {
     window.requestAnimationFrame(() => {
@@ -106,8 +109,23 @@ const toggleTheme = () => {
     }
 }
 
+const sectionIds = ['nanocore', 'hyperdb', 'koshur', 'lsec', 'skills', 'open-source', 'research-projects', 'courses', 'books', 'apps', 'contact']
+
+let sectionObserver = null
+
 onMounted(() => {
     window.addEventListener('scroll', handleScroll)
+
+    sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) activeSection.value = entry.target.id
+        })
+    }, { rootMargin: '-40% 0px -55% 0px' })
+
+    sectionIds.forEach(id => {
+        const el = document.getElementById(id)
+        if (el) sectionObserver.observe(el)
+    })
 
     // Initialize theme based on local storage or system preference
     if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
@@ -121,6 +139,7 @@ onMounted(() => {
 
 onUnmounted(() => {
     window.removeEventListener('scroll', handleScroll)
+    sectionObserver?.disconnect()
 })
 
 const links = [

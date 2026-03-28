@@ -28,22 +28,22 @@
                             <div
                                 class="absolute w-64 h-40 rounded-lg shadow-2xl border-2 border-gray-700/50 transform -rotate-12 -translate-y-24 -translate-x-20 group-hover/images:rotate-0 group-hover/images:-translate-x-36 group-hover/images:-translate-y-24 group-hover/images:scale-100 group-hover/images:z-10 transition-all duration-500 ease-out">
                                 <img :src="atvcasImages[0]" class="w-full h-full object-cover rounded-lg"
-                                    alt="Detection" loading="lazy" />
+                                    alt="ATVACS vehicle detection and recognition output" loading="lazy" />
                             </div>
                             <div
                                 class="absolute w-64 h-40 rounded-lg shadow-2xl border-2 border-gray-700/50 transform rotate-6 -translate-y-12 translate-x-24 group-hover/images:rotate-0 group-hover/images:translate-x-36 group-hover/images:-translate-y-24 group-hover/images:scale-100 group-hover/images:z-10 transition-all duration-500 ease-out">
                                 <img :src="atvcasImages[1]" class="w-full h-full object-cover rounded-lg"
-                                    alt="Classification" loading="lazy" />
+                                    alt="ATVACS vehicle classification and counting output" loading="lazy" />
                             </div>
                             <div
                                 class="absolute w-64 h-40 rounded-lg shadow-2xl border-2 border-gray-700/50 transform -rotate-3 translate-y-16 -translate-x-16 group-hover/images:rotate-0 group-hover/images:-translate-x-36 group-hover/images:translate-y-24 group-hover/images:scale-100 group-hover/images:z-10 transition-all duration-500 ease-out">
-                                <img :src="atvcasImages[2]" class="w-full h-full object-cover rounded-lg" alt="RTL"
-                                    loading="lazy" />
+                                <img :src="atvcasImages[2]" class="w-full h-full object-cover rounded-lg"
+                                    alt="ATVACS foreground mask with real-time lane detection" loading="lazy" />
                             </div>
                             <div
                                 class="absolute w-64 h-40 rounded-lg shadow-2xl border-2 border-gray-700/50 transform rotate-12 translate-y-32 translate-x-12 group-hover/images:rotate-0 group-hover/images:translate-x-36 group-hover/images:translate-y-24 group-hover/images:scale-100 group-hover/images:z-10 transition-all duration-500 ease-out">
-                                <img :src="atvcasImages[3]" class="w-full h-full object-cover rounded-lg" alt="VD"
-                                    loading="lazy" />
+                                <img :src="atvcasImages[3]" class="w-full h-full object-cover rounded-lg"
+                                    alt="ATVACS vehicle detection with real-time lane tracking" loading="lazy" />
                             </div>
                         </div>
 

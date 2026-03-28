@@ -65,7 +65,17 @@
             </button>
           </div>
 
-          <form v-else @submit.prevent="sendMessage" class="space-y-6">
+          <div v-if="error"
+            class="mb-4 px-4 py-3 bg-red-900/30 border border-red-700/50 rounded-lg text-red-300 text-sm flex items-center gap-2">
+            <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 9v2m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" />
+            </svg>
+            Something went wrong. Please try again or email me directly at
+            <a href="mailto:hello@afaan.dev" class="underline hover:text-red-200">hello@afaan.dev</a>.
+          </div>
+
+          <form v-if="!sent" @submit.prevent="sendMessage" class="space-y-6">
             <div>
               <label class="block text-sm font-medium text-gray-300 mb-2">Name</label>
               <input type="text" v-model="name" required
@@ -113,22 +123,30 @@ const email = ref('')
 const message = ref('')
 const sent = ref(false)
 const sending = ref(false)
+const error = ref(false)
 
-function sendMessage() {
+async function sendMessage() {
   sending.value = true
-  fetch('https://script.google.com/macros/s/AKfycbyr7UVSG3tsVPZagH79m1MMvBVaKDj6WNdWiCKvS8ws4pkRX9wm5cOAIr3ZCq20btgS/exec', {
-    method: 'post',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: 'name=' + encodeURIComponent(name.value) + '&email=' + encodeURIComponent(email.value) + '&message=' + encodeURIComponent(message.value)
-  }).then(r => r.text()).then((d) => {
-    if (d == 'success') {
+  error.value = false
+  try {
+    const r = await fetch('https://script.google.com/macros/s/AKfycbyr7UVSG3tsVPZagH79m1MMvBVaKDj6WNdWiCKvS8ws4pkRX9wm5cOAIr3ZCq20btgS/exec', {
+      method: 'post',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: 'name=' + encodeURIComponent(name.value) + '&email=' + encodeURIComponent(email.value) + '&message=' + encodeURIComponent(message.value)
+    })
+    const d = await r.text()
+    if (d === 'success') {
       name.value = ''
       email.value = ''
       message.value = ''
       sent.value = true
+    } else {
+      error.value = true
     }
-  }).finally(() => {
+  } catch {
+    error.value = true
+  } finally {
     sending.value = false
-  })
+  }
 }
 </script>

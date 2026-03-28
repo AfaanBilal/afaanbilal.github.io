@@ -4,7 +4,7 @@
             <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-600">Books</span>
         </h2>
         <p
-            class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto text-center mb-12 animate-fade-in-up delay-100">
+            class="text-lg text-gray-600 max-w-2xl mx-auto text-center mb-12 animate-fade-in-up delay-100">
             Comprehensive guides and handbooks for mastering modern technology.
         </p>
 
@@ -12,11 +12,19 @@
             <div v-for="book in books" :key="book.title"
                 class="group bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col">
 
-                <a :href="book.url" target="_blank" rel="noopener"
+                <a :href="book.url" target="_blank" rel="noopener" :download="book.download || undefined"
                     class="relative h-64 overflow-hidden block bg-gray-100 dark:bg-gray-700">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
-                    <img :src="book.image" :alt="book.title" loading="lazy"
+                    <img v-if="book.image" :src="book.image" :alt="book.title" loading="lazy"
                         class="w-full h-full object-contain p-4 transform group-hover:scale-105 transition-transform duration-500" />
+                    <div v-else
+                        class="w-full h-full flex flex-col items-center justify-center gap-3 text-gray-400 dark:text-gray-500">
+                        <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                        <span class="text-sm font-medium">SOC 2 Type II</span>
+                    </div>
                     <div class="absolute bottom-4 left-4 z-20">
                         <span
                             class="px-2 py-1 bg-blue-500 text-white text-xs font-bold rounded uppercase tracking-wide">PDF</span>
@@ -60,6 +68,13 @@ const books = [
         url: 'https://cloud-security-handbook.afaan.dev/',
         image: '/images/cloud-security-architect-handbook-cover.jpg',
         description: 'Master advanced architectural patterns, automation strategies, and future-proofing techniques for securing cloud environments at scale.',
+    },
+    {
+        title: 'SOC 2 Type II Compliance Guide',
+        url: '/assets/SOC-2-Type-II-Compliance.pdf',
+        image: null,
+        description: 'A practical guide to achieving and maintaining SOC 2 Type II compliance — covering trust service criteria, audit preparation, evidence collection, and security controls for SaaS platforms.',
+        download: 'SOC-2-Type-II-Compliance.pdf',
     }
 ]
 </script>

@@ -161,6 +161,13 @@ const commands = [
         action: () => scrollTo('koshur')
     },
     {
+        id: 'lsec',
+        label: 'Go to lsec',
+        group: 'Projects',
+        icon: IconTerminal,
+        action: () => scrollTo('lsec')
+    },
+    {
         id: 'github',
         label: 'Open GitHub Profile',
         group: 'Social',
