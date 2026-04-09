@@ -295,6 +295,7 @@ const apps = [
         link: 'https://github.com/AfaanBilal/one-dua',
         image: 'https://raw.githubusercontent.com/AfaanBilal/one-dua/master/screenshots/one-dua.png',
         tech: ['React Native', 'Typescript', 'Expo'],
+        playStore: 'https://play.google.com/store/apps/details?id=dev.afaan.onedua',
         description: 'A collection of supplications (Duas).'
     },
     {
