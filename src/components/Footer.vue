@@ -38,8 +38,13 @@
                 </a>
             </div>
 
-            <div class="text-gray-600 dark:text-gray-400 text-sm">
-                &copy; {{ year }} Afaan Bilal. All rights reserved.
+            <div class="text-gray-600 dark:text-gray-400 text-sm space-y-2">
+                <div>
+                    <a href="/privacy"
+                        class="hover:text-purple-600 dark:hover:text-purple-400 transition-colors">Privacy
+                        Policy</a>
+                </div>
+                <div>&copy; {{ year }} Afaan Bilal. All rights reserved.</div>
             </div>
         </div>
     </footer>
