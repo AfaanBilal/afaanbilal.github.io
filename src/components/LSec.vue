@@ -15,7 +15,7 @@
                         <div class="text-red-400 font-bold uppercase tracking-wider text-sm mb-1">Featured Project
                         </div>
                         <p class="text-red-200 italic text-lg">Fast, static, heuristic-based. Catch security issues
-                            before they reach production.</p>
+                            before they reach production. No interpreter required.</p>
                     </div>
 
                     <h2
@@ -53,7 +53,7 @@
                                         d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                                 </svg>
                             </span>
-                            <span><span class="font-bold text-white">51</span> Security Rules</span>
+                            <span><span class="font-bold text-white">61</span> Security Rules</span>
                         </li>
                         <li class="flex items-center gap-3">
                             <span
@@ -99,6 +99,17 @@
                                 </svg>
                             </span>
                             <span><span class="font-bold text-white">OSV</span> Dependency Scanning</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span
+                                class="flex items-center justify-center w-6 h-6 rounded-full bg-purple-500/20 text-purple-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                                </svg>
+                            </span>
+                            <span><span class="font-bold text-white">Confidence</span> Scoring &amp; Baselines</span>
                         </li>
                     </ul>
 
@@ -188,12 +199,12 @@
 
 <script setup>
 const categories = [
-    { name: 'Env', count: 7, color: 'text-yellow-400' },
+    { name: 'Env', count: 8, color: 'text-yellow-400' },
     { name: 'Auth', count: 8, color: 'text-red-400' },
-    { name: 'Injection', count: 7, color: 'text-red-400' },
-    { name: 'HTTP', count: 8, color: 'text-orange-400' },
-    { name: 'Storage', count: 6, color: 'text-blue-400' },
-    { name: 'Deps', count: 6, color: 'text-purple-400' },
+    { name: 'Injection', count: 11, color: 'text-red-400' },
+    { name: 'HTTP', count: 12, color: 'text-orange-400' },
+    { name: 'Storage', count: 7, color: 'text-blue-400' },
+    { name: 'Deps', count: 5, color: 'text-purple-400' },
     { name: 'Secrets', count: 4, color: 'text-red-400' },
     { name: 'Logging', count: 5, color: 'text-green-400' },
 ]
