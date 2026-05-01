@@ -16,40 +16,40 @@
         <div v-if="loading" class="mb-10">
             <!-- Filters Skeleton -->
             <div class="flex flex-wrap justify-center gap-2 mb-8 animate-pulse">
-                <div class="h-9 w-20 bg-gray-200 rounded-full"></div>
-                <div class="h-9 w-24 bg-gray-200 rounded-full"></div>
-                <div class="h-9 w-28 bg-gray-200 rounded-full"></div>
-                <div class="h-9 w-20 bg-gray-200 rounded-full"></div>
-                <div class="h-9 w-24 bg-gray-200 rounded-full"></div>
-                <div class="h-9 w-20 bg-gray-200 rounded-full"></div>
-                <div class="h-9 w-24 bg-gray-200 rounded-full"></div>
-                <div class="h-9 w-28 bg-gray-200 rounded-full"></div>
-                <div class="h-9 w-20 bg-gray-200 rounded-full"></div>
-                <div class="h-9 w-24 bg-gray-200 rounded-full"></div>
+                <div class="h-9 w-20 bg-gray-200 dark:bg-gray-700 rounded-full"></div>
+                <div class="h-9 w-24 bg-gray-200 dark:bg-gray-700 rounded-full"></div>
+                <div class="h-9 w-28 bg-gray-200 dark:bg-gray-700 rounded-full"></div>
+                <div class="h-9 w-20 bg-gray-200 dark:bg-gray-700 rounded-full"></div>
+                <div class="h-9 w-24 bg-gray-200 dark:bg-gray-700 rounded-full"></div>
+                <div class="h-9 w-20 bg-gray-200 dark:bg-gray-700 rounded-full"></div>
+                <div class="h-9 w-24 bg-gray-200 dark:bg-gray-700 rounded-full"></div>
+                <div class="h-9 w-28 bg-gray-200 dark:bg-gray-700 rounded-full"></div>
+                <div class="h-9 w-20 bg-gray-200 dark:bg-gray-700 rounded-full"></div>
+                <div class="h-9 w-24 bg-gray-200 dark:bg-gray-700 rounded-full"></div>
             </div>
 
             <div class="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
                 <div v-for="n in itemsPerPage" :key="n"
-                    class="border border-gray-100 rounded-xl p-4 shadow-sm animate-pulse bg-white">
+                    class="border border-gray-100 dark:border-gray-700 rounded-xl p-4 shadow-sm animate-pulse bg-white dark:bg-gray-800">
 
                     <!-- Header Skeleton -->
                     <div class="flex justify-between items-start mb-2">
-                        <div class="h-6 bg-gray-200 rounded w-2/3"></div>
-                        <div class="h-6 w-8 bg-gray-200 rounded-full"></div>
+                        <div class="h-6 bg-gray-200 dark:bg-gray-700 rounded w-2/3"></div>
+                        <div class="h-6 w-8 bg-gray-200 dark:bg-gray-700 rounded-full"></div>
                     </div>
 
                     <!-- Description Skeleton -->
                     <div class="space-y-2 mb-2 h-[60px]">
-                        <div class="h-4 bg-gray-200 rounded w-full"></div>
-                        <div class="h-4 bg-gray-200 rounded w-5/6"></div>
+                        <div class="h-4 bg-gray-200 dark:bg-gray-700 rounded w-full"></div>
+                        <div class="h-4 bg-gray-200 dark:bg-gray-700 rounded w-5/6"></div>
                     </div>
 
                     <!-- Footer Skeleton -->
                     <div class="flex items-center justify-between mt-auto">
-                        <div class="h-4 w-16 bg-gray-200 rounded-full"></div>
+                        <div class="h-4 w-16 bg-gray-200 dark:bg-gray-700 rounded-full"></div>
                         <div class="flex gap-3">
-                            <div class="h-4 w-12 bg-gray-200 rounded"></div>
-                            <div class="h-4 w-12 bg-gray-200 rounded"></div>
+                            <div class="h-4 w-12 bg-gray-200 dark:bg-gray-700 rounded"></div>
+                            <div class="h-4 w-12 bg-gray-200 dark:bg-gray-700 rounded"></div>
                         </div>
                     </div>
                 </div>
@@ -106,35 +106,7 @@
                 </button>
             </div>
 
-            <!-- Loading State for Grid -->
-            <div v-if="isChangingPage" class="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mb-10">
-                <div v-for="n in itemsPerPage" :key="n"
-                    class="border border-gray-100 rounded-xl p-4 shadow-sm animate-pulse bg-white">
-
-                    <!-- Header Skeleton -->
-                    <div class="flex justify-between items-start mb-2">
-                        <div class="h-6 bg-gray-200 rounded w-2/3"></div>
-                        <div class="h-6 w-8 bg-gray-200 rounded-full"></div>
-                    </div>
-
-                    <!-- Description Skeleton -->
-                    <div class="space-y-2 mb-2 h-[60px]">
-                        <div class="h-4 bg-gray-200 rounded w-full"></div>
-                        <div class="h-4 bg-gray-200 rounded w-5/6"></div>
-                    </div>
-
-                    <!-- Footer Skeleton -->
-                    <div class="flex items-center justify-between mt-auto">
-                        <div class="h-4 w-16 bg-gray-200 rounded-full"></div>
-                        <div class="flex gap-3">
-                            <div class="h-4 w-12 bg-gray-200 rounded"></div>
-                            <div class="h-4 w-12 bg-gray-200 rounded"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div v-else class="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+            <div class="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
                 <div v-for="(r, index) in displayedRepos" :key="r.id"
                     class="group relative bg-white dark:bg-gray-800 rounded-xl p-4 border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
                     <!-- Gradient Border/Glow Effect on Hover -->
@@ -240,42 +212,68 @@
             <a href="https://github.com/AfaanBilal" target="_blank" rel="noopener"
                 class="inline-flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors font-medium">
                 <span>View all on GitHub</span>
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path
-                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                </svg>
+                <IconGitHub class="h-5 w-5" />
             </a>
         </div>
     </section>
 </template>
 
 <script setup>
-import { ref, onMounted, computed, watch } from 'vue'
+import { ref, onMounted, onUnmounted, computed, watch } from 'vue'
+import { isExcludedRepo } from '../config'
+import IconGitHub from './icons/IconGitHub.vue'
 
 const allRepos = ref([])
 const loading = ref(true)
-const isChangingPage = ref(false)
 const error = ref(false)
 const selectedLanguage = ref('All')
 const sortBy = ref('stars')
 
-const excludeNames = ["AfaanBilal", "afaanbilal.github.io", "musings", "amx-infinity.github.io", "SoftSolutions"]
-
 const sectionRef = ref(null)
+let observer = null
+
+const CACHE_KEY = 'os_repos_v1'
+const CACHE_TTL = 60 * 60 * 1000 // 1h
+
+const readCache = () => {
+    try {
+        const raw = localStorage.getItem(CACHE_KEY)
+        if (!raw) return null
+        const { ts, data } = JSON.parse(raw)
+        if (Date.now() - ts > CACHE_TTL) return null
+        return Array.isArray(data) ? data : null
+    } catch { return null }
+}
+
+const writeCache = (data) => {
+    try { localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), data })) } catch {}
+}
+
+const fetchJsonArray = async (url) => {
+    const res = await fetch(url)
+    if (!res.ok) throw new Error(`GitHub API ${res.status}`)
+    const json = await res.json()
+    if (!Array.isArray(json)) throw new Error(json?.message || 'Unexpected response')
+    return json
+}
 
 const fetchRepos = async () => {
+    const cached = readCache()
+    if (cached) {
+        allRepos.value = cached
+        loading.value = false
+        return
+    }
+
     try {
         loading.value = true
-        const userReposPromise = fetch('https://api.github.com/users/AfaanBilal/repos?per_page=100').then(r => r.json())
-        const orgReposPromise = fetch('https://api.github.com/orgs/AMX-Infinity/repos?per_page=100').then(r => r.json())
-
-        const [userRepos, orgRepos] = await Promise.all([userReposPromise, orgReposPromise])
-
-        let repos = []
-        if (Array.isArray(userRepos)) repos = [...repos, ...userRepos]
-        if (Array.isArray(orgRepos)) repos = [...repos, ...orgRepos]
-
+        const [userRepos, orgRepos] = await Promise.all([
+            fetchJsonArray('https://api.github.com/users/AfaanBilal/repos?per_page=100'),
+            fetchJsonArray('https://api.github.com/orgs/AMX-Infinity/repos?per_page=100'),
+        ])
+        const repos = [...userRepos, ...orgRepos]
         allRepos.value = repos
+        writeCache(repos)
     } catch (e) {
         console.error("Failed to fetch repos", e)
         error.value = true
@@ -285,21 +283,25 @@ const fetchRepos = async () => {
 }
 
 onMounted(() => {
-    const observer = new IntersectionObserver((entries) => {
+    observer = new IntersectionObserver((entries) => {
         if (entries[0].isIntersecting) {
             fetchRepos()
-            observer.disconnect()
+            observer?.disconnect()
+            observer = null
         }
     }, { threshold: 0.1 })
 
-    if (sectionRef.value) {
-        observer.observe(sectionRef.value)
-    }
+    if (sectionRef.value) observer.observe(sectionRef.value)
+})
+
+onUnmounted(() => {
+    observer?.disconnect()
+    observer = null
 })
 
 const sortedRepos = computed(() => {
     return allRepos.value
-        .filter(o => !excludeNames.includes(o.name))
+        .filter(o => !isExcludedRepo(o.name))
         .sort((a, b) => sortBy.value === 'updated'
             ? new Date(b.pushed_at) - new Date(a.pushed_at)
             : b.stargazers_count - a.stargazers_count)
@@ -359,38 +361,10 @@ const displayedRepos = computed(() => {
 
 const changePage = (page) => {
     if (page >= 1 && page <= totalPages.value) {
-        isChangingPage.value = true
-
-        setTimeout(() => {
-            currentPage.value = page
-            isChangingPage.value = false
-        }, 200)
+        currentPage.value = page
     }
 }
 
 
 </script>
 
-<style scoped>
-.animate-fade-in-up {
-    animation: fadeInUp 0.8s ease-out forwards;
-    opacity: 0;
-    transform: translateY(20px);
-}
-
-.delay-100 {
-    animation-delay: 0.2s;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-</style>

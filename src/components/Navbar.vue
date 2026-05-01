@@ -86,10 +86,11 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
+import { useTheme } from '../composables/useTheme'
 
+const { isDark, toggle: toggleTheme } = useTheme()
 const isOpen = ref(false)
 const scrolled = ref(false)
-const isDark = ref(false)
 const activeSection = ref('')
 
 const handleScroll = () => {
@@ -98,15 +99,8 @@ const handleScroll = () => {
     })
 }
 
-const toggleTheme = () => {
-    isDark.value = !isDark.value
-    if (isDark.value) {
-        document.documentElement.classList.add('dark')
-        localStorage.setItem('theme', 'dark')
-    } else {
-        document.documentElement.classList.remove('dark')
-        localStorage.setItem('theme', 'light')
-    }
+const onKeydown = (e) => {
+    if (e.key === 'Escape' && isOpen.value) isOpen.value = false
 }
 
 const sectionIds = ['nanocore', 'hyperdb', 'koshur', 'lsec', 'skills', 'open-source', 'research-projects', 'courses', 'books', 'apps', 'contact']
@@ -115,30 +109,26 @@ let sectionObserver = null
 
 onMounted(() => {
     window.addEventListener('scroll', handleScroll)
+    window.addEventListener('keydown', onKeydown)
 
     sectionObserver = new IntersectionObserver((entries) => {
+        let best = null
         entries.forEach(entry => {
-            if (entry.isIntersecting) activeSection.value = entry.target.id
+            if (!entry.isIntersecting) return
+            if (!best || entry.intersectionRatio > best.intersectionRatio) best = entry
         })
-    }, { rootMargin: '-40% 0px -55% 0px' })
+        if (best) activeSection.value = best.target.id
+    }, { rootMargin: '-40% 0px -55% 0px', threshold: [0, 0.25, 0.5, 0.75, 1] })
 
     sectionIds.forEach(id => {
         const el = document.getElementById(id)
         if (el) sectionObserver.observe(el)
     })
-
-    // Initialize theme based on local storage or system preference
-    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        isDark.value = true
-        document.documentElement.classList.add('dark')
-    } else {
-        isDark.value = false
-        document.documentElement.classList.remove('dark')
-    }
 })
 
 onUnmounted(() => {
     window.removeEventListener('scroll', handleScroll)
+    window.removeEventListener('keydown', onKeydown)
     sectionObserver?.disconnect()
 })
 

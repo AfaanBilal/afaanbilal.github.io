@@ -1,4 +1,6 @@
 <script setup>
+import IconGitHub from './icons/IconGitHub.vue'
+
 const trackSOC2Download = () => {
     if (typeof window !== 'undefined' && window.gtag) {
         window.gtag('event', 'download_soc2', {
@@ -128,10 +130,7 @@ const trackCloudSecurity = () => {
                             <a href="https://github.com/AfaanBilal" target="_blank" rel="noopener"
                                 aria-label="GitHub Profile"
                                 class="p-2 rounded-lg bg-gray-800 hover:bg-gray-700 hover:text-white transition-all transform hover:-translate-y-1">
-                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                    <path
-                                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                                </svg>
+                                <IconGitHub class="w-6 h-6" />
                             </a>
                             <a href="https://linkedin.com/in/AfaanBilal" target="_blank" rel="noopener"
                                 aria-label="LinkedIn Profile"
@@ -156,7 +155,7 @@ const trackCloudSecurity = () => {
                         <!-- Profile Image -->
                         <div
                             class="absolute inset-4 rounded-full overflow-hidden shadow-2xl border-4 border-gray-800 ring-4 ring-purple-900/50">
-                            <img src="/assets/afaan.png" alt="Afaan Bilal" fetchpriority="high"
+                            <img src="/assets/afaan.png" alt="Afaan Bilal" fetchpriority="high" width="384" height="384"
                                 class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-700" />
                         </div>
 
@@ -164,11 +163,7 @@ const trackCloudSecurity = () => {
                         <a href="https://github.com/AfaanBilal" target="_blank" rel="noopener" aria-hidden="true"
                             tabindex="-1"
                             class="absolute top-0 right-0 bg-gray-800 p-3 rounded-2xl shadow-xl animate-float hover:scale-110 transition-transform cursor-pointer">
-                            <svg class="w-8 h-8 text-[#8034cc]" fill="currentColor" viewBox="0 0 24 24"
-                                aria-hidden="true">
-                                <path
-                                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                            </svg>
+                            <IconGitHub class="w-8 h-8 text-[#8034cc]" />
                         </a>
                         <!-- Float Element 2 -->
                         <div aria-hidden="true"
@@ -183,64 +178,3 @@ const trackCloudSecurity = () => {
     </section>
 </template>
 
-<style scoped>
-.animate-slide-in-left {
-    animation: slideInLeft 1s ease-out forwards;
-    opacity: 0;
-    transform: translateX(-50px);
-}
-
-.animate-slide-in-right {
-    animation: slideInRight 1s ease-out forwards;
-    opacity: 0;
-    transform: translateX(50px);
-}
-
-@keyframes slideInLeft {
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes slideInRight {
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-.animate-spin-slow {
-    animation: spin 15s linear infinite;
-}
-
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-.animate-float {
-    animation: float 6s ease-in-out infinite;
-}
-
-.animation-delay-2000 {
-    animation-delay: 2s;
-}
-
-@keyframes float {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-20px);
-    }
-}
-</style>

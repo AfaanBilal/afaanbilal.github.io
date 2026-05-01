@@ -78,8 +78,10 @@
 <script setup>
 import { ref, computed, onMounted, onUnmounted, nextTick, h } from 'vue'
 import { useRouter } from 'vue-router'
+import { useTheme } from '../composables/useTheme'
 
 const router = useRouter()
+const { toggle: toggleTheme } = useTheme()
 const isOpen = ref(false)
 const animate = ref(false)
 const search = ref('')
@@ -88,6 +90,7 @@ const inputRef = ref(null)
 const paletteRef = ref(null)
 const toast = ref('')
 let toastTimer = null
+let lastFocused = null
 
 const showToast = (msg) => {
     toast.value = msg
@@ -210,10 +213,7 @@ const commands = [
         label: 'Toggle Theme',
         group: 'System',
         icon: IconSun,
-        action: () => {
-            const isDark = document.documentElement.classList.toggle('dark')
-            localStorage.setItem('theme', isDark ? 'dark' : 'light')
-        }
+        action: () => toggleTheme()
     },
     {
         id: 'email',
@@ -260,7 +260,8 @@ const navigate = (dir) => {
 }
 
 const execute = () => {
-    const cmd = commands.find(c => c.id === selectedId.value)
+    const cmd = filteredCommands.value.find(c => c.id === selectedId.value)
+        || filteredCommands.value[0]
     if (cmd) trigger(cmd)
 }
 
@@ -284,18 +285,24 @@ const close = () => {
     setTimeout(() => {
         isOpen.value = false
         search.value = ''
+        lastFocused?.focus?.()
+        lastFocused = null
     }, 200)
 }
 
 const onKeydown = (e) => {
     if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
         e.preventDefault()
+        if (isOpen.value) return
+        lastFocused = document.activeElement
         isOpen.value = true
         if (commands.length > 0) selectedId.value = commands[0].id
         nextTick(() => {
             animate.value = true
             inputRef.value?.focus()
         })
+    } else if (e.key === 'Escape' && isOpen.value) {
+        close()
     }
 }
 
