@@ -5,7 +5,7 @@
   "description": "Afaan Bilal's Portfolio",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && node scripts/copy404.js",
+    "build": "vite-ssg build && node scripts/generateSitemap.js && node scripts/copy404.js",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -18,9 +18,11 @@
   "devDependencies": {
     "@tailwindcss/vite": "^4.1.18",
     "@vitejs/plugin-vue": "^6.0.3",
+    "@vue/server-renderer": "^3.5.39",
     "autoprefixer": "^10.4.24",
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.18",
-    "vite": "^7.3.1"
+    "vite": "^7.3.1",
+    "vite-ssg": "^28.3.0"
   }
 }

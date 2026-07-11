@@ -26,7 +26,7 @@
                 </div>
 
                 <h1 class="text-5xl md:text-6xl font-black tracking-tight text-white">Privacy Policy</h1>
-                <p class="text-xl text-gray-300 mt-4">Last updated: April 9, 2026</p>
+                <p class="text-xl text-gray-300 mt-4">Last updated: July 11, 2026</p>
             </div>
         </div>
 
@@ -50,18 +50,26 @@
                 <section>
                     <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Website (afaan.dev)</h2>
                     <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
-                        The Website is a static portfolio site. It does not require you to create an account, log in,
-                        or submit any personal information.
+                        The Website is a static portfolio site. It does not require you to create an account or log in.
                     </p>
                     <ul class="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-2">
                         <li>
-                            <strong class="text-gray-900 dark:text-white">No personal data collection:</strong>
-                            The Website does not collect names, email addresses, or other personal identifiers through
-                            forms or tracking.
+                            <strong class="text-gray-900 dark:text-white">Consent-based analytics:</strong>
+                            The Website uses Google Analytics to understand aggregate, anonymized traffic. Analytics and
+                            any related cookies are disabled by default and are only enabled if you explicitly click
+                            &ldquo;Accept&rdquo; on the cookie banner. IP addresses are anonymized, and you can decline
+                            with no loss of functionality.
                         </li>
                         <li>
-                            <strong class="text-gray-900 dark:text-white">No cookies:</strong>
-                            The Website does not set any cookies on your device.
+                            <strong class="text-gray-900 dark:text-white">No cookies without consent:</strong>
+                            No analytics or tracking cookies are set on your device unless you opt in. Your choice is
+                            remembered locally in your browser.
+                        </li>
+                        <li>
+                            <strong class="text-gray-900 dark:text-white">Contact form:</strong>
+                            If you use the contact form, the name, email address, and message you submit are sent to the
+                            site owner (via Google Apps Script) solely to respond to your enquiry. This information is
+                            provided voluntarily by you and is not used for any other purpose.
                         </li>
                         <li>
                             <strong class="text-gray-900 dark:text-white">Hosting logs:</strong>
@@ -135,7 +143,9 @@
                     <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
                         The Services may load content from or connect to third-party services such as GitHub APIs,
                         external CDNs, and public data providers. These services may collect technical data according
-                        to their own privacy policies. The Services do not use any analytics or advertising services.
+                        to their own privacy policies. The Website uses Google Analytics (consent-based and
+                        IP-anonymized, as described above); the mobile Apps use no analytics. No advertising services
+                        are used across the Services.
                     </p>
                     <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
                         Apps distributed through the Google Play Store are subject to

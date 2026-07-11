@@ -4,22 +4,22 @@
             <h2 class="text-4xl font-bold text-center mb-5 text-white">GitHub Stats</h2>
             <div class="flex justify-center flex-wrap">
                 <div class="w-full md:w-1/3 py-4 flex justify-center">
-                    <img v-show="!errors.streak"
-                        src="https://github-readme-streak-stats.herokuapp.com?user=AfaanBilal&theme=default"
+                    <img v-show="!errors.streak" loading="lazy" referrerpolicy="no-referrer"
+                        src="https://streak-stats.demolab.com?user=AfaanBilal&theme=default"
                         alt="AfaanBilal's GitHub Streak Stats showing current and longest streak"
                         @error="errors.streak = true" />
                     <StatFallback v-if="errors.streak" label="GitHub Streak" />
                 </div>
                 <div class="w-full md:w-1/3 py-4 flex justify-center">
-                    <img v-show="!errors.langs"
-                        src="https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/top-langs/?username=AfaanBilal&layout=compact&langs_count=10"
+                    <img v-show="!errors.langs" loading="lazy" referrerpolicy="no-referrer"
+                        src="https://github-readme-stats.vercel.app/api/top-langs/?username=AfaanBilal&layout=compact&langs_count=10"
                         alt="AfaanBilal's Top Languages on GitHub"
                         @error="errors.langs = true" />
                     <StatFallback v-if="errors.langs" label="Top Languages" />
                 </div>
                 <div class="w-full md:w-1/3 py-4 flex justify-center">
-                    <img v-show="!errors.stats"
-                        src="https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api?username=AfaanBilal&show_icons=true&include_all_commits=true&count_private=true&custom_title=GitHub+Stats"
+                    <img v-show="!errors.stats" loading="lazy" referrerpolicy="no-referrer"
+                        src="https://github-readme-stats.vercel.app/api?username=AfaanBilal&show_icons=true&include_all_commits=true&count_private=true&custom_title=GitHub+Stats"
                         alt="AfaanBilal's GitHub Stats showing total stars, commits, PRs, and issues"
                         @error="errors.stats = true" />
                     <StatFallback v-if="errors.stats" label="GitHub Stats" />
@@ -27,7 +27,7 @@
             </div>
             <div class="flex justify-center flex-wrap">
                 <div class="w-full py-4 flex justify-center">
-                    <img v-show="!errors.trophy" class="w-full"
+                    <img v-show="!errors.trophy" class="w-full" loading="lazy" referrerpolicy="no-referrer"
                         src="https://github-profile-trophy.vercel.app/?username=AfaanBilal&column=-1&margin-w=50&margin-h=50"
                         alt="AfaanBilal's GitHub Trophies"
                         @error="errors.trophy = true" />
@@ -36,7 +36,7 @@
             </div>
             <div class="flex justify-center flex-wrap">
                 <div class="w-full py-4 flex justify-center">
-                    <img v-show="!errors.activity" class="w-full"
+                    <img v-show="!errors.activity" class="w-full" loading="lazy" referrerpolicy="no-referrer"
                         src="https://github-readme-activity-graph.vercel.app/graph?username=AfaanBilal&theme=react-dark&hide_title=true&radius=10&area=true"
                         alt="AfaanBilal's GitHub Contribution Graph"
                         @error="errors.activity = true" />

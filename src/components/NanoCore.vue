@@ -1,9 +1,7 @@
 <template>
     <section id="nanocore" class="py-24 bg-black text-white relative overflow-hidden scroll-mt-12">
         <!-- Background Patterns -->
-        <div
-            class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/circuit-board.png')]">
-        </div>
+        <div class="absolute inset-0 opacity-20 bg-texture-grid"></div>
 
         <div class="container mx-auto px-6 relative z-10">
             <div class="flex flex-col lg:flex-row items-start gap-12">
@@ -54,7 +52,7 @@
                                         d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                                 </svg>
                             </span>
-                            <span><span class="font-bold text-white">250+</span> GitHub Stars</span>
+                            <span><span class="font-bold text-white">280+</span> GitHub Stars</span>
                         </li>
                         <li class="flex items-center gap-3">
                             <span

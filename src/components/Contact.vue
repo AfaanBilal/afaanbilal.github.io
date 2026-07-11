@@ -73,6 +73,11 @@
           </div>
 
           <form v-if="!sent" @submit.prevent="sendMessage" class="space-y-6">
+            <!-- Honeypot: hidden from real users, tempting to bots. If filled, we drop the submission. -->
+            <div aria-hidden="true" class="absolute w-px h-px overflow-hidden -m-px p-0 border-0" style="clip: rect(0 0 0 0);">
+              <label>Company</label>
+              <input type="text" v-model="honeypot" tabindex="-1" autocomplete="off" />
+            </div>
             <div>
               <label class="block text-sm font-medium text-gray-300 mb-2">Name</label>
               <input type="text" v-model="name" required
@@ -123,7 +128,22 @@ const sent = ref(false)
 const sending = ref(false)
 const error = ref(false)
 
+// Spam guard: a honeypot field. Real users never see or fill it; bots do.
+// Deliberately no time-based gate — that risked silently dropping fast/autofill
+// users while falsely showing them the "sent" confirmation.
+const honeypot = ref('')
+
 async function sendMessage() {
+  // Honeypot tripped => almost certainly a bot. Mimic success so it gets no
+  // signal, and never hit the endpoint.
+  if (honeypot.value) {
+    name.value = ''
+    email.value = ''
+    message.value = ''
+    sent.value = true
+    return
+  }
+
   sending.value = true
   error.value = false
   try {

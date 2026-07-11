@@ -2,9 +2,7 @@
     <section id="hyperdb"
         class="py-24 bg-gradient-to-br from-purple-900 to-indigo-900 text-white relative overflow-hidden scroll-mt-12">
         <!-- Background Patterns -->
-        <div
-            class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]">
-        </div>
+        <div class="absolute inset-0 opacity-10 bg-texture-carbon"></div>
 
         <div class="container mx-auto px-6 relative z-10">
             <div class="flex flex-col lg:flex-row items-start gap-12">
