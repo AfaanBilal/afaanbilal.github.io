@@ -37,8 +37,8 @@ const trackCloudSecurity = () => {
                     <div class="space-y-2">
                         <div
                             class="inline-block px-4 py-1.5 rounded-full bg-purple-900/30 border border-purple-800 text-purple-300 text-sm font-bold tracking-wide">
-                            Principal Software Engineer, CISO at <a href="https://centiment.co" target="_blank"
-                                rel="noopener" class="font-black hover:underline">Centiment</a>
+                            Principal Software Engineer, CISO <!-- at <a href="https://centiment.co" target="_blank"
+                                rel="noopener" class="font-black hover:underline">Centiment</a> -->
                         </div>
                     </div>
 
