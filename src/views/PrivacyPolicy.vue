@@ -26,7 +26,7 @@
                 </div>
 
                 <h1 class="text-5xl md:text-6xl font-black tracking-tight text-white">Privacy Policy</h1>
-                <p class="text-xl text-gray-300 mt-4">Last updated: July 11, 2026</p>
+                <p class="text-xl text-gray-300 mt-4">Last updated: September 28, 2026</p>
             </div>
         </div>
 
@@ -54,16 +54,15 @@
                     </p>
                     <ul class="list-disc list-inside text-gray-600 dark:text-gray-300 space-y-2">
                         <li>
-                            <strong class="text-gray-900 dark:text-white">Consent-based analytics:</strong>
-                            The Website uses Google Analytics to understand aggregate, anonymized traffic. Analytics and
-                            any related cookies are disabled by default and are only enabled if you explicitly click
-                            &ldquo;Accept&rdquo; on the cookie banner. IP addresses are anonymized, and you can decline
-                            with no loss of functionality.
+                            <strong class="text-gray-900 dark:text-white">Cookie-free analytics:</strong>
+                            The Website uses Cloudflare Web Analytics to count aggregate page views. It sets no cookies,
+                            does not fingerprint or identify individual visitors, and does not follow you across other
+                            sites.
                         </li>
                         <li>
-                            <strong class="text-gray-900 dark:text-white">No cookies without consent:</strong>
-                            No analytics or tracking cookies are set on your device unless you opt in. Your choice is
-                            remembered locally in your browser.
+                            <strong class="text-gray-900 dark:text-white">No tracking cookies:</strong>
+                            The Website sets no cookies. The only things stored in your browser are your light/dark theme
+                            preference and a short-lived cache of public GitHub data, both in local storage.
                         </li>
                         <li>
                             <strong class="text-gray-900 dark:text-white">Contact form:</strong>
@@ -143,8 +142,8 @@
                     <p class="text-gray-600 dark:text-gray-300 leading-relaxed mb-4">
                         The Services may load content from or connect to third-party services such as GitHub APIs,
                         external CDNs, and public data providers. These services may collect technical data according
-                        to their own privacy policies. The Website uses Google Analytics (consent-based and
-                        IP-anonymized, as described above); the mobile Apps use no analytics. No advertising services
+                        to their own privacy policies. The Website is served through Cloudflare and uses Cloudflare Web
+                        Analytics (cookie-free, as described above); the mobile Apps use no analytics. No advertising services
                         are used across the Services.
                     </p>
                     <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
@@ -207,10 +206,13 @@
 </template>
 
 <script setup>
-import { onMounted } from 'vue'
+import { useSeoMeta } from '@unhead/vue'
 import Footer from '../components/Footer.vue'
 
-onMounted(() => {
-    document.title = 'Privacy Policy | Afaan Bilal'
+useSeoMeta({
+    title: 'Privacy Policy | Afaan Bilal',
+    ogTitle: 'Privacy Policy | Afaan Bilal',
+    twitterTitle: 'Privacy Policy | Afaan Bilal',
+    description: "How afaan.dev and Afaan Bilal's mobile apps handle your data.",
 })
 </script>

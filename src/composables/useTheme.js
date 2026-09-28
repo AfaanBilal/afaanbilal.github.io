@@ -7,11 +7,12 @@ const apply = (dark) => {
     if (typeof document === 'undefined') return
     if (dark) document.documentElement.classList.add('dark')
     else document.documentElement.classList.remove('dark')
-    localStorage.setItem('theme', dark ? 'dark' : 'light')
+    try { localStorage.setItem('theme', dark ? 'dark' : 'light') } catch (e) { }
 }
 
 const resolveInitial = () => {
-    const stored = localStorage.getItem('theme')
+    let stored = null
+    try { stored = localStorage.getItem('theme') } catch (e) { }
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
     isDark.value = stored === 'dark' || (!stored && prefersDark)
     watch(isDark, apply)

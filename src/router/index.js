@@ -7,9 +7,17 @@ export const routes = [
         component: HomeView
     },
     {
-        path: '/project/:name',
+        path: '/project/:owner/:repo',
         name: 'project',
         component: () => import('../views/ProjectView.vue')
+    },
+    {
+        // Legacy links: /project/Owner%2FRepo
+        path: '/project/:name',
+        redirect: (to) => {
+            const [owner, repo] = String(to.params.name).split('/')
+            return repo ? { name: 'project', params: { owner, repo } } : { name: 'not-found', params: { pathMatch: to.path.slice(1).split('/') } }
+        }
     },
     {
         path: '/privacy',
@@ -26,7 +34,9 @@ export const routes = [
 export const scrollBehavior = (to, from, savedPosition) => {
     if (savedPosition) return savedPosition
     if (to.hash) {
-        return { el: to.hash, behavior: 'smooth', top: 80 }
+        const pos = { el: to.hash, behavior: 'smooth', top: 80 }
+        // Coming from another page: give the new view (and its async sections) a moment to render.
+        return from.name === to.name ? pos : new Promise(resolve => setTimeout(() => resolve(pos), 300))
     }
     return { top: 0, behavior: 'instant' }
 }

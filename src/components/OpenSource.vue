@@ -115,7 +115,7 @@
                     </div>
 
                     <div class="flex justify-between items-start mb-2">
-                        <router-link :to="{ name: 'project', params: { name: r.full_name } }"
+                        <router-link :to="{ name: 'project', params: { owner: r.full_name.split('/')[0], repo: r.name } }"
                             class="group-hover:text-purple-400 transition-colors text-gray-800 dark:text-gray-100">
                             <h3 class="text-xl font-bold truncate capitalize" :title="r.name.split('-').join(' ')">
                                 {{ r.name.split('-').join(' ') }}
@@ -220,7 +220,7 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted, computed, watch } from 'vue'
-import { isExcludedRepo } from '../config'
+import { isExcludedRepo, REPO_SOURCES, fetchAllRepos } from '../config'
 import IconGitHub from './icons/IconGitHub.vue'
 
 const allRepos = ref([])
@@ -232,7 +232,7 @@ const sortBy = ref('stars')
 const sectionRef = ref(null)
 let observer = null
 
-const CACHE_KEY = 'os_repos_v1'
+const CACHE_KEY = 'os_repos_v2'
 const CACHE_TTL = 60 * 60 * 1000 // 1h
 
 const readCache = () => {
@@ -249,13 +249,9 @@ const writeCache = (data) => {
     try { localStorage.setItem(CACHE_KEY, JSON.stringify({ ts: Date.now(), data })) } catch {}
 }
 
-const fetchJsonArray = async (url) => {
-    const res = await fetch(url)
-    if (!res.ok) throw new Error(`GitHub API ${res.status}`)
-    const json = await res.json()
-    if (!Array.isArray(json)) throw new Error(json?.message || 'Unexpected response')
-    return json
-}
+// Only what the cards render; full repo objects for 100+ repos can overflow localStorage.
+const slim = ({ id, name, full_name, description, homepage, html_url, language, stargazers_count, pushed_at }) =>
+    ({ id, name, full_name, description, homepage, html_url, language, stargazers_count, pushed_at })
 
 const fetchRepos = async () => {
     const cached = readCache()
@@ -267,11 +263,7 @@ const fetchRepos = async () => {
 
     try {
         loading.value = true
-        const [userRepos, orgRepos] = await Promise.all([
-            fetchJsonArray('https://api.github.com/users/AfaanBilal/repos?per_page=100'),
-            fetchJsonArray('https://api.github.com/orgs/AMX-Infinity/repos?per_page=100'),
-        ])
-        const repos = [...userRepos, ...orgRepos]
+        const repos = (await Promise.all(REPO_SOURCES.map(src => fetchAllRepos(src)))).flat().map(slim)
         allRepos.value = repos
         writeCache(repos)
     } catch (e) {

@@ -10,4 +10,8 @@ export const createApp = ViteSSG(
         routes,
         scrollBehavior,
     },
+    ({ app, initialState }) => {
+        // Serialized into prerendered pages and restored on the client (see ProjectView).
+        app.provide('ssgState', initialState)
+    },
 )

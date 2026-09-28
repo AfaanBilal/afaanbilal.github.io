@@ -140,3 +140,7 @@ Thumbs.db
 # Vite
 dist/
 .vite/
+
+# Generated at build time by scripts/prerenderProjects.js
+public/projects/
+public/sitemap.xml

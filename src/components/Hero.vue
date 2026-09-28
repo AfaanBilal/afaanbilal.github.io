@@ -1,23 +1,5 @@
 <script setup>
 import IconGitHub from './icons/IconGitHub.vue'
-
-const trackSOC2Download = () => {
-    if (typeof window !== 'undefined' && window.gtag) {
-        window.gtag('event', 'download_soc2', {
-            event_category: 'engagement',
-            event_label: 'hero_section'
-        });
-    }
-}
-
-const trackCloudSecurity = () => {
-    if (typeof window !== 'undefined' && window.gtag) {
-        window.gtag('event', 'click_cloud_security', {
-            event_category: 'engagement',
-            event_label: 'hero_section'
-        });
-    }
-}
 </script>
 
 <template>
@@ -74,7 +56,7 @@ const trackCloudSecurity = () => {
                         </a>
                     </div>
                     <div class="flex flex-col items-center md:items-start gap-4 pt-2">
-                        <a href="https://cloud-security-handbook.afaan.dev/" target="_blank" @click="trackCloudSecurity"
+                        <a href="https://cloud-security-handbook.afaan.dev/" target="_blank"
                             class="w-full sm:w-[420px] group relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium rounded-xl group bg-gradient-to-br from-blue-400 to-cyan-300 group-hover:from-blue-400 group-hover:to-cyan-300 focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800 transform hover:-translate-y-1 transition-all duration-200 shadow-[0_0_20px_rgba(56,189,248,0.3)] hover:shadow-[0_0_30px_rgba(56,189,248,0.5)]">
                             <span
                                 class="w-full relative px-8 py-3.5 transition-all ease-in duration-75 bg-gray-900 rounded-[10px] flex items-center justify-center gap-2">
@@ -91,7 +73,7 @@ const trackCloudSecurity = () => {
                         </a>
 
                         <a href="/assets/SOC-2-Type-II-Compliance.pdf" target="_blank"
-                            download="SOC-2-Type-II-Compliance.pdf" @click="trackSOC2Download"
+                            download="SOC-2-Type-II-Compliance.pdf"
                             class="w-full sm:w-[420px] group relative inline-flex items-center justify-center p-0.5 overflow-hidden text-sm font-medium rounded-xl group bg-gradient-to-br from-teal-300 to-lime-300 group-hover:from-teal-300 group-hover:to-lime-300 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-lime-800 transform hover:-translate-y-1 transition-all duration-200 shadow-[0_0_20px_rgba(45,212,191,0.3)] hover:shadow-[0_0_30px_rgba(45,212,191,0.5)]">
                             <span
                                 class="w-full relative px-8 py-3.5 transition-all ease-in duration-75 bg-gray-900 rounded-[10px] flex items-center justify-center gap-2">
@@ -155,7 +137,7 @@ const trackCloudSecurity = () => {
                         <!-- Profile Image -->
                         <div
                             class="absolute inset-4 rounded-full overflow-hidden shadow-2xl border-4 border-gray-800 ring-4 ring-purple-900/50">
-                            <img src="/assets/afaan.png" alt="Afaan Bilal" fetchpriority="high" width="384" height="384"
+                            <img src="/assets/afaan.webp" alt="Afaan Bilal" fetchpriority="high" width="384" height="384"
                                 class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-700" />
                         </div>
 

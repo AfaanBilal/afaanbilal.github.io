@@ -44,6 +44,15 @@
     </section>
 </template>
 
+<script setup>
+import { useHead } from '@unhead/vue'
+
+useHead({
+    title: 'Page Not Found | Afaan Bilal',
+    meta: [{ name: 'robots', content: 'noindex' }],
+})
+</script>
+
 <style scoped>
 .animate-fade-in-up {
     animation: fadeInUp 0.8s ease-out forwards;

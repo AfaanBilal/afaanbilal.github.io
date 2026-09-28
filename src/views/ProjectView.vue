@@ -86,7 +86,13 @@
 
                 <div
                     class="bg-white dark:bg-gray-800 rounded-3xl p-6 md:p-12 shadow-sm border border-gray-100 dark:border-gray-700">
-                    <div class="markdown-body dark:prose-invert" v-html="readmeHtml"></div>
+                    <div v-if="loadError" class="text-center space-y-3">
+                        <p class="text-red-500">Couldn't load this project right now. This is usually GitHub API rate
+                            limiting (60 requests/hour); please try again later.</p>
+                        <a :href="'https://github.com/' + repoFullName" target="_blank" rel="noopener"
+                            class="text-purple-600 dark:text-purple-400 hover:underline">View it on GitHub</a>
+                    </div>
+                    <div v-else class="markdown-body dark:prose-invert" v-html="readmeHtml"></div>
                 </div>
             </section>
 
@@ -114,32 +120,130 @@
 </template>
 
 <script setup>
-import { ref, onMounted, computed, watch } from 'vue'
+import { ref, onMounted, onServerPrefetch, computed, watch, inject } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import showdown from 'showdown'
+import { useSeoMeta } from '@unhead/vue'
 import 'github-markdown-css/github-markdown.css'
 import Footer from '../components/Footer.vue'
 import IconGitHub from '../components/icons/IconGitHub.vue'
 import { isAllowedOwner } from '../config'
 import { sanitize } from '../lib/sanitize'
+import { fetchProjectData } from '../lib/project'
 
 const route = useRoute()
 const router = useRouter()
+// Prerendered pages carry their snapshot to the client in vite-ssg's initialState,
+// so hydration renders the same markup without refetching.
+const ssgState = inject('ssgState', {})
 
-const repoFullName = ref('')
 const repo = ref({})
-const langs = ref({})
+const languages = ref([])
 const readmeHtml = ref('loading...')
 const licenseHtml = ref('loading...')
+const loadError = ref(false)
+
+const repoFullName = computed(() => `${route.params.owner}/${route.params.repo}`)
 
 const repoTitle = computed(() => {
-    return repo.value.name ? toTitleCase(repo.value.name.split('-').join(' ')) : 'Loading...'
+    return repo.value.name ? toTitleCase(repo.value.name.split('-').join(' ')) : (loadError.value ? repoFullName.value : 'Loading...')
 })
 
-const languages = computed(() => Object.keys(langs.value))
+const description = computed(() => repo.value.description || `${repoTitle.value}: an open source project by Afaan Bilal.`)
+const ogImage = computed(() => repo.value.full_name ? `https://opengraph.githubassets.com/1/${repo.value.full_name}` : undefined)
+
+useSeoMeta({
+    title: () => (repo.value.name ? repoTitle.value + ' | ' : '') + 'Afaan Bilal',
+    description,
+    ogTitle: () => repoTitle.value,
+    ogDescription: description,
+    ogImage,
+    twitterTitle: () => repoTitle.value,
+    twitterDescription: description,
+    twitterImage: ogImage,
+})
 
 function toTitleCase(str) {
-    return str.replace(/\w\S*/g, (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase())
+    return str.replace(/\w\S*/g, (txt) => txt.charAt(0).toUpperCase() + txt.slice(1).toLowerCase())
+}
+
+const apply = (data) => {
+    repo.value = data.repo
+    languages.value = data.languages
+    readmeHtml.value = data.readmeHtml
+    licenseHtml.value = data.licenseHtml
+    loadError.value = false
+}
+
+// Build-time snapshot from scripts/prerenderProjects.js (public/projects/<owner>/<repo>.json).
+const loadSnapshot = async (owner, name) => {
+    try {
+        if (import.meta.env.SSR) {
+            const { readFile } = await import('node:fs/promises')
+            return JSON.parse(await readFile(`public/projects/${owner}/${name}.json`, 'utf8'))
+        }
+        const res = await fetch(`/projects/${encodeURIComponent(owner)}/${encodeURIComponent(name)}.json`)
+        return res.ok ? await res.json() : null
+    } catch { return null }
+}
+
+// Repos created after the last deploy have no snapshot: ask GitHub directly.
+const loadLive = async (full) => {
+    const res = await fetch('https://api.github.com/repos/' + full)
+    if (res.status === 404) return null
+    if (!res.ok) throw new Error(`GitHub API ${res.status}`)
+    const data = await res.json()
+    if (!data.full_name || !isAllowedOwner(data.full_name)) return null
+    return fetchProjectData(data, { sanitize })
+}
+
+// Keep the URL the visitor asked for; a bare { name: 'not-found' } resolves to "/".
+const showNotFound = () => router.replace({
+    name: 'not-found',
+    params: { pathMatch: route.path.slice(1).split('/') },
+    query: route.query,
+    hash: route.hash,
+})
+
+const prerendered = ssgState.projects?.[repoFullName.value]
+if (prerendered) apply(prerendered)
+
+onServerPrefetch(async () => {
+    const { owner, repo: name } = route.params
+    const data = await loadSnapshot(owner, name)
+    if (!data) return
+    ssgState.projects = { ...ssgState.projects, [`${owner}/${name}`]: data }
+    apply(data)
+})
+
+async function loadRepo() {
+    const { owner, repo: name } = route.params
+    if (!owner || !name) return
+    const full = `${owner}/${name}`
+    if (!isAllowedOwner(full)) return showNotFound()
+
+    const cached = ssgState.projects?.[full]
+    if (cached) return apply(cached)
+
+    repo.value = {}
+    languages.value = []
+    readmeHtml.value = 'loading...'
+    licenseHtml.value = 'loading...'
+    loadError.value = false
+
+    // Ignore responses that land after the visitor has moved to another project.
+    const stale = () => route.params.owner !== owner || route.params.repo !== name
+
+    try {
+        const data = await loadSnapshot(owner, name) ?? await loadLive(full)
+        if (stale()) return
+        if (!data) return showNotFound()
+        apply(data)
+    } catch (e) {
+        if (stale()) return
+        console.error(e)
+        loadError.value = true
+        licenseHtml.value = ''
+    }
 }
 
 onMounted(() => {
@@ -147,69 +251,10 @@ onMounted(() => {
     window.scrollTo(0, 0)
 })
 
-watch(() => route.params.name, () => {
+watch(() => [route.params.owner, route.params.repo], () => {
     loadRepo()
     window.scrollTo(0, 0)
 })
-
-async function loadRepo() {
-    repoFullName.value = route.params.name
-    if (!repoFullName.value) return
-
-    if (!isAllowedOwner(repoFullName.value)) {
-        router.replace({ name: 'not-found' })
-        return
-    }
-
-    const converter = new showdown.Converter({
-        tables: true,
-        strikethrough: true,
-        tasklists: true,
-        simpleLineBreaks: true,
-        ghCodeBlocks: true,
-        openLinksInNewWindow: true,
-    })
-
-    try {
-        const repoRes = await fetch('https://api.github.com/repos/' + repoFullName.value)
-        if (!repoRes.ok) throw new Error('Repo not found')
-        const repoData = await repoRes.json()
-
-        if (!repoData.full_name || !isAllowedOwner(repoData.full_name)) {
-            router.replace({ name: 'not-found' })
-            return
-        }
-
-        repo.value = repoData
-        document.title = repoTitle.value + ' | Afaan Bilal'
-
-        const langsRes = await fetch(repo.value.languages_url)
-        langs.value = await langsRes.json()
-
-        const readmeRes = await fetch('https://raw.githubusercontent.com/' + repoFullName.value + '/' + repo.value.default_branch + '/README.md')
-        const readmeText = readmeRes.ok ? await readmeRes.text() : '_No README found._'
-        let html = converter.makeHtml(readmeText)
-
-        html = html.replace(/src="(?!(?:https?:\/\/|\/\/|data:))([^"]+)"/g,
-            `src="https://raw.githubusercontent.com/${repoFullName.value}/${repo.value.default_branch}/$1"`)
-
-        readmeHtml.value = sanitize(html)
-
-        try {
-            const licenseRes = await fetch('https://raw.githubusercontent.com/' + repoFullName.value + '/' + repo.value.default_branch + '/LICENSE')
-            if (licenseRes.ok) {
-                const licenseText = await licenseRes.text()
-                licenseHtml.value = sanitize(converter.makeHtml(licenseText))
-            } else {
-                licenseHtml.value = ''
-            }
-        } catch (e) { licenseHtml.value = '' }
-
-    } catch (e) {
-        console.error(e)
-        router.replace({ name: 'not-found' })
-    }
-}
 </script>
 
 <style>

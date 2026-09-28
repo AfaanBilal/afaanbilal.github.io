@@ -79,20 +79,20 @@
               <input type="text" v-model="honeypot" tabindex="-1" autocomplete="off" />
             </div>
             <div>
-              <label class="block text-sm font-medium text-gray-300 mb-2">Name</label>
-              <input type="text" v-model="name" required
+              <label for="contact-name" class="block text-sm font-medium text-gray-300 mb-2">Name</label>
+              <input id="contact-name" type="text" v-model="name" required autocomplete="name"
                 class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 focus:ring-2 focus:ring-purple-500 outline-none transition-all text-white placeholder-gray-500 focus:bg-gray-700"
                 placeholder="John Doe">
             </div>
             <div>
-              <label class="block text-sm font-medium text-gray-300 mb-2">Email</label>
-              <input type="email" v-model="email" required
+              <label for="contact-email" class="block text-sm font-medium text-gray-300 mb-2">Email</label>
+              <input id="contact-email" type="email" v-model="email" required autocomplete="email"
                 class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 focus:ring-2 focus:ring-purple-500 outline-none transition-all text-white placeholder-gray-500 focus:bg-gray-700"
                 placeholder="john@example.com">
             </div>
             <div>
-              <label class="block text-sm font-medium text-gray-300 mb-2">Message</label>
-              <textarea rows="4" v-model="message" required
+              <label for="contact-message" class="block text-sm font-medium text-gray-300 mb-2">Message</label>
+              <textarea id="contact-message" rows="4" v-model="message" required
                 class="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 focus:ring-2 focus:ring-purple-500 outline-none transition-all text-white placeholder-gray-500 focus:bg-gray-700"
                 placeholder="Tell me about your project..."></textarea>
             </div>

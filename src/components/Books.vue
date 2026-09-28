@@ -66,7 +66,7 @@ const books = [
     {
         title: "The Cloud Security Architect's Handbook",
         url: 'https://cloud-security-handbook.afaan.dev/',
-        image: '/images/cloud-security-architect-handbook-cover.jpg',
+        image: '/images/cloud-security-architect-handbook-cover.webp',
         description: 'Master advanced architectural patterns, automation strategies, and future-proofing techniques for securing cloud environments at scale.',
     },
     {

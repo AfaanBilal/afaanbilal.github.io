@@ -6,7 +6,6 @@
   <link rel="icon" type="image/png" href="/assets/afaan.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#111827">
-  <link rel="canonical" href="https://afaan.dev/">
 
   <!-- Apply persisted/preferred theme before paint to avoid a flash of the wrong theme -->
   <script>
@@ -19,57 +18,14 @@
     })();
   </script>
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXSTRB12SH"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    // GDPR: deny all storage by default; the consent banner grants it on opt-in.
-    gtag('consent', 'default', {
-      ad_storage: 'denied',
-      ad_user_data: 'denied',
-      ad_personalization: 'denied',
-      analytics_storage: 'denied',
-      wait_for_update: 500
-    });
-    // Restore a returning visitor's prior consent before the first hit.
-    try {
-      if (localStorage.getItem('cookie-consent') === 'granted') {
-        gtag('consent', 'update', { analytics_storage: 'granted' });
-      }
-    } catch (e) { }
-    gtag('js', new Date());
-    gtag('config', 'G-XXSTRB12SH');
-  </script>
-
-  <!-- Primary Meta Tags -->
   <title>Afaan Bilal &middot; Principal Software Engineer, CISO</title>
-  <meta name="title" content="Afaan Bilal &middot; Principal Software Engineer, CISO">
-  <meta name="description"
-    content="Principal Software Engineer, CISO. Expert in Full Stack Development, Cloud Computing, and Security.">
   <meta name="keywords"
     content="Afaan Bilal, Software Engineer, Full Stack, Rust, Go, SOC2, React, Vue, PHP, Laravel, CISO">
   <meta name="author" content="Afaan Bilal">
-
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://afaan.dev/">
-  <meta property="og:title" content="Afaan Bilal &middot; Principal Software Engineer, CISO">
-  <meta property="og:description"
-    content="Principal Software Engineer, CISO at Centiment. Expert in Full Stack Development, Cloud Computing, and Security.">
-  <meta property="og:image" content="https://afaan.dev/assets/afaan.png">
-
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://afaan.dev/">
-  <meta property="twitter:title" content="Afaan Bilal &middot; Principal Software Engineer, CISO">
-  <meta property="twitter:description"
-    content="Principal Software Engineer, CISO. Expert in Full Stack Development, Cloud Computing, and Security.">
-  <meta property="twitter:image" content="https://afaan.dev/assets/afaan.png">
+  <!-- description, canonical, Open Graph and Twitter tags are set per route in App.vue (useSeoMeta) -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="image" href="/assets/afaan.png" fetchpriority="high">
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700&display=swap" rel="stylesheet"
     media="print" onload="this.media='all'" />
   <noscript>
