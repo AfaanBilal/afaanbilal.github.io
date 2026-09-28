@@ -222,10 +222,10 @@
 
 <script setup>
 const atvcasImages = [
-    '/research/atvacs/A2-Detection-Recognition.png',
-    '/research/atvacs/A2-Classification-Counting.png',
+    '/research/atvacs/A2-Detection-Recognition.webp',
+    '/research/atvacs/A2-Classification-Counting.webp',
     '/research/atvacs/FGM-RTL.png',
-    '/research/atvacs/VD-RTL.png'
+    '/research/atvacs/VD-RTL.webp'
 ]
 const atvcasTags = ['Python', 'Computer Vision', 'Deep Learning', 'YOLO', 'Neural Networks', 'Traffic Analysis']
 

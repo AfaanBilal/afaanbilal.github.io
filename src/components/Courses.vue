@@ -74,7 +74,7 @@ const courses = [
     {
         title: 'Creating an API server in Rust with Actix, SQLx and JWT',
         url: 'https://www.udemy.com/course/rust-api-server-actix-sqlx-jwt/?referralCode=0C3C85FE260C2016C334',
-        image: '/images/udemy-rust-actix-sqlx-course.png',
+        image: '/images/udemy-rust-actix-sqlx-course.webp',
         description: 'Build your own REST API server with the safety and performance of Rust using Actix Web, SQLx and JWT authentication.',
         rating: 4.5,
         curriculum: '/assets/API-Server-Development-in-Rust-with-Actix-Web-SQLx-and-JWT.pdf'
@@ -89,7 +89,7 @@ const courses = [
     {
         title: 'Creating a REST API server with PHP, Laravel and MySQL',
         url: 'https://www.udemy.com/course/laravel-rest-api-server/?referralCode=AE00F1CF28608CD5F56E',
-        image: '/images/udemy-laravel-rest-course.png',
+        image: '/images/udemy-laravel-rest-course.webp',
         description: 'Project-based guide to creating production-ready Laravel REST API servers including authentication, route-model binding, pagination, sorting, searching and more.',
         rating: 4.6
     }

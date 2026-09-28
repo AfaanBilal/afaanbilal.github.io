@@ -90,6 +90,7 @@ const inputRef = ref(null)
 const paletteRef = ref(null)
 const toast = ref('')
 let toastTimer = null
+let closeTimer = null
 let lastFocused = null
 
 const showToast = (msg) => {
@@ -278,11 +279,14 @@ const scrollTo = (id) => {
     }
     const el = document.getElementById(id)
     if (el) el.scrollIntoView({ behavior: 'smooth' })
+    // Section lives on the home page; route there and let scrollBehavior find it.
+    else router.push({ path: '/', hash: '#' + id })
 }
 
 const close = () => {
     animate.value = false
-    setTimeout(() => {
+    clearTimeout(closeTimer)
+    closeTimer = setTimeout(() => {
         isOpen.value = false
         search.value = ''
         lastFocused?.focus?.()
@@ -293,8 +297,9 @@ const close = () => {
 const onKeydown = (e) => {
     if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
         e.preventDefault()
-        if (isOpen.value) return
-        lastFocused = document.activeElement
+        if (isOpen.value && animate.value) return
+        clearTimeout(closeTimer)
+        if (!isOpen.value) lastFocused = document.activeElement
         isOpen.value = true
         if (commands.length > 0) selectedId.value = commands[0].id
         nextTick(() => {

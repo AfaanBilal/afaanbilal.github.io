@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import tailwindcss from '@tailwindcss/vite'
 import path from 'path'
+import fs from 'fs'
 
 // https://vitejs.dev/config/
 export default defineConfig(({ isSsrBuild }) => ({
@@ -26,11 +27,15 @@ export default defineConfig(({ isSsrBuild }) => ({
       },
     },
   },
-  // vite-ssg: statically prerender only the content routes.
-  // Dynamic /project/:name pages depend on the GitHub API and stay client-rendered.
+  // vite-ssg: prerender the content routes plus every project snapshotted by
+  // scripts/prerenderProjects.js. Projects without a snapshot stay client-rendered.
   ssgOptions: {
     script: 'async',
     formatting: 'minify',
-    includedRoutes: () => ['/', '/privacy'],
+    includedRoutes: () => {
+      let projects = []
+      try { projects = JSON.parse(fs.readFileSync('public/projects/index.json', 'utf8')) } catch { }
+      return ['/', '/privacy', ...projects.map((full) => `/project/${full}`)]
+    },
   },
 }))

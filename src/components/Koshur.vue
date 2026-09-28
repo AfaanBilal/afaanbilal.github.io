@@ -153,7 +153,7 @@
                             web-based playground
                         </div>
                         <div class="relative group rounded-xl border border-gray-700 shadow-2xl overflow-hidden">
-                            <img src="/screenshots/koshur.png" alt="Koshur Online Playground"
+                            <img src="/screenshots/koshur.webp" alt="Koshur Online Playground"
                                 class="w-full transform group-hover:scale-105 transition-transform duration-500" />
                             <div
                                 class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">

@@ -21,7 +21,12 @@ try {
     // page and then hydrate-mismatch into the real route. Strip the prerendered
     // content to an empty #app so the fallback does a clean client-side mount.
     const html = fs.readFileSync(indexHtml, 'utf8');
-    const shell = html.replace(/<div id="app"[^>]*>[\s\S]*<\/div>/, '<div id="app"></div>');
+    // Anchored to </body> so anything ever added after #app fails the check below
+    // loudly instead of being silently swallowed. The home canonical is dropped too;
+    // client-side routes set their own via useHead.
+    const shell = html
+        .replace(/<div id="app"[^>]*>[\s\S]*<\/div>(?=\s*<\/body>)/, '<div id="app"></div>')
+        .replace(/<link rel="canonical"[^>]*>/, '');
 
     if (!shell.includes('<div id="app"></div>')) {
         console.error('Error: could not locate #app root to build the 404 shell.');

@@ -219,7 +219,7 @@ const apps = [
         category: 'Web',
         domain: 'koshur.afaan.dev',
         link: 'https://koshur.afaan.dev',
-        image: '/screenshots/koshur.png',
+        image: '/screenshots/koshur.webp',
         tech: ['Vue', 'Typescript', 'Tailwind'],
         description: 'Online playground and documentation for the Koshur programming language.'
     },
@@ -246,7 +246,7 @@ const apps = [
         category: 'Web',
         domain: 'oss.afaan.dev',
         link: 'https://oss.afaan.dev',
-        image: '/screenshots/oss.png',
+        image: '/screenshots/oss.webp',
         tech: ['React', 'Typescript', 'Tailwind'],
         description: 'GitHub summary of repositories, languages and organizations.'
     },
